@@ -2,10 +2,10 @@
 
 Decidim.configure do |config|
   # The name of the application
-  config.application_name = "My Application Name"
+  config.application_name = "Decidim IMPD"
 
   # The email that will be used as sender in all emails from Decidim
-  config.mailer_sender = "change-me@example.org"
+  config.mailer_sender = ENV["EMAIL"]
 
   # Sets the list of available locales for the whole application.
   #
@@ -278,6 +278,20 @@ Decidim.configure do |config|
   # Defines the name of the cookie used to check if the user allows Decidim to
   # set cookies.
   # config.consent_cookie_name = "decidim-cc"
+
+  if ENV["HEROKU_APP_NAME"].present?
+    config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
+  end
+
+  config.maps = {
+    provider: :here,
+    api_key: Rails.application.secrets.maps[:api_key],
+    static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
+  }
+  config.geocoder = {
+    timeout: 5,
+    units: :km
+  }
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales

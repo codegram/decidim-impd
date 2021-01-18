@@ -1,0 +1,73 @@
+{
+  "name": "decidim_impd",
+  "description": "decidim_impd - Direct and participatory democracy web platform based on Decidim framework",
+  "keywords": [],
+  "addons": [
+    "heroku-postgresql:standard-0",
+    "heroku-redis:hobby-dev",
+    "logentries:le_tryit",
+    "memcachedcloud:30",
+    "newrelic:wayne",
+    "sendgrid:starter"
+  ],
+  "scripts": {
+    "postdeploy":"SEED=true rake db:seed"
+  },
+  "stack": "heroku-20",
+  "buildpacks": [
+    {
+      "url": "https://github.com/gaffneyc/heroku-buildpack-jemalloc"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "env": {
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "AWS_BUCKET_NAME": {
+      "required": true
+    },
+    "AWS_REGION": {
+      "required": true
+    },
+    "EMAIL": {
+      "description": "The email from where the transactions emails will be set as send.",
+      "required": true
+    },
+    "CENSUS_PASSWORD": {
+      "description": "Password for a custom CensusAuthenticationHandler, if needed",
+      "required": false
+    },
+    "CENSUS_URL": {
+      "description": "URL for a custom CensusAuthenticationHandler, if needed",
+      "required": false
+    },
+    "CENSUS_USERNAME": {
+      "description": "Username for a custom CensusAuthenticationHandler, if needed",
+      "required": false
+    },
+    "MAPS_API_KEY": {
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Needed for review apps and seed data",
+      "required": false
+    },
+    "SECRET_KEY_BASE": {
+      "description": "A secret used by Rails to identify sessions",
+      "generator": "secret"
+    },
+    "JEMALLOC_ENABLED": {
+      "value": "true"
+    },
+    "SENTRY_DSN": {
+      "description": "The URL for Sentry to report error",
+      "required": false
+    }
+  }
+}
