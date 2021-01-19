@@ -3,17 +3,14 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "release/0.23-stable" }
 
-gem "decidim", "0.23.1"
-
-gem "bootsnap", "~> 1.3"
+gem "decidim", DECIDIM_VERSION
 
 gem "puma", "~> 5"
+gem "bootsnap", "~> 1.3"
 gem "uglifier", "~> 4.1"
-
 gem "faker", "~> 1.9"
-
-gem "wicked_pdf", "~> 1.4"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
