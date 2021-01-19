@@ -807,7 +807,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
-  decidim-dev (= 0.23.1)
+  decidim-dev!
   faker (~> 1.9)
   fog-aws
   letter_opener_web (~> 1.3)
