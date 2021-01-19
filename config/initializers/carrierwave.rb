@@ -23,7 +23,7 @@ if Rails.application.secrets.aws_access_key_id.present?
       region:                Rails.application.secrets.aws_region,            # optional, defaults to 'us-east-1'
       host:                  's3.eu-west-3.amazonaws.com'                     # optional, defaults to nil
     }
-    config.fog_directory  = 'decidim_impd',
+    config.fog_directory  = 'decidim-impd',
     config.fog_attributes = {
       'Cache-Control' => "max-age=#{365.day.to_i}",
       'X-Content-Type-Options' => "nosniff"
