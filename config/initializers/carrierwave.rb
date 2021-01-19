@@ -20,10 +20,11 @@ if Rails.application.secrets.aws_access_key_id.present?
       provider:              'AWS',                                             # required
       aws_access_key_id:     Rails.application.secrets.aws_access_key_id,     # required
       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key, # required
-      region:                Rails.application.secrets.aws_region,            # optional, defaults to 'us-east-1'
-      host:                  's3.eu-west-3.amazonaws.com'                     # optional, defaults to nil
+      region:                Rails.application.secrets.aws_region,
+      host:                  Rails.application.secrets.aws_host,
     }
-    config.fog_directory  = 'decidim-impd',
+    config.fog_directory  = Rails.application.secrets.aws_bucket
+    config.fog_public = true
     config.fog_attributes = {
       'Cache-Control' => "max-age=#{365.day.to_i}",
       'X-Content-Type-Options' => "nosniff"
