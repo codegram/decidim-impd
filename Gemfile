@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "release/0.23-stable" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "feat/file-uploads-question-type" }
 
 gem "decidim", DECIDIM_VERSION
 
