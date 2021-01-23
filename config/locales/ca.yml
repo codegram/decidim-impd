@@ -3,3 +3,27 @@ ca:
     forms:
       question_type:
         files: Adjunts
+  activemodel:
+    attributes:
+      add_documents: Adjunts
+      answer:
+        add_documents: Adjunts
+    errors:
+      models:
+        answer:
+          attributes:
+            add_documents:
+              needs_to_be_reattached: És necessari tornar a adjuntar l'arxiu
+  errors:
+    messages:
+      carrierwave_processing_error: no s'ha pogut processar
+      carrierwave_integrity_error: no és d'una mena d'arxiu permès
+      carrierwave_download_error: no s'ha pogut descarregar
+      extension_whitelist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions permeses són: %{allowed_types}"
+      extension_blacklist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions prohibides són: %{prohibited_types}"
+      content_type_whitelist_error: "No es poden pujar arxius de l'extensió %{content_type}"
+      content_type_blacklist_error: "No es poden pujar arxius de l'extensió %{content_type}"
+      rmagick_processing_error: "No s'ha pogut manipular amb rmagick, potser perquè no és una imatge? Error original: %{e}"
+      mini_magick_processing_error: "No s'ha pogut manipular amb MiniMagick, potser perquè no és una imatge? Error original: %{e}"
+      min_size_error: "La grandària de l'arxiu ha de ser major que %{min_size}"
+      max_size_error: "La grandària de l'arxiu ha de ser inferior a %{max_size}"
