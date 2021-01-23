@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/decidim/decidim
-  revision: 93f52bd51620eaf0404779e54a77515b837f9174
+  revision: 2ed4d46a73a5640a439706cb77c26d31202892e6
   tag: feat/file-uploads-question-type
   specs:
     decidim (0.24.0.dev)
