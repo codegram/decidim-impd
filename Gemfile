@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "feat/file-uploads-question-type" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "develop" }
 
 gem "decidim", DECIDIM_VERSION
 
@@ -11,6 +11,7 @@ gem "puma", "~> 5"
 gem "bootsnap", "~> 1.3"
 gem "uglifier", "~> 4.1"
 gem "faker", "~> 1.9"
+gem "decidim-elections_census", path: "decidim-module-elections_census"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri

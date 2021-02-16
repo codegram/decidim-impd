@@ -1,0 +1,20 @@
+---
+ca:
+  layouts:
+    decidim:
+      elections_census:
+        title: El cens electoral
+      process_header:
+        census_title: El cens electoral
+        census_subtitle: Alguna explicació
+        intro: Informació
+        new: Inscripció al cens
+        search: Verificació de dades
+  decidim:
+    menu:
+      census: Cens electoral
+    elections_census:
+      voters:
+        index:
+          description: Un text més llarg
+          short_description: Text curt explicant això del cens.
