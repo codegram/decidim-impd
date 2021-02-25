@@ -4,7 +4,9 @@ ca:
       question_type:
         files: Adjunts
     elections_census:
-      member_form:
+      admin:
+        voters: Cens electoral
+      voters:
         create:
           error: Hi ha hagut algun error amb la teva inscripció.
           success: La teva inscripció s'ha realitzat correctament.
@@ -39,6 +41,10 @@ ca:
           select_disability: Escull una discapacitat
           select_secondary_disability: Escull una discapacitat secundària (opcional)
           select_gender: Escull un gènere
+          date_select:
+            day: Dia
+            month: Mes
+            year: Any
 
   activemodel:
     attributes:

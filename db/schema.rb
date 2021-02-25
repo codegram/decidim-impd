@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_195439) do
+ActiveRecord::Schema.define(version: 2021_02_25_211018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
-  enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
@@ -462,6 +461,23 @@ ActiveRecord::Schema.define(version: 2021_02_25_195439) do
     t.index ["decidim_scope_id"], name: "index_decidim_debates_debates_on_decidim_scope_id"
     t.index ["decidim_user_group_id"], name: "index_decidim_debates_debates_on_decidim_user_group_id"
     t.index ["endorsements_count"], name: "idx_decidim_debates_debates_on_endorsemnts_count"
+  end
+
+  create_table "decidim_elections_census_voters", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "lastname", null: false
+    t.string "second_lastname"
+    t.string "document_type", null: false
+    t.string "document_number", null: false
+    t.string "disability", null: false
+    t.string "secondary_disability"
+    t.string "address", null: false
+    t.date "birthday", null: false
+    t.string "gender", null: false
+    t.string "email"
+    t.string "mobile_phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "decidim_endorsements", force: :cascade do |t|

@@ -2,7 +2,7 @@
 
 module Decidim
   module ElectionsCensus
-    class MemberForm < Decidim::Form
+    class VoterForm < Decidim::Form
       mimic :voter
 
       DOCUMENT_TYPES = %w(dni passport nie minor_no_documents no_documents)
@@ -17,7 +17,7 @@ module Decidim
       attribute :disability, String
       attribute :secondary_disability, String
       attribute :address, String
-      attribute :birthday, String
+      attribute :birthday, Date
       attribute :gender, String
       attribute :email, String
       attribute :mobile_phone_number, String
@@ -32,6 +32,16 @@ module Decidim
       validates :document_number, presence: true, if: ->(form) { form.document_type.blank? || form.document_type != "minor_no_documents" || form.document_type != "no_documents" }
       validate :different_disabilities
       validate :email_or_phone
+
+      def self.from_params(params, additional_params = {})
+        year = params["voter"]["birthday(1i)"]
+        month = params["voter"]["birthday(2i)"]
+        day = params["voter"]["birthday(3i)"]
+
+        params["voter"]["birthday"] = Date.new(year.to_i, month.to_i, day.to_i) if year.present? && month.present? && day.present?
+
+        super(params)
+      end
 
       private
 

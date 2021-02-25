@@ -48,7 +48,7 @@
               <%= form_required_explanation %>
 
               <div class="field">
-                <%= f.select :document_type, Decidim::ElectionsCensus::MemberForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t(".select_document_type") %>
+                <%= f.select :document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t(".select_document_type") %>
               </div>
 
               <div class="field">
@@ -68,11 +68,11 @@
               </div>
 
               <div class="field">
-                <%= f.select :disability, Decidim::ElectionsCensus::MemberForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_disability") %>
+                <%= f.select :disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_disability") %>
               </div>
 
               <div class="field">
-                <%= f.select :secondary_disability, Decidim::ElectionsCensus::MemberForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_secondary_disability") %>
+                <%= f.select :secondary_disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_secondary_disability") %>
               </div>
 
               <div class="field">
@@ -80,11 +80,12 @@
               </div>
 
               <div class="field">
-                <%= f.text_field :birthday %>
+                <%= f.date_select :birthday, start_year: 1900, end_year: 16.years.ago.year, default: 35.years.ago, prompt: { day: t(".date_select.day"), month: t(".date_select.month"), year: t(".date_select.year") } %>
+
               </div>
 
               <div class="field">
-                <%= f.select :gender, Decidim::ElectionsCensus::MemberForm::GENDERS.map {|option| [t(option, scope: "decidim.elections_census.genders"), option]}, prompt: t(".select_gender") %>
+                <%= f.select :gender, Decidim::ElectionsCensus::VoterForm::GENDERS.map {|option| [t(option, scope: "decidim.elections_census.genders"), option]}, prompt: t(".select_gender") %>
               </div>
 
               <div class="field">
