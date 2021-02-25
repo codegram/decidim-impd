@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_120268) do
+ActiveRecord::Schema.define(version: 2021_02_25_195439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -171,6 +171,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_120268) do
     t.string "youtube_handler"
     t.string "github_handler"
     t.bigint "decidim_assemblies_type_id"
+    t.integer "weight", default: 1, null: false
     t.index ["decidim_area_id"], name: "index_decidim_assemblies_on_decidim_area_id"
     t.index ["decidim_assemblies_type_id"], name: "index_decidim_assemblies_on_decidim_assemblies_type_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
@@ -455,8 +456,6 @@ ActiveRecord::Schema.define(version: 2021_01_21_120268) do
     t.integer "last_comment_by_id"
     t.string "last_comment_by_type"
     t.bigint "decidim_scope_id"
-    t.datetime "archived_at"
-    t.index ["archived_at"], name: "index_decidim_debates_debates_on_archived_at"
     t.index ["closed_at"], name: "index_decidim_debates_debates_on_closed_at"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_debates_debates_on_decidim_author"
     t.index ["decidim_component_id"], name: "index_decidim_debates_debates_on_decidim_component_id"
@@ -569,6 +568,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_120268) do
     t.integer "max_choices"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "max_characters", default: 0
     t.index ["decidim_questionnaire_id"], name: "index_decidim_forms_questions_on_decidim_questionnaire_id"
     t.index ["position"], name: "index_decidim_forms_questions_on_position"
   end
@@ -967,6 +967,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_120268) do
     t.bigint "decidim_area_id"
     t.bigint "decidim_scope_type_id"
     t.boolean "show_metrics", default: true
+    t.integer "weight", default: 1, null: false
     t.index ["decidim_area_id"], name: "index_decidim_participatory_processes_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_process_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_processes_on_decidim_organization_id"
@@ -1371,6 +1372,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_120268) do
     t.boolean "blocked", default: false, null: false
     t.datetime "blocked_at"
     t.integer "block_id"
+    t.boolean "email_on_moderations", default: true
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false) AND ((type)::text = 'Decidim::User'::text))"

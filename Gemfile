@@ -10,7 +10,7 @@ gem "decidim", DECIDIM_VERSION
 gem "puma", "~> 5"
 gem "bootsnap", "~> 1.3"
 gem "uglifier", "~> 4.1"
-gem "faker", "~> 1.9"
+gem "faker"
 gem "decidim-elections_census", path: "decidim-module-elections_census"
 
 group :development, :test do
