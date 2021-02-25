@@ -1,1 +1,125 @@
-Inscripció al cens
+<%# Inscripció al cens
+<%#
+<%# Tipus de document:
+<%# DNI
+<%# Passaport
+<%# NIE
+<%# Menor sense documents
+<%# Persona sense documentació
+<%#
+<%# Document
+<%#
+<%# Nom
+<%# Primer cognom
+<%# Segon cognom
+<%#
+<%# Discapacitat:
+<%#
+<%# Discapacitat secundaria
+<%#
+<%# Adreça
+<%# Data de naixement
+<%# Genere:
+<%# Home
+<%# Done
+<%#
+<%# Email
+<%# Telèfon mòbil
+
+<% add_decidim_page_title(t(".sign_up")) %>
+
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-10 medium-centered">
+
+        <%= decidim_form_for(@form) do |f| %>
+          <%= invisible_captcha %>
+          <div class="card">
+            <div class="card__content">
+              <%= form_required_explanation %>
+
+              <div class="field">
+                <%= f.select :document_type, Decidim::ElectionsCensus::MemberForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t(".select_document_type") %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :document_number %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :name %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :lastname %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :second_lastname %>
+              </div>
+
+              <div class="field">
+                <%= f.select :disability, Decidim::ElectionsCensus::MemberForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_disability") %>
+              </div>
+
+              <div class="field">
+                <%= f.select :secondary_disability, Decidim::ElectionsCensus::MemberForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_secondary_disability") %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :address %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :birthday %>
+              </div>
+
+              <div class="field">
+                <%= f.select :gender, Decidim::ElectionsCensus::MemberForm::GENDERS.map {|option| [t(option, scope: "decidim.elections_census.genders"), option]}, prompt: t(".select_gender") %>
+              </div>
+
+              <div class="field">
+                <%= f.email_field :email %>
+              </div>
+
+              <div class="field">
+                <%= f.telephone_field :mobile_phone_number %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="card__tos">
+            <div class="card__content">
+              <h3><%= t(".tos_title") %></h3>
+
+              <p class="tos-text">
+              <%= t(".tos_text") %>
+              </p>
+
+              <div class="field">
+                <%= f.check_box :tos_agreement, label: t(".tos_agreement") %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <%= f.submit t(".send"), class: "button expanded" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
