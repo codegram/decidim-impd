@@ -10,13 +10,23 @@ module Decidim
       paths["lib/tasks"] = nil
 
       routes do
-        # Add admin engine routes here
-        # resources :elections_census do
-        #   collection do
-        #     resources :exports, only: [:create]
-        #   end
-        # end
-        # root to: "elections_census#index"
+        resources :voters, only: [:index], as: :voters do
+          post :verify, on: :member
+          post :unverify, on: :member
+        end
+        root to: "voters#index"
+      end
+
+      initializer "decidim_elections_census_admin.routes" do
+        Decidim::Admin::Engine.routes do
+          mount Decidim::ElectionsCensus::AdminEngine => "/elections-census"
+        end
+      end
+
+      initializer "decidim_elections_census.voters_menu" do
+        Decidim.menu :admin_menu do |menu|
+          menu.item I18n.t("voters", scope: "decidim.elections_census.admin"), decidim_elections_census_admin.root_path, icon_name: "lock-locked"
+        end
       end
 
       def load_seed

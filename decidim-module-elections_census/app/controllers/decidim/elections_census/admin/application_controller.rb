@@ -8,7 +8,16 @@ module Decidim
       #
       # Note that it inherits from `Decidim::Admin::Components::BaseController`, which
       # override its layout and provide all kinds of useful methods.
-      class ApplicationController < Decidim::Admin::Components::BaseController
+      class ApplicationController < Decidim::Admin::ApplicationController
+        register_permissions(
+          Decidim::ElectionsCensus::Admin::ApplicationController,
+          Decidim::ElectionsCensus::Admin::Permissions,
+          Decidim::Admin::Permissions
+        )
+
+        def permission_class_chain
+          ::Decidim.permissions_registry.chain_for(::Decidim::ElectionsCensus::Admin::ApplicationController)
+        end
       end
     end
   end

@@ -1,0 +1,24 @@
+<% content_for :secondary_nav do %>
+  <div class="secondary-nav">
+    <div class="secondary-nav__title">
+      <%= t "decidim.admin.titles.voters" %>
+    </div>
+    <ul>
+      <% if admin_allowed_to? :read, :voter %>
+        <li <% if is_active_link?(decidim_elections_census_admin.root_path) %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.pending", scope: "decidim.admin"), decidim_elections_census_admin.root_path, class: "button expanded small new" %>
+        </li>
+      <% end %>
+      <% if admin_allowed_to? :read, :voter %>
+        <li <% if is_active_link?(decidim_elections_census_admin.root_path) %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.verified", scope: "decidim.admin"), decidim_elections_census_admin.root_path, class: "button expanded small new" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render "layouts/decidim/admin/application" do %>
+  <%= yield %>
+<% end %>
+
