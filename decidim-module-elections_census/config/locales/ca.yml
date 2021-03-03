@@ -3,18 +3,126 @@ ca:
   layouts:
     decidim:
       elections_census:
-        title: El cens electoral
+        title: Cens electoral
       process_header:
-        census_title: El cens electoral
+        census_title: Cens electoral
         census_subtitle: Alguna explicació
         intro: Informació
         new: Inscripció al cens
         search: Verificació de dades
   decidim:
+    admin:
+      actions:
+        verify: Verificar
+        unverify: Desverificar
+      voters:
+        index:
+          pending: Pendents de verificar
+          verified: Verificats
+      titles:
+        voters: Cens electoral
     menu:
       census: Cens electoral
     elections_census:
+      admin:
+        voters: Cens electoral
+      document_types:
+        dni: DNI
+        passport: Passaport
+        nie: NIE
+        minor_no_documents: Menor sense documents
+        no_documents: Persona sense documentació
+      disabilities:
+        physical: Física
+        intellectual: Intel·lectual
+        not_reported: No informada
+        auditory_sensory: Auditiva
+        visual_sensory: Visual
+        mental_disorder: Transtorn de salut mental
+        other: Altres
+      genders:
+        female: Dona
+        male: Home
+        other: Altre
       voters:
+        create:
+          error: Hi ha hagut algun error amb la seva inscripció.
+          success: Les seves dades han estat registrades correctament.
         index:
           description: Un text més llarg
           short_description: Text curt explicant això del cens.
+        new:
+          title: Inscripció al cens
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          tos_title: Termes legals
+          tos_text: Text dels termes legals
+          tos_agreement: Estic d'acord amb els termes legals
+          send: Enviar
+          email_help: El correu electrònic del representant legal en cas de menor de 16 anys.
+          mobile_phone_number_help: El número de telèfon mòbil del representant legal en cas de menor de 16 anys.
+          select_document_type: Escull el tipus de document
+          select_disability: Escull una discapacitat
+          select_secondary_disability: Escull una discapacitat secundària (opcional)
+          select_gender: Escull un gènere
+          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya o bé informe de diagnòstic psiquiàtric de trastorn de salut mental
+          date_select:
+            day: Dia
+            month: Mes
+            year: Any
+
+  activemodel:
+    attributes:
+      add_documents: Adjunts
+      answer:
+        add_documents: Adjunts
+      voter:
+        document_type: Tipus de document
+        document_number: Número de document
+        legal_guardian_document_type: Tipus de document del representant legal
+        legal_guardian_document_number: Número de document del representant legal
+        legal_guardian_name: Nom
+        legal_guardian_lastname: Cognom
+        legal_guardian_second_lastname: Segon cognom
+        name: Nom
+        lastname: Cognom
+        second_lastname: Segon cognom
+        full_name: Nom i cognoms
+        disability: Discapacitat
+        secondary_disability: Discapacitat secundària
+        address: Adreça
+        address_type: Tipus de via
+        address_name: Nom de la via
+        address_number: Número
+        address_floor: Pis
+        address_door: Porta
+        address_postal_code: Codi postal
+        birthday: Data de naixement
+        gender: Gènere
+        email: Correu electrònic
+        mobile_phone_number: Telèfon mòbil
+        tos_agreement: Termes legals
+        created_at: Data de creació
+        disability_certificate: Document acreditatiu de la discapacitat
+        family_book: Llibre de família
+    errors:
+      models:
+        answer:
+          attributes:
+            add_documents:
+              needs_to_be_reattached: És necessari tornar a adjuntar l'arxiu
+        voter:
+          email_or_phone_required: Has d'introduir el correu electrònic o el telèfon
+          must_be_different: Ha de ser diferent de la discapacitat principal
+  errors:
+    messages:
+      carrierwave_processing_error: no s'ha pogut processar
+      carrierwave_integrity_error: no és d'una mena d'arxiu permès
+      carrierwave_download_error: no s'ha pogut descarregar
+      extension_whitelist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions permeses són: %{allowed_types}"
+      extension_blacklist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions prohibides són: %{prohibited_types}"
+      content_type_whitelist_error: "No es poden pujar arxius de l'extensió %{content_type}"
+      content_type_blacklist_error: "No es poden pujar arxius de l'extensió %{content_type}"
+      rmagick_processing_error: "No s'ha pogut manipular amb rmagick, potser perquè no és una imatge? Error original: %{e}"
+      mini_magick_processing_error: "No s'ha pogut manipular amb MiniMagick, potser perquè no és una imatge? Error original: %{e}"
+      min_size_error: "La grandària de l'arxiu ha de ser major que %{min_size}"
+      max_size_error: "La grandària de l'arxiu ha de ser inferior a %{max_size}"

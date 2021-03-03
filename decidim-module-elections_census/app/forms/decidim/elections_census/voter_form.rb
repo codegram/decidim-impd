@@ -5,8 +5,8 @@ module Decidim
     class VoterForm < Decidim::Form
       mimic :voter
 
-      DOCUMENT_TYPES = %w(dni passport nie minor_no_documents no_documents)
-      DISABILITIES = %w(physical intellectual not_reported auditory_sensory visual_sensory mental_disorder other)
+      DOCUMENT_TYPES = %w(dni nie passport)
+      DISABILITIES = %w(physical mental_disorder intellectual auditory_sensory visual_sensory)
       GENDERS = %w(female male other)
 
       attribute :document_type, String
@@ -16,22 +16,38 @@ module Decidim
       attribute :second_lastname, String
       attribute :disability, String
       attribute :secondary_disability, String
-      attribute :address, String
+      attribute :address_type, String
+      attribute :address_name, String
+      attribute :address_number, String
+      attribute :address_floor, String
+      attribute :address_door, String
+      attribute :address_postal_code, String
       attribute :birthday, Date
       attribute :gender, String
       attribute :email, String
       attribute :mobile_phone_number, String
       attribute :tos_agreement, Boolean
+      attribute :disability_certificate
+      attribute :family_book
+      attribute :legal_guardian_document_type, String
+      attribute :legal_guardian_document_number, String
+      attribute :legal_guardian_name, String
+      attribute :legal_guardian_lastname, String
+      attribute :legal_guardian_second_lastname, String
 
-      validates :document_type, :name, :lastname, :disability, :address, :birthday, :gender, presence: true
+      validates :document_type, :name, :lastname, :disability, :address, :birthday, :gender, :address_type, :address_name, :address_number, :address_floor, :address_door, :address_postal_code, presence: true
       validates :tos_agreement, acceptance: true
       validates :document_type, inclusion: { in: DOCUMENT_TYPES }
       validates :disability, inclusion: { in: DISABILITIES }
       validates :secondary_disability, inclusion: { in: DISABILITIES }, allow_blank: true
       validates :gender, inclusion: { in: GENDERS }
       validates :document_number, presence: true, if: ->(form) { form.document_type.blank? || form.document_type != "minor_no_documents" || form.document_type != "no_documents" }
+      validates :disability_certificate, presence: true, if: ->(form) { form.disability == "mental_disorder" || form.secondary_disability == "mental_disorder" || form.needs_legal_guardian? }
+      validates :family_book, :legal_guardian_document_number, :legal_guardian_name, :legal_guardian_lastname, :legal_guardian_second_lastname, presence: true, if: ->(form) { form.needs_legal_guardian? }
+      validates :legal_guardian_document_type, inclusion: { in: DOCUMENT_TYPES }, if: ->(form) { form.needs_legal_guardian? }
       validate :different_disabilities
       validate :email_or_phone
+      validate :exists_in_census
 
       def self.from_params(params, additional_params = {})
         year = params["voter"]["birthday(1i)"]
@@ -41,6 +57,22 @@ module Decidim
         params["voter"]["birthday"] = Date.new(year.to_i, month.to_i, day.to_i) if year.present? && month.present? && day.present?
 
         super(params)
+      end
+
+      def needs_legal_guardian?
+        return unless birthday
+        (Date.today.to_time.to_i - birthday.to_time.to_i) < 16.years
+      end
+
+      def address
+        [
+          address_type,
+          address_name,
+          address_number,
+          address_floor,
+          address_door,
+          address_postal_code
+        ].join(", ")
       end
 
       private
@@ -56,6 +88,11 @@ module Decidim
         return if disability != secondary_disability
 
         errors.add(:secondary_disability, :must_be_different)
+      end
+
+      # TODO: Validate against Barcelona's census
+      def exists_in_census
+        true
       end
     end
   end
