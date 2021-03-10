@@ -1,4 +1,3 @@
----
 ca:
   layouts:
     decidim:
@@ -6,10 +5,9 @@ ca:
         title: Cens electoral
       process_header:
         census_title: Cens electoral
-        census_subtitle: Alguna explicació
         intro: Informació
         new: Inscripció al cens
-        search: Verificació de dades
+        search: Comprova la inscripció al cens
   decidim:
     admin:
       actions:
@@ -33,30 +31,27 @@ ca:
         minor_no_documents: Menor sense documents
         no_documents: Persona sense documentació
       disabilities:
-        physical: Física
-        intellectual: Intel·lectual
-        not_reported: No informada
-        auditory_sensory: Auditiva
-        visual_sensory: Visual
-        mental_disorder: Transtorn de salut mental
+        physical: Discapacitat física
+        intellectual: Discapacitat intel·lectual
+        not_reported: Discapacitat no informada
+        auditory_sensory: Discapacitat auditiva
+        visual_sensory: Discapacitat visual
+        mental_disorder: Discapacitat per transtorn de salut mental
         other: Altres
       genders:
         female: Dona
         male: Home
-        other: Altre
+        other: No binari
       voters:
         create:
-          error: Hi ha hagut algun error amb la seva inscripció.
-          success: Les seves dades han estat registrades correctament.
-        index:
-          description: Un text més llarg
-          short_description: Text curt explicant això del cens.
+          error: Hi ha hagut algun error amb la teva inscripció.
+          success: "Les teves dades han estat introduïdes correctament al cens electoral. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a eleccionsIMPD@bcn.cat."
         new:
           title: Inscripció al cens
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
           tos_title: Termes legals
           tos_text: Text dels termes legals
-          tos_agreement: Estic d'acord amb els termes legals
+          tos_agreement: "Estic d'acord amb els <a href='https://impd.decidim.barcelona/pages/terms-and-conditions?locale=ca' target='_blank'>termes legals</a> i la <a href='https://impd.decidim.barcelona/pages/privacitat?locale=ca' target='_blank'>política de privacitat</a>."
           send: Enviar
           email_help: El correu electrònic del representant legal en cas de menor de 16 anys.
           mobile_phone_number_help: El número de telèfon mòbil del representant legal en cas de menor de 16 anys.
@@ -64,12 +59,33 @@ ca:
           select_disability: Escull una discapacitat
           select_secondary_disability: Escull una discapacitat secundària (opcional)
           select_gender: Escull un gènere
-          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya o bé informe de diagnòstic psiquiàtric de trastorn de salut mental
+          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya. Si tens discapacitat per trastorn de salut mental i no el reconeixement legal de la situació de discapacitat, envia el diagnòstic psiquiàtric o un document que acrediti que t’estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental.
+          gender_help: Camp amb finalitats estadístiques
           date_select:
             day: Dia
             month: Mes
             year: Any
-
+          form_instructions_1: "Si vols inscriure’t al cens electoral, cal que sàpigues el següent:"
+          form_instructions_2: "Has d'estar empadronat/ada a Barcelona."
+          form_instructions_3: "Has de tenir preparada aquesta documentació: reconeixement legal de la situació de discapacitat o diagnòstic per trastorn de salut mental o document que acrediti que t'estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental."
+          form_instructions_4: També has de tenir a mà el número de DNI, NIE o passaport.
+          form_instructions_5: "En el cas de persones tutores d'un/a menor de 16 anys amb discapacitat, cal també tenir preparat el llibre de família."
+        search:
+          title: Verificació de dades del cens
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          success: Verificació correcta.
+          pending: Verificació de dades en procés.
+          not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
+          error: Hi ha hagut algun error al comprovar la teva inscripció.
+          form_instructions_1: Per poder votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
+          form_instructions_2: Per comprovar si estàs inscrit/a al cens electoral o saber com t’hi pots inscriure, només has d’introduir les dades que demanem a les caselles inferiors.
+          form_instructions_3_html: "Si tens dubtes sobre si constes o no al cens, o tens dificultats per fer la inscripció, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+          ok_instructions_1_html: "Estàs inscrit/a al cens <strong>%{disability}</strong>"
+          ok_instructions_2_html: "i/o <strong>%{disability}</strong>"
+          ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
+          ok_instructions_4_html: "següent formulari"
+          pending_instructions_1_html: "Les teves dades han estat introduïdes correctament al cens electoral. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+          pending_instructions_2: Emplenar el formulari d’inscripció no garanteix el dret a vot de manera immediata. Les dades seran revisades a fi de comprovar que compleixes tots els requisits per poder votar. T’avisarem només en cas que hi hagi alguna incidència en la inscripció al cens.
   activemodel:
     attributes:
       add_documents: Adjunts
@@ -87,7 +103,7 @@ ca:
         lastname: Cognom
         second_lastname: Segon cognom
         full_name: Nom i cognoms
-        disability: Discapacitat
+        disability: Discapacitat principal
         secondary_disability: Discapacitat secundària
         address: Adreça
         address_type: Tipus de via
@@ -113,6 +129,7 @@ ca:
         voter:
           email_or_phone_required: Has d'introduir el correu electrònic o el telèfon
           must_be_different: Ha de ser diferent de la discapacitat principal
+          invalid_census: No existeixen aquestes dades al padró
   errors:
     messages:
       carrierwave_processing_error: no s'ha pogut processar

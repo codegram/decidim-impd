@@ -10,11 +10,12 @@
     </div>
     <div class="row">
       <div class="columns large-6 medium-10 medium-centered">
-        <p>Si vol inscriure’s al cens electoral, cal que sàpiga que:</p>
+        <p><%= t(".form_instructions_1") %></p>
         <ul>
-          <li>Ha d’estar empadronat/da a Barcelona</li>
-          <li>Ha de tenir preparada aquesta documentació: reconeixement de grau de discapacitat o diagnòstic per trastorn de salut mental, document acreditatiu del sector de la discapacitat a la que es pertany i el DNI, NIE o passaport</li>
-          <li>En el cas de tutors d’un menor de 16 anys amb discapacitat cal aportar el llibre de família</li>
+          <li><%= t(".form_instructions_2") %></li>
+          <li><%= t(".form_instructions_3") %></li>
+          <li><%= t(".form_instructions_4") %></li>
+          <li><%= t(".form_instructions_5") %></li>
         </ul>
 
         <%= decidim_form_for(@form) do |f| %>
@@ -45,6 +46,7 @@
 
               <div class="field">
                 <%= f.select :gender, Decidim::ElectionsCensus::VoterForm::GENDERS.map {|option| [t(option, scope: "decidim.elections_census.genders"), option]}, prompt: t(".select_gender") %>
+                <p class="help-text"><%= t(".gender_help") %></p>
               </div>
 
               <div class="field voter-birthday">
@@ -142,12 +144,6 @@
 
           <div class="card" id="card__tos">
             <div class="card__content">
-              <h3><%= t(".tos_title") %></h3>
-
-              <p class="tos-text">
-              <%= t(".tos_text") %>
-              </p>
-
               <div class="field">
                 <%= f.check_box :tos_agreement, label: t(".tos_agreement") %>
               </div>

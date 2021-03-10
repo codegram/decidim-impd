@@ -35,14 +35,13 @@ module Decidim
       attribute :legal_guardian_lastname, String
       attribute :legal_guardian_second_lastname, String
 
-      validates :document_type, :name, :lastname, :disability, :address, :birthday, :gender, :address_type, :address_name, :address_number, :address_floor, :address_door, :address_postal_code, presence: true
+      validates :document_type, :name, :lastname, :disability, :address, :birthday, :address_type, :address_name, :address_number, :address_floor, :address_door, :address_postal_code, :disability_certificate, presence: true
       validates :tos_agreement, acceptance: true
       validates :document_type, inclusion: { in: DOCUMENT_TYPES }
       validates :disability, inclusion: { in: DISABILITIES }
       validates :secondary_disability, inclusion: { in: DISABILITIES }, allow_blank: true
-      validates :gender, inclusion: { in: GENDERS }
+      validates :gender, inclusion: { in: GENDERS }, allow_blank: true
       validates :document_number, presence: true, if: ->(form) { form.document_type.blank? || form.document_type != "minor_no_documents" || form.document_type != "no_documents" }
-      validates :disability_certificate, presence: true, if: ->(form) { form.disability == "mental_disorder" || form.secondary_disability == "mental_disorder" || form.needs_legal_guardian? }
       validates :family_book, :legal_guardian_document_number, :legal_guardian_name, :legal_guardian_lastname, :legal_guardian_second_lastname, presence: true, if: ->(form) { form.needs_legal_guardian? }
       validates :legal_guardian_document_type, inclusion: { in: DOCUMENT_TYPES }, if: ->(form) { form.needs_legal_guardian? }
       validate :different_disabilities
@@ -90,9 +89,15 @@ module Decidim
         errors.add(:secondary_disability, :must_be_different)
       end
 
-      # TODO: Validate against Barcelona's census
       def exists_in_census
-        true
+        return if document_number.blank? || document_type.blank? || address_postal_code.blank? || birthday.blank?
+
+        return if Decidim::ElectionsCensus::CensusVerifier.new(document_number, document_type, address_postal_code, birthday).valid?
+
+        errors.add(:document_number, :invalid_census)
+        errors.add(:document_type, :invalid_census)
+        errors.add(:address_postal_code, :invalid_census)
+        errors.add(:birthday, :invalid_census)
       end
     end
   end

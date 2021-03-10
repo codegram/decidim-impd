@@ -23,26 +23,29 @@ module Decidim
         return broadcast(:invalid) if form.invalid?
 
         transaction do
-          voter = Voter.create!(
+          voter = Voter.find_or_initialize_by(
             document_type: form.document_type,
             document_number: form.document_number,
-            name: form.name,
-            lastname: form.lastname,
-            second_lastname: form.second_lastname,
-            legal_guardian_document_type: form.legal_guardian_document_type,
-            legal_guardian_document_number: form.legal_guardian_document_number,
-            legal_guardian_name: form.legal_guardian_name,
-            legal_guardian_lastname: form.legal_guardian_lastname,
-            legal_guardian_second_lastname: form.legal_guardian_second_lastname,
-            disability: form.disability,
-            secondary_disability: form.secondary_disability,
-            address: form.address,
-            birthday: form.birthday,
-            gender: form.gender,
-            email: form.email,
-            mobile_phone_number: form.mobile_phone_number,
             organization: form.current_organization
           )
+
+          voter.name = form.name
+          voter.lastname = form.lastname
+          voter.second_lastname = form.second_lastname
+          voter.legal_guardian_document_type = form.legal_guardian_document_type
+          voter.legal_guardian_document_number = form.legal_guardian_document_number
+          voter.legal_guardian_name = form.legal_guardian_name
+          voter.legal_guardian_lastname = form.legal_guardian_lastname
+          voter.legal_guardian_second_lastname = form.legal_guardian_second_lastname
+          voter.disability = form.disability
+          voter.secondary_disability = form.secondary_disability
+          voter.address = form.address
+          voter.gender = form.gender
+          voter.email = form.email
+          voter.birthday = form.birthday
+          voter.mobile_phone_number = form.mobile_phone_number
+          voter.verified_at = nil
+          voter.save!
 
           Attachment.create!(
             title: { I18n.locale => 'Document acreditatiu' },

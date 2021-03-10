@@ -11,7 +11,7 @@ module Decidim
 
       routes do
         resources :voters, only: [:create, :new], as: :voters do
-          get :search, on: :collection
+          match "search" => "voters#search", as: :search, via: [:get, :post], on: :collection
         end
 
         root to: "voters#index"

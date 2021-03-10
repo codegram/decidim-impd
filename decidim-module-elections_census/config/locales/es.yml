@@ -1,0 +1,147 @@
+---
+es:
+  layouts:
+    decidim:
+      elections_census:
+        title: Censo electoral
+      process_header:
+        census_title: Censo electoral
+        intro: Información
+        new: Inscripción en el censo
+        search: Comprueba la inscripción en el censo
+  decidim:
+    admin:
+      actions:
+        verify: Verificar
+        unverify: Desverificar
+      voters:
+        index:
+          pending: Pendientes de verificar
+          verified: Verificados
+      titles:
+        voters: Censo electoral
+    menu:
+      census: Censo electoral
+    elections_census:
+      admin:
+        voters: Censo electoral
+      document_types:
+        dni: DNI
+        passport: Pasaporte
+        nie: NIE
+        minor_no_documents: Menor sin documentación
+        no_documents: Persona sin documentación
+      disabilities:
+        physical: Discapacidad física
+        intellectual: Discapacidad intelectual
+        not_reported: Discapacidad no informada
+        auditory_sensory: Discapacidad auditiva
+        visual_sensory: Discapacidad visual
+        mental_disorder: Discapacidad por transtorno de salud mental
+        other: Otros
+      genders:
+        female: Mujer
+        male: Hombre
+        other: No binario
+      voters:
+        create:
+          error: Ha habido algun error con tu inscripción.
+          success_html: "Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a eleccionsIMPD@bcn.cat."
+        new:
+          title: Inscripción en el censo
+          subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
+          tos_title: Términos legales
+          tos_text: Texto de los términos legales.
+          tos_agreement: "Estoy de acuerdo con los <a href='https://impd.decidim.barcelona/pages/terms-and-conditions?locale=es' target='_blank'>términos legales</a> y la <a href='https://impd.decidim.barcelona/pages/privacitat?locale=es' target='_blank'>política de privacidad</a>"
+          send: Enviar
+          email_help: El correo electrónico del representante legal en caso de menor de 16 años.
+          mobile_phone_number_help: El número de teléfono móvil del representante legal en caso de menor de 16 años.
+          select_document_type: Escoge el tipo de documento
+          select_disability: Escoge una discapacidad
+          select_secondary_disability: Escoge una discapacidad secundaria (opcional)
+          select_gender: Escoge un género
+          disability_certificate_help: Dictamen técnico facultativo de la discapacidad de la Generalitat de Catalunya. Si tienes discapacidad por trastorno de salud mental y no el reconocimiento legal de la situación de discapacidad, envía el diagnóstico psiquiátrico o un documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental.
+          gender_help: Campo con finalidades estadísticas
+          date_select:
+            day: Día
+            month: Mes
+            year: Año
+          form_instructions_1: "Si quieres inscribirte en el censo electoral, ten en cuenta lo siguiente:"
+          form_instructions_2: "Debes estar empadronado/a en Barcelona."
+          form_instructions_3: "Debes tener preparada esta documentación: reconocimiento legal de la situación de discapacidad o diagnóstico por trastorno de salud mental o documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental."
+          form_instructions_4: "Número de DNI, NIE o pasaporte."
+          form_instructions_5: "En el caso de personas tutoras de un/a menor de 16 años con discapacidad, también hay que tener preparado el libro de familia"
+
+        search:
+          title: Verificación de datos del censo
+          subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
+          success: Verificación correcta.
+          pending: Verificación de datos en curso.
+          not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
+          error: Ha habido algun error al comprobar tu inscripción.
+          form_instructions_1: "Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental."
+          form_instructions_2: "Para comprobar si estás inscrito/a en el censo electoral o saber cómo te puedes inscribir en él, solo tienes que introducir los datos que solicitamos en las casillas inferiores."
+          form_instructions_3_html: "Si tienes dudas sobre si constas o no en el censo, o tienes dificultades a la hora de hacer la inscripción, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+          ok_instructions_1_html: "Estás inscrito/a en el censo <strong>%{disability}</strong>"
+          ok_instructions_2_html: "o <strong>%{disability}</strong>"
+          ok_instructions_3_html: "Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}"
+          ok_instructions_4_html: "siguiente formulario."
+          pending_instructions_1_html: "Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+          pending_instructions_2: "Rellenar el formulario de inscripción no garantiza el derecho al voto de forma inmediata. Los datos se revisarán con el objetivo de comprobar que cumples con todos los requisitos para poder votar. Te avisaremos solo en caso de que haya alguna incidencia en la inscripción en el censo."
+  activemodel:
+    attributes:
+      add_documents: Adjuntos
+      answer:
+        add_documents: Adjuntos
+      voter:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        legal_guardian_document_type: Tipo de documento del representante legal
+        legal_guardian_document_number: Número de documento del representante legal
+        legal_guardian_name: Nombre
+        legal_guardian_lastname: Apellido
+        legal_guardian_second_lastname: Segundo apellido
+        name: Nombre
+        lastname: Apellido
+        second_lastname: Segundo apellido
+        full_name: Nombre y apellidos
+        disability: Discapacidad principal
+        secondary_disability: Discapacidad secundaria
+        address: Dirección
+        address_type: Tipo de vía
+        address_name: Nombre de la vía
+        address_number: Número
+        address_floor: Piso
+        address_door: Puerta
+        address_postal_code: Código postal
+        birthday: Fecha de nacimiento
+        gender: Género
+        email: Correo electrónico
+        mobile_phone_number: Teléfono móvil
+        tos_agreement: Términos legales
+        created_at: Fecha de creación
+        disability_certificate: Documento acreditativo de la discapacidad
+        family_book: Libro de família
+    errors:
+      models:
+        answer:
+          attributes:
+            add_documents:
+              needs_to_be_reattached: Es necesario volver a adjuntar el archivo.
+        voter:
+          email_or_phone_required: Tienes que introduir el correo electrónico o el teléfono
+          must_be_different: Tiene que ser diferente de la discapacidad principal
+          invalid_census: No existen estos datos en el padrón
+  errors:
+    messages:
+      carrierwave_processing_error: no pudo ser procesado
+      carrierwave_integrity_error: no es de un tipo de archivo permitido
+      carrierwave_download_error: no pudo ser descargado
+      extension_whitelist_error: "No se pueden subir archivos de la extensión %{extension}. Las extensiones permitidas son: %{allowed_types}"
+      extension_blacklist_error: "No se pueden subir archivos de la extensión %{extension}. Las extensiones prohibidas son: %{prohibited_types}"
+      content_type_whitelist_error: "No se pueden subir archivos de la extensión %{content_type}"
+      content_type_blacklist_error: "No se pueden subir archivos de la extensión %{content_type}"
+      rmagick_processing_error: "No se pudo manipular con rmagick, quizá porque no es una imágen? Error original: %{e}"
+      mini_magick_processing_error: "No se pudo manipular con MiniMagick, quizá porque no es una imágen? Error original: %{e}"
+      min_size_error: "El tamaño del archivo debe ser mayor que %{min_size}"
+      max_size_error: "El tamaño del archivo debe ser inferior a %{max_size}"

@@ -8,6 +8,10 @@ module Decidim
                  class_name: "Decidim::Organization"
 
       include Decidim::HasAttachments
+
+      def verified?
+        verified_at.present?
+      end
     end
   end
 end

@@ -1,1 +1,64 @@
-Verificació del cens
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-10 medium-centered">
+        <% if @status == :form %>
+          <p><%= t(".form_instructions_1") %></p>
+          <p><%= t(".form_instructions_2") %></p>
+          <p><%= t(".form_instructions_3_html") %></p>
+          <%= decidim_form_for(@form, url: search_voters_path, method: :post) do |f| %>
+            <%= invisible_captcha %>
+            <div class="card">
+              <div class="card__content">
+                <%= form_required_explanation %>
+
+                <div class="field">
+                  <%= f.select :document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t("decidim.elections_census.voters.new.select_document_type") %>
+                </div>
+
+                <div class="field">
+                  <%= f.text_field :document_number %>
+                </div>
+
+                <div class="field voter-birthday">
+                  <%= f.date_select :birthday, start_year: Time.current.year, end_year: 110.years.ago.year, default: 35.years.ago, prompt: { day: t("decidim.elections_census.voters.new.date_select.day"), month: t("decidim.elections_census.voters.new.date_select.month"), year: t("decidim.elections_census.voters.new.date_select.year") } %>
+                </div>
+
+                <div class="field">
+                  <%= f.text_field :address_postal_code %>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__content">
+                <div class="actions">
+                  <%= f.submit t("decidim.elections_census.voters.new.send"), class: "button expanded" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% elsif @status == :ok %>
+          <p>
+            <%= t(".ok_instructions_1_html", disability: t(@voter.disability, scope: "decidim.elections_census.disabilities")) %>
+            <% if @voter.secondary_disability.present? %>
+              <%= t(".ok_instructions_2_html", disability: t(@voter.secondary_disability, scope: "decidim.elections_census.disabilities")) %>
+            <% end %>
+            .
+          </p>
+          <p><%= t(".ok_instructions_3_html", link: link_to(t(".ok_instructions_4_html"), new_voter_path)) %></p>
+        <% elsif @status == :pending %>
+          <p><%= t(".pending_instructions_1_html") %></p>
+          <p><%= t(".pending_instructions_2") %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

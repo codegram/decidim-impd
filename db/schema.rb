@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_171033) do
+ActiveRecord::Schema.define(version: 2021_03_10_154049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -484,6 +484,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_171033) do
     t.string "legal_guardian_lastname"
     t.string "legal_guardian_second_lastname"
     t.integer "decidim_organization_id"
+    t.datetime "verified_at"
   end
 
   create_table "decidim_endorsements", force: :cascade do |t|
