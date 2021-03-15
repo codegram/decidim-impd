@@ -111,7 +111,7 @@ ca:
         address_number: Número
         address_floor: Pis
         address_door: Porta
-        address_postal_code: Codi postal
+        address_postal_code: Codi postal (de l'adreça d’empadronament)
         birthday: Data de naixement
         gender: Gènere
         email: Correu electrònic

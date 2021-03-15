@@ -113,7 +113,7 @@ es:
         address_number: Número
         address_floor: Piso
         address_door: Puerta
-        address_postal_code: Código postal
+        address_postal_code: Código postal (de la dirección de empadronamiento)
         birthday: Fecha de nacimiento
         gender: Género
         email: Correo electrónico
