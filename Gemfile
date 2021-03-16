@@ -12,6 +12,7 @@ gem "bootsnap", "~> 1.3"
 gem "uglifier", "~> 4.1"
 gem "faker"
 gem "decidim-elections_census", path: "decidim-module-elections_census"
+gem "charlock_holmes"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri

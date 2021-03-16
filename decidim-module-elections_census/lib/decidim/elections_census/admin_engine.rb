@@ -13,6 +13,7 @@ module Decidim
         resources :voters, only: [:index], as: :voters do
           post :verify, on: :member
           post :unverify, on: :member
+          match :import, on: :collection, via: [:get, :post]
         end
         root to: "voters#index"
       end

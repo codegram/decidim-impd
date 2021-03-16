@@ -1,14 +1,11 @@
 ---
 es:
-  layouts:
-    decidim:
-      elections_census:
-        title: Censo electoral
-      process_header:
-        census_title: Censo electoral
-        intro: Información
-        new: Inscripción en el censo
-        search: Comprueba la inscripción en el censo
+  elections_census:
+    title: Censo electoral
+    census_title: Censo electoral
+    intro: Información
+    new: Inscripción en el censo
+    search: Comprueba la inscripción en el censo
   decidim:
     admin:
       actions:
@@ -18,6 +15,7 @@ es:
         index:
           pending: Pendientes de verificar
           verified: Verificados
+          import: Importar censo
       titles:
         voters: Censo electoral
     menu:
@@ -46,7 +44,7 @@ es:
       voters:
         create:
           error: Ha habido algun error con tu inscripción.
-          success_html: "Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a eleccionsIMPD@bcn.cat."
+          success: "Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a eleccionsIMPD@bcn.cat."
         new:
           title: Inscripción en el censo
           subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
@@ -71,7 +69,6 @@ es:
           form_instructions_3: "Debes tener preparada esta documentación: reconocimiento legal de la situación de discapacidad o diagnóstico por trastorno de salud mental o documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental."
           form_instructions_4: "Número de DNI, NIE o pasaporte."
           form_instructions_5: "En el caso de personas tutoras de un/a menor de 16 años con discapacidad, también hay que tener preparado el libro de familia"
-
         search:
           title: Verificación de datos del censo
           subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat

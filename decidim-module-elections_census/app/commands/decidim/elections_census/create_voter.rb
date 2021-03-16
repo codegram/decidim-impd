@@ -25,7 +25,7 @@ module Decidim
         transaction do
           voter = Voter.find_or_initialize_by(
             document_type: form.document_type,
-            document_number: form.document_number,
+            document_number: form.document_number.upcase,
             organization: form.current_organization
           )
 
@@ -33,7 +33,7 @@ module Decidim
           voter.lastname = form.lastname
           voter.second_lastname = form.second_lastname
           voter.legal_guardian_document_type = form.legal_guardian_document_type
-          voter.legal_guardian_document_number = form.legal_guardian_document_number
+          voter.legal_guardian_document_number = form.legal_guardian_document_number.upcase
           voter.legal_guardian_name = form.legal_guardian_name
           voter.legal_guardian_lastname = form.legal_guardian_lastname
           voter.legal_guardian_second_lastname = form.legal_guardian_second_lastname
@@ -43,7 +43,7 @@ module Decidim
           voter.gender = form.gender
           voter.email = form.email
           voter.birthday = form.birthday
-          voter.mobile_phone_number = form.mobile_phone_number
+          voter.mobile_phone_number = form.mobile_phone_number.to_s.gsub(/[^\d,\.]/, '')
           voter.verified_at = nil
           voter.save!
 

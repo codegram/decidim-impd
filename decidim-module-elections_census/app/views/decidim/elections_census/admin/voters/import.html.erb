@@ -1,0 +1,26 @@
+<%= decidim_form_for(@form, url: import_voters_path, class: "form grid-container") do |form| %>
+  <div class="card">
+    <div class="card-divider">
+      <h2 class="card-title flex--sbc">
+        <%= t "decidim.admin.titles.voters" %>
+      </h2>
+    </div>
+    <div class="card-section">
+      <div class="grid-x">
+        <div class="cell">
+          <fieldset>
+            <div class="row column">
+              <%= form.upload :file, optional: false, help_i18n_scope: "decidim.admin.forms.file_help.import" %>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-x align-center mt-sm">
+    <%= form.submit t("decidim.admin.actions.import") %>
+  </div>
+<% end -%>
+
+<%= javascript_include_tag "decidim/admin/import_guidance" %>
+

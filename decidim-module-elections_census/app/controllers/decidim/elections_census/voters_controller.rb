@@ -33,7 +33,7 @@ module Decidim
       def search
         if params["voter"].present?
           @form = form(SearchForm).from_params(params)
-          @status = "foo"
+          @status = nil
           @voter = nil
 
           VoterStatus.call(@form) do

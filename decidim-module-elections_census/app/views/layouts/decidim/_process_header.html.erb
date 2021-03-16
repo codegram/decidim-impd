@@ -4,7 +4,7 @@
     <div class="process-header__container row collapse column">
       <div class="columns mediumlarge-8 process-header__info">
         <div>
-          <h1 class="text-highlight heading2"> <%= t(".census_title") %> </h1>
+          <h1 class="text-highlight heading2"> <%= t("elections_census.census_title") %> </h1>
         </div>
       </div>
     </div>
@@ -12,17 +12,17 @@
   <%=
     extended_navigation_bar([
       {
-        name: t(".intro"),
+        name: t("elections_census.intro"),
         url: decidim_elections_census.root_path,
         active: is_active_link?(decidim_elections_census.root_path, :exclusive)
       },
       {
-        name: t(".search"),
+        name: t("elections_census.search"),
         url: decidim_elections_census.search_voters_path,
         active: is_active_link?(decidim_elections_census.search_voters_path, :exclusive)
       },
       {
-        name: t(".new"),
+        name: t("elections_census.new"),
         url: decidim_elections_census.new_voter_path,
         active: is_active_link?(decidim_elections_census.new_voter_path, :exclusive)
       },

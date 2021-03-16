@@ -856,6 +856,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (~> 1.3)
   byebug (~> 11.0)
+  charlock_holmes
   dalli
   decidim!
   decidim-dev!

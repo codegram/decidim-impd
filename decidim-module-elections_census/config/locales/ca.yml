@@ -1,13 +1,11 @@
+---
 ca:
-  layouts:
-    decidim:
-      elections_census:
-        title: Cens electoral
-      process_header:
-        census_title: Cens electoral
-        intro: Informació
-        new: Inscripció al cens
-        search: Comprova la inscripció al cens
+  elections_census:
+    title: Cens electoral
+    census_title: Cens electoral
+    intro: Informació
+    new: Inscripció al cens
+    search: Comprova la inscripció al cens
   decidim:
     admin:
       actions:
@@ -17,6 +15,7 @@ ca:
         index:
           pending: Pendents de verificar
           verified: Verificats
+          import: Importar cens
       titles:
         voters: Cens electoral
     menu:

@@ -4,6 +4,11 @@
       <%= t "decidim.admin.titles.voters" %>
     </div>
     <ul>
+      <% if admin_allowed_to? :import, :voter %>
+        <li <% if is_active_link?(decidim_elections_census_admin.import_voters_path) %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.import", scope: "decidim.admin"), decidim_elections_census_admin.import_voters_path, class: "button expanded small new" %>
+        </li>
+      <% end %>
       <% if admin_allowed_to? :read, :voter %>
         <li <% if is_active_link?(decidim_elections_census_admin.root_path) %> class="is-active" <% end %>>
           <%= link_to t("voters.index.pending", scope: "decidim.admin"), decidim_elections_census_admin.root_path, class: "button expanded small new" %>
