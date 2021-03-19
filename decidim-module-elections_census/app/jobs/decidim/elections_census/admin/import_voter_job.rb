@@ -7,11 +7,15 @@ module Decidim
         def perform(voter_data, organization)
           voter = Voter.find_or_initialize_by(document_number: voter_data["DOCUMENT"], organization: organization)
 
+          disability = parse_disability(voter_data["DISCAPACITAT_1"]) unless voter_data["DISCAPACITAT_1"].blank?
+
+          return if disability.blank? && !voter.persisted?
+
           voter.document_type = parse_document_type(voter_data["TIPUS_DOCUMENT"])
           voter.name = voter_data["NOM"] unless voter_data["NOM"].blank?
           voter.lastname = voter_data["PRIMER_COGNOM"] unless voter_data["PRIMER_COGNOM"].blank?
           voter.second_lastname = voter_data["SEGON_COGNOM"] unless voter_data["SEGON_COGNOM"].blank?
-          voter.disability = parse_disability(voter_data["DISCAPACITAT_1"]) unless voter_data["DISCAPACITAT_1"].blank?
+          voter.disability = disability
           voter.secondary_disability = parse_disability(voter_data["DISCAPACITAT_2"]) unless voter_data["DISCAPACITAT_2"].blank?
           voter.address = voter_data["ADRECA"] unless voter_data["ADRECA"].blank?
           voter.gender = parse_gender(voter_data["GENERE"]) unless voter_data["GENERE"].blank?
