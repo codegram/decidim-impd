@@ -16,6 +16,7 @@ es:
           pending: Pendientes de verificar
           verified: Verificados
           import: Importar censo
+          export: Exportar pendientes de verificar
       titles:
         voters: Censo electoral
     menu:
@@ -45,6 +46,13 @@ es:
         create:
           error: Ha habido algun error con tu inscripción.
           success: "Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a eleccionsIMPD@bcn.cat."
+        import:
+          error: Ha habido algun error al importar el censo.
+          success: Censo importado correctamente
+        verify:
+          success: Persona verificada correctamente
+        unverify:
+          success: Persona desverificada correctamente
         new:
           title: Inscripción en el censo
           subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat

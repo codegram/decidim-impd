@@ -8,5 +8,6 @@ module Decidim
   # This namespace holds the logic of the `ElectionsCensus` component. This component
   # allows users to create elections_census in a participatory space.
   module ElectionsCensus
+    autoload :VoterSerializer, "decidim/elections_census/voter_serializer"
   end
 end

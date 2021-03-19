@@ -10,15 +10,29 @@ module Decidim
 
         def index
           enforce_permission_to :read, :voter
-          @voters = paginate(Decidim::ElectionsCensus::Voter.where(organization: current_organization))
+          voters = Decidim::ElectionsCensus::Voter.where(organization: current_organization)
+
+          if params["verified"].present?
+            voters = voters.verified
+          else
+            voters = voters.unverified
+          end
+
+          @voters = paginate(voters)
         end
 
         def verify
           enforce_permission_to :verify, :voter
+          Decidim::ElectionsCensus::Voter.find(params[:id]).verify!
+          flash[:notice] = I18n.t("voters.verify.success", scope: "decidim.elections_census")
+          redirect_back(fallback_location: { action: :index })
         end
 
         def unverify
           enforce_permission_to :unverify, :voter
+          Decidim::ElectionsCensus::Voter.find(params[:id]).unverify!
+          flash[:notice] = I18n.t("voters.unverify.success", scope: "decidim.elections_census")
+          redirect_back(fallback_location: { action: :index })
         end
 
         def import
@@ -40,6 +54,15 @@ module Decidim
           else
             @form = ImportForm.new
           end
+        end
+
+        def export
+          enforce_permission_to :export, :voter
+
+          ExportVotersJob.perform_later(current_user, current_organization)
+          flash[:notice] = t("decidim.admin.exports.notice")
+
+          redirect_to action: :index
         end
       end
     end

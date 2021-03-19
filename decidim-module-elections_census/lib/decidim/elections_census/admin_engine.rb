@@ -14,6 +14,7 @@ module Decidim
           post :verify, on: :member
           post :unverify, on: :member
           match :import, on: :collection, via: [:get, :post]
+          get :export, on: :collection
         end
         root to: "voters#index"
       end

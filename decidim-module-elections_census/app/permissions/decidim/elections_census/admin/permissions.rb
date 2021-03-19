@@ -11,7 +11,7 @@ module Decidim
           return permission_action unless user.admin?
 
           case permission_action.action
-          when :verify, :read, :unverify, :import
+          when :verify, :read, :unverify, :import, :export
             allow!
           end
 
