@@ -21,12 +21,14 @@ module Decidim
         app.config.assets.precompile += %w[decidim_elections_census_manifest.js decidim_elections_census_manifest.css]
       end
 
-      initializer "decidim_elections_census.menu" do
-        Decidim.menu :menu do |menu|
-          menu.item I18n.t("menu.census", scope: "decidim"),
-            decidim_elections_census.root_path,
-            position: 2,
-            active: %r{^/elections-census/}
+      initializer "decidim_elections_census.menu" do |app|
+        if app.secrets.census_active
+          Decidim.menu :menu do |menu|
+            menu.item I18n.t("menu.census", scope: "decidim"),
+              decidim_elections_census.root_path,
+              position: 2,
+              active: %r{^/elections-census/}
+          end
         end
       end
     end
