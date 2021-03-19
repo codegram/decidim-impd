@@ -78,10 +78,10 @@ es:
           form_instructions_4: "Número de DNI, NIE o pasaporte."
           form_instructions_5: "En el caso de personas tutoras de un/a menor de 16 años con discapacidad, también hay que tener preparado el libro de familia"
         search:
-          title: Verificación de datos del censo
+          title: Comprueba la inscripción en el censo
           subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
-          success: Verificación correcta.
-          pending: Verificación de datos en curso.
+          success: Comprobación correcta.
+          pending: Comprobación de datos en curso.
           not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
           error: Ha habido algun error al comprobar tu inscripción.
           form_instructions_1: "Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental."

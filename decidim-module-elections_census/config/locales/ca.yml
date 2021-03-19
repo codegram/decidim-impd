@@ -78,10 +78,10 @@ ca:
           form_instructions_4: També has de tenir a mà el número de DNI, NIE o passaport.
           form_instructions_5: "En el cas de persones tutores d'un/a menor de 16 anys amb discapacitat, cal també tenir preparat el llibre de família."
         search:
-          title: Verificació de dades del cens
+          title: Comprova la inscripció al cens
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          success: Verificació correcta.
-          pending: Verificació de dades en procés.
+          success: Comprovació correcta.
+          pending: Comprovació de dades en procés.
           not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
           error: Hi ha hagut algun error al comprovar la teva inscripció.
           form_instructions_1: Per poder votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
