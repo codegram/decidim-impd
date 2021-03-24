@@ -9,8 +9,6 @@ module Decidim
 
           disability = parse_disability(voter_data["DISCAPACITAT_1"]) unless voter_data["DISCAPACITAT_1"].blank?
 
-          return if disability.blank? && !voter.persisted?
-
           voter.document_type = parse_document_type(voter_data["TIPUS_DOCUMENT"])
           voter.name = voter_data["NOM"] unless voter_data["NOM"].blank?
           voter.lastname = voter_data["PRIMER_COGNOM"] unless voter_data["PRIMER_COGNOM"].blank?
@@ -23,6 +21,9 @@ module Decidim
           voter.birthday = parse_date(voter_data["DATA_NAIXEMENT"]) unless voter_data["DATA_NAIXEMENT"].blank?
           voter.mobile_phone_number = voter_data["TELEFON"].to_s.gsub(/[^\d,\.]/, '') unless voter_data["TELEFON"].blank?
           voter.verified_at = Time.current
+
+          return if voter.disability.blank? || voter.lastname.blank?
+
           voter.save!
         end
 
