@@ -31,7 +31,6 @@ module Decidim
           data = CSV.parse(utf8_encoded_content, headers: :first_row, col_sep: ";")
           data.each do |voter|
             voter = voter.to_h
-            next if voter["EXPEDIENT"].blank?
             next if voter["TIPUS_DOCUMENT"].blank?
             next if voter["DOCUMENT"].blank?
 
