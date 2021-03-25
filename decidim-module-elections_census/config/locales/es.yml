@@ -65,8 +65,8 @@ es:
           select_document_type: Escoge el tipo de documento
           select_disability: Escoge una discapacidad
           select_secondary_disability: Escoge una discapacidad secundaria (opcional)
-          select_gender: Escoge un género
-          disability_certificate_help: Dictamen técnico facultativo de la discapacidad de la Generalitat de Catalunya. Si tienes discapacidad por trastorno de salud mental y no el reconocimiento legal de la situación de discapacidad, envía el diagnóstico psiquiátrico o un documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental.
+          select_gender: Escoge un sexo
+          disability_certificate_help: Dictamen técnico facultativo de la discapacidad de la Generalitat de Catalunya. En caso de ser una persona en situación de trastorno de salud mental y no dispongas del reconocimiento legal de la situación de discapacidad, envía el diagnóstico psiquiátrico o un documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental.
           disability_certificate_help_2: "Si no tienes ninguno de estos documentos, tendrás que enviar el documento de declaración de la discapacidad que hay debajo. Antes te lo tendrás que descargar, llenar los datos y firmarlo."
           disability_certificate_help_3: "Documento de declaración de la discapacidad."
           gender_help: Campo con finalidades estadísticas
@@ -106,10 +106,10 @@ es:
         legal_guardian_document_type: Tipo de documento del representante legal
         legal_guardian_document_number: Número de documento del representante legal
         legal_guardian_name: Nombre
-        legal_guardian_lastname: Apellido
+        legal_guardian_lastname: Primer apellido
         legal_guardian_second_lastname: Segundo apellido
         name: Nombre
-        lastname: Apellido
+        lastname: Primer apellido
         second_lastname: Segundo apellido
         full_name: Nombre y apellidos
         disability: Discapacidad principal
@@ -122,7 +122,7 @@ es:
         address_door: Puerta
         address_postal_code: Código postal (de la dirección de empadronamiento)
         birthday: Fecha de nacimiento
-        gender: Género
+        gender: Sexo
         email: Correo electrónico
         mobile_phone_number: Teléfono móvil
         tos_agreement: Términos legales

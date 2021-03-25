@@ -65,8 +65,8 @@ ca:
           select_document_type: Escull el tipus de document
           select_disability: Escull una discapacitat
           select_secondary_disability: Escull una discapacitat secundària (opcional)
-          select_gender: Escull un gènere
-          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya. Si tens discapacitat per trastorn de salut mental i no el reconeixement legal de la situació de discapacitat, envia el diagnòstic psiquiàtric o un document que acrediti que t’estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental.
+          select_gender: Escull un sexe
+          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya. En cas de ser una persona en situació de trastorn de salut mental i no disposar del reconeixement legal de la situació de discapacitat, envia el diagnòstic psiquiàtric o un document que acrediti que t’estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental.
           disability_certificate_help_2: "Si no tens cap d'aquests documents, hauràs d'enviar el document de declaració de la discapacitat que hi ha a sota. Abans te l'hauràs de descarregar, omplir les dades que es demanen i signar-lo."
           disability_certificate_help_3: "Document de declaració de la discapacitat."
           gender_help: Camp amb finalitats estadístiques
@@ -106,10 +106,10 @@ ca:
         legal_guardian_document_type: Tipus de document del representant legal
         legal_guardian_document_number: Número de document del representant legal
         legal_guardian_name: Nom
-        legal_guardian_lastname: Cognom
+        legal_guardian_lastname: Primer cognom
         legal_guardian_second_lastname: Segon cognom
         name: Nom
-        lastname: Cognom
+        lastname: Primer cognom
         second_lastname: Segon cognom
         full_name: Nom i cognoms
         disability: Discapacitat principal
@@ -122,7 +122,7 @@ ca:
         address_door: Porta
         address_postal_code: Codi postal (de l'adreça d’empadronament)
         birthday: Data de naixement
-        gender: Gènere
+        gender: Sexe
         email: Correu electrònic
         mobile_phone_number: Telèfon mòbil
         tos_agreement: Termes legals
