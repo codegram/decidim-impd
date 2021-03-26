@@ -80,6 +80,8 @@ es:
           form_instructions_3: "Debes tener preparada esta documentación: reconocimiento legal de la situación de discapacidad o diagnóstico por trastorno de salud mental o documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental."
           form_instructions_4: "Número de DNI, NIE o pasaporte."
           form_instructions_5: "En el caso de personas tutoras de un/a menor de 16 años con discapacidad, también hay que tener preparado el libro de familia"
+          form_instructions_6: "Para inscribirte al censo tienes que introducir los datos que pedimos en las casillas inferiores."
+          form_instructions_7_html: "Si tienes dificultades para hacer la inscripción,, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
         search:
           title: Comprueba la inscripción en el censo
           subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
@@ -88,8 +90,8 @@ es:
           not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
           error: Ha habido algun error al comprobar tu inscripción.
           form_instructions_1: "Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental."
-          form_instructions_2: "Para comprobar si estás inscrito/a en el censo electoral o saber cómo te puedes inscribir en él, solo tienes que introducir los datos que solicitamos en las casillas inferiores."
-          form_instructions_3_html: "Si tienes dudas sobre si constas o no en el censo, o tienes dificultades a la hora de hacer la inscripción, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+          form_instructions_2: "Para comprobar si estás inscrito/a en el censo electoral, solo tienes que introducir los datos que pedimos en las casillas inferiores."
+          form_instructions_3_html: "Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
           ok_instructions_1_html: "Estás inscrito/a en el censo <strong>%{disability}</strong>"
           ok_instructions_2_html: "o <strong>%{disability}</strong>"
           ok_instructions_3_html: "Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}"
