@@ -69,6 +69,7 @@ ca:
           disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya. En cas de ser una persona en situació de trastorn de salut mental i no disposar del reconeixement legal de la situació de discapacitat, envia el diagnòstic psiquiàtric o un document que acrediti que t’estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental.
           disability_certificate_help_2: "Si no tens cap d'aquests documents, hauràs d'enviar el document de declaració de la discapacitat que hi ha a sota. Abans te l'hauràs de descarregar, omplir les dades que es demanen i signar-lo."
           disability_certificate_help_3: "Document de declaració de la discapacitat."
+          file_settings_help: "Les extensions permeses són: %{extensions}."
           gender_help: Camp amb finalitats estadístiques
           date_select:
             day: Dia
