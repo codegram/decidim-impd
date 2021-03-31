@@ -66,9 +66,10 @@ es:
           select_disability: Escoge una discapacidad
           select_secondary_disability: Escoge una discapacidad secundaria (opcional)
           select_gender: Escoge un sexo
-          disability_certificate_help: Dictamen técnico facultativo de la discapacidad de la Generalitat de Catalunya. En caso de ser una persona en situación de trastorno de salud mental y no dispongas del reconocimiento legal de la situación de discapacidad, envía el diagnóstico psiquiátrico o un documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental.
-          disability_certificate_help_2: "Si no tienes ninguno de estos documentos, tendrás que enviar el documento de declaración de la discapacidad que hay debajo. Antes te lo tendrás que descargar, llenar los datos y firmarlo."
+          disability_certificate_help: "Dictamen técnico facultativo de la discapacidad de la Generalitat de Catalunya."
+          disability_certificate_help_2: "Si no tienes el dictamen técnico facultativo, tendrás que enviar el documento de declaración de la discapacidad que hay debajo. Antes te lo tendrás que descargar, llenar los datos y firmarlo."
           disability_certificate_help_3: "Documento de declaración de la discapacidad."
+          disability_certificate_help_4: "En caso de ser una persona en situación de trastorno de salud mental y no dispongas del reconocimiento legal de la situación de discapacidad, envía el diagnóstico psiquiátrico o un documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental."
           file_settings_help: "Las extensiones permitidas son: %{extensions}."
           gender_help: Campo con finalidades estadísticas
           date_select:

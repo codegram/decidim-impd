@@ -121,15 +121,14 @@
             <div class="card__content">
               <div class="field">
                 <%= f.file_field :disability_certificate %>
-                <p class="help-text"><%= t(".file_settings_help", extensions: current_organization.file_upload_settings["allowed_file_extensions"]["default"].join(", ")) %></p>
                 <p class="help-text"><%= t(".disability_certificate_help") %></p>
                 <p class="help-text"><%= t(".disability_certificate_help_2") %></p>
                 <p class="help-text"><%= link_to t(".disability_certificate_help_3"), "https://decidim-impd.s3.eu-west-3.amazonaws.com/decidim-impd/comunicacio-tipologia-discapacitat.pdf", target: "_blank"  %></p>
+                <p class="help-text"><%= t(".disability_certificate_help_4") %></p>
               </div>
 
               <div class="field family-book">
                 <%= f.file_field :family_book %>
-                <p class="help-text"><%= t(".file_settings_help", extensions: current_organization.file_upload_settings["allowed_file_extensions"]["default"].join(", ")) %></p>
               </div>
             </div>
           </div>
