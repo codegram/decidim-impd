@@ -22,7 +22,7 @@ module Decidim
       def voter
         @voter ||= Voter.find_by(
           document_type: form.document_type,
-          document_number: form.document_number,
+          document_number: form.document_number.upcase,
           birthday: form.birthday,
           organization: form.current_organization
         )
