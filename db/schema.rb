@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_171349) do
+ActiveRecord::Schema.define(version: 2021_05_19_112944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -476,9 +476,9 @@ ActiveRecord::Schema.define(version: 2021_03_24_171349) do
     t.string "document_number", null: false
     t.string "disability", null: false
     t.string "secondary_disability"
-    t.string "address", null: false
+    t.string "address"
     t.date "birthday", null: false
-    t.string "gender", null: false
+    t.string "gender"
     t.string "email"
     t.string "mobile_phone_number"
     t.datetime "created_at", null: false
