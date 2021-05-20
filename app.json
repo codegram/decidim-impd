@@ -80,6 +80,9 @@
     },
     "RAILS_ENV": {
       "value": "production"
+    },
+    "USE_NPM_INSTALL": {
+      "value": "true"
     }
   }
 }
