@@ -16,6 +16,9 @@
   "stack": "heroku-20",
   "buildpacks": [
     {
+      "url": "heroku/nodejs"
+    },
+    {
       "url": "https://github.com/gaffneyc/heroku-buildpack-jemalloc"
     },
     {
@@ -68,6 +71,15 @@
     "SENTRY_DSN": {
       "description": "The URL for Sentry to report error",
       "required": false
+    },
+    "NODE_ENV": {
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "value": "production"
     }
   }
 }

@@ -1,0 +1,794 @@
+{
+  "css/decidim_admin-8c04cfb5.css.map": "/decidim-packs/css/decidim_admin-8c04cfb5.css.map",
+  "css/decidim_api_docs-ac8b629a.css.map": "/decidim-packs/css/decidim_api_docs-ac8b629a.css.map",
+  "css/decidim_conference_diploma-f4511eb2.css.map": "/decidim-packs/css/decidim_conference_diploma-f4511eb2.css.map",
+  "css/decidim_core-b20b2a2e.css.map": "/decidim-packs/css/decidim_core-b20b2a2e.css.map",
+  "css/decidim_dev-bc17b667.css.map": "/decidim-packs/css/decidim_dev-bc17b667.css.map",
+  "css/decidim_elections_trustee_zone-74f87cba.css.map": "/decidim-packs/css/decidim_elections_trustee_zone-74f87cba.css.map",
+  "css/decidim_email-01cfb872.css.map": "/decidim-packs/css/decidim_email-01cfb872.css.map",
+  "css/decidim_initiatives_initiatives_votes-4d88357c.css.map": "/decidim-packs/css/decidim_initiatives_initiatives_votes-4d88357c.css.map",
+  "css/decidim_initiatives_print-b9e59984.css.map": "/decidim-packs/css/decidim_initiatives_print-b9e59984.css.map",
+  "css/decidim_map-bd3f29e0.css.map": "/decidim-packs/css/decidim_map-bd3f29e0.css.map",
+  "css/decidim_questionnaire_answers_pdf-73f0b975.css.map": "/decidim-packs/css/decidim_questionnaire_answers_pdf-73f0b975.css.map",
+  "css/decidim_system-bdfc5c4c.css.map": "/decidim-packs/css/decidim_system-bdfc5c4c.css.map",
+  "css/decidim_templates-0eba138d.css.map": "/decidim-packs/css/decidim_templates-0eba138d.css.map",
+  "css/decidim_votings_admin_votings-f73552e5.css.map": "/decidim-packs/css/decidim_votings_admin_votings-f73552e5.css.map",
+  "decidim_accountability.js": "/decidim-packs/js/decidim_accountability-4801027fcb3c7d5e9187.js",
+  "decidim_accountability_admin.js": "/decidim-packs/js/decidim_accountability_admin-8a5385aeae3fdebf696d.js",
+  "decidim_admin.css": "/decidim-packs/css/decidim_admin-8c04cfb5.css",
+  "decidim_admin.js": "/decidim-packs/js/decidim_admin-d98072e7e6052a36647d.js",
+  "decidim_api_docs.css": "/decidim-packs/css/decidim_api_docs-ac8b629a.css",
+  "decidim_api_docs.js": "/decidim-packs/js/decidim_api_docs-14d97ba9d0661a3a7442.js",
+  "decidim_assemblies.js": "/decidim-packs/js/decidim_assemblies-38e17be3a18822083f04.js",
+  "decidim_assemblies_admin.js": "/decidim-packs/js/decidim_assemblies_admin-5c175f020aeeb014b821.js",
+  "decidim_blogs.js": "/decidim-packs/js/decidim_blogs-24dda13a1c2c0f44a907.js",
+  "decidim_budgets.js": "/decidim-packs/js/decidim_budgets-b46a24f645e5ea08a7fe.js",
+  "decidim_conference_diploma.css": "/decidim-packs/css/decidim_conference_diploma-f4511eb2.css",
+  "decidim_conference_diploma.js": "/decidim-packs/js/decidim_conference_diploma-5a81f535bc1b71ec6c23.js",
+  "decidim_conferences_admin.js": "/decidim-packs/js/decidim_conferences_admin-182fffc508fa7f7d97a1.js",
+  "decidim_consultations.js": "/decidim-packs/js/decidim_consultations-975aff0588c659dd21af.js",
+  "decidim_core.css": "/decidim-packs/css/decidim_core-b20b2a2e.css",
+  "decidim_core.js": "/decidim-packs/js/decidim_core-196256f80be6cba90564.js",
+  "decidim_debates_admin.js": "/decidim-packs/js/decidim_debates_admin-ed8ea149fdab9ee54a43.js",
+  "decidim_dev.css": "/decidim-packs/css/decidim_dev-bc17b667.css",
+  "decidim_dev.js": "/decidim-packs/js/decidim_dev-3aed1d5ece50ed979c0a.js",
+  "decidim_elections.js": "/decidim-packs/js/decidim_elections-2c2a88709a8a37b0e78e.js",
+  "decidim_elections_admin_pending_action.js": "/decidim-packs/js/decidim_elections_admin_pending_action-2a59f9acd2deb48dc8b0.js",
+  "decidim_elections_admin_vote_statistics.js": "/decidim-packs/js/decidim_elections_admin_vote_statistics-dbe5e90732bd89c1b5ab.js",
+  "decidim_elections_election_log.js": "/decidim-packs/js/decidim_elections_election_log-733f45ad02f9c599a7fc.js",
+  "decidim_elections_onboarding.js": "/decidim-packs/js/decidim_elections_onboarding-6046597ecfa73bb01e15.js",
+  "decidim_elections_trustee_key_ceremony.js": "/decidim-packs/js/decidim_elections_trustee_key_ceremony-583884040d43305655aa.js",
+  "decidim_elections_trustee_tally.js": "/decidim-packs/js/decidim_elections_trustee_tally-e96b4fc22b0458e01422.js",
+  "decidim_elections_trustee_trustee_zone.js": "/decidim-packs/js/decidim_elections_trustee_trustee_zone-33c84bf59a6aef0fdba7.js",
+  "decidim_elections_trustee_zone.css": "/decidim-packs/css/decidim_elections_trustee_zone-74f87cba.css",
+  "decidim_elections_trustee_zone.js": "/decidim-packs/js/decidim_elections_trustee_zone-c8020492de1f2673ea58.js",
+  "decidim_elections_voter_casting_vote.js": "/decidim-packs/js/decidim_elections_voter_casting_vote-5cf56f9b83dffcb6baac.js",
+  "decidim_elections_voter_new_vote.js": "/decidim-packs/js/decidim_elections_voter_new_vote-20f0ee7b5874f13ad78b.js",
+  "decidim_elections_voter_setup_preview.js": "/decidim-packs/js/decidim_elections_voter_setup_preview-36f1d67c9697b777aa8d.js",
+  "decidim_elections_voter_setup_vote.js": "/decidim-packs/js/decidim_elections_voter_setup_vote-c51e75da3f9d1682471c.js",
+  "decidim_elections_voter_verify_vote.js": "/decidim-packs/js/decidim_elections_voter_verify_vote-16ef1fa1ceb8c23eca5f.js",
+  "decidim_email.css": "/decidim-packs/css/decidim_email-01cfb872.css",
+  "decidim_email.js": "/decidim-packs/js/decidim_email-c003b453e43cad0f9c9d.js",
+  "decidim_forms.js": "/decidim-packs/js/decidim_forms-2a78ea0192b5252d3ba6.js",
+  "decidim_forms_admin.js": "/decidim-packs/js/decidim_forms_admin-4d1bd4805e414dff976b.js",
+  "decidim_geocoding_provider_here.js": "/decidim-packs/js/decidim_geocoding_provider_here-d77c93fa6c89a5d7e64b.js",
+  "decidim_geocoding_provider_photon.js": "/decidim-packs/js/decidim_geocoding_provider_photon-474554908455613d1579.js",
+  "decidim_initiatives.js": "/decidim-packs/js/decidim_initiatives-4e4183f9fe2da2cbafbd.js",
+  "decidim_initiatives_admin.js": "/decidim-packs/js/decidim_initiatives_admin-c1a9c98e5240b9fc57ca.js",
+  "decidim_initiatives_initiatives_votes.css": "/decidim-packs/css/decidim_initiatives_initiatives_votes-4d88357c.css",
+  "decidim_initiatives_initiatives_votes.js": "/decidim-packs/js/decidim_initiatives_initiatives_votes-317d10d4d552d8b5624e.js",
+  "decidim_initiatives_print.css": "/decidim-packs/css/decidim_initiatives_print-b9e59984.css",
+  "decidim_initiatives_print.js": "/decidim-packs/js/decidim_initiatives_print-3c1a318887e11b489df7.js",
+  "decidim_map.css": "/decidim-packs/css/decidim_map-bd3f29e0.css",
+  "decidim_map.js": "/decidim-packs/js/decidim_map-40a36d00be8b77fdf449.js",
+  "decidim_map_provider_default.js": "/decidim-packs/js/decidim_map_provider_default-da9323b08256f2585a83.js",
+  "decidim_map_provider_here.js": "/decidim-packs/js/decidim_map_provider_here-aa1f9ae451413ea4c4a4.js",
+  "decidim_meetings.js": "/decidim-packs/js/decidim_meetings-93b1d623eab1162c71c4.js",
+  "decidim_meetings_admin.js": "/decidim-packs/js/decidim_meetings_admin-64468a01faef0641d954.js",
+  "decidim_pages.js": "/decidim-packs/js/decidim_pages-1d8054bd0b504270da89.js",
+  "decidim_participatory_processes.js": "/decidim-packs/js/decidim_participatory_processes-5bb13415d8e6e5445717.js",
+  "decidim_participatory_processes_admin.js": "/decidim-packs/js/decidim_participatory_processes_admin-febbdc4548b2ecb82ba8.js",
+  "decidim_proposals.js": "/decidim-packs/js/decidim_proposals-af1c8315392eabe64adf.js",
+  "decidim_proposals_admin.js": "/decidim-packs/js/decidim_proposals_admin-cd23e6b76eda78f66d12.js",
+  "decidim_questionnaire_answers_pdf.css": "/decidim-packs/css/decidim_questionnaire_answers_pdf-73f0b975.css",
+  "decidim_questionnaire_answers_pdf.js": "/decidim-packs/js/decidim_questionnaire_answers_pdf-273980c8bf48fedd5019.js",
+  "decidim_sortitions.js": "/decidim-packs/js/decidim_sortitions-6eec8c5cf3f96421a4e3.js",
+  "decidim_system.css": "/decidim-packs/css/decidim_system-bdfc5c4c.css",
+  "decidim_system.js": "/decidim-packs/js/decidim_system-fe8c8e4d69d1f87253c8.js",
+  "decidim_templates.css": "/decidim-packs/css/decidim_templates-0eba138d.css",
+  "decidim_templates.js": "/decidim-packs/js/decidim_templates-9b5e311dd45c07c62635.js",
+  "decidim_votings_admin_monitoring_committee_members_form.js": "/decidim-packs/js/decidim_votings_admin_monitoring_committee_members_form-6dd1a217fcd882325c6b.js",
+  "decidim_votings_admin_polling_officers_form.js": "/decidim-packs/js/decidim_votings_admin_polling_officers_form-d58f1629dd799f5f984a.js",
+  "decidim_votings_admin_polling_officers_picker.js": "/decidim-packs/js/decidim_votings_admin_polling_officers_picker-693770aec636c73e1e43.js",
+  "decidim_votings_admin_polling_stations_form.js": "/decidim-packs/js/decidim_votings_admin_polling_stations_form-80492696a08e08f6c724.js",
+  "decidim_votings_admin_update_census_dataset_status.js": "/decidim-packs/js/decidim_votings_admin_update_census_dataset_status-91fe649fb7d8feb4f5d6.js",
+  "decidim_votings_admin_votings.css": "/decidim-packs/css/decidim_votings_admin_votings-f73552e5.css",
+  "decidim_votings_admin_votings.js": "/decidim-packs/js/decidim_votings_admin_votings-13483ad1c4134eac3804.js",
+  "decidim_votings_voting_description_cell.js": "/decidim-packs/js/decidim_votings_voting_description_cell-0e30ea077aeb892b56b5.js",
+  "decidim_votings_voting_polling_officer_zone_edit_closure.js": "/decidim-packs/js/decidim_votings_voting_polling_officer_zone_edit_closure-e7843a2490623405227f.js",
+  "decidim_votings_voting_polling_officer_zone_new_closure.js": "/decidim-packs/js/decidim_votings_voting_polling_officer_zone_new_closure-80572e8ff35fcb17b8c2.js",
+  "decidim_widget.js": "/decidim-packs/js/decidim_widget-25960c5f13936c18d51b.js",
+  "entrypoints": {
+    "decidim_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js",
+          "/decidim-packs/js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js",
+          "/decidim-packs/js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js",
+          "/decidim-packs/js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js",
+          "/decidim-packs/js/vendors-node_modules_react-dom_index_js-e13adff1907efb7805ad.js",
+          "/decidim-packs/js/vendors-node_modules_foundation-datepicker_js_locales_foundation-datepicker_ar_js-node_module-679306-7b83150008d075b65df4.js",
+          "/decidim-packs/js/vendors-node_modules_axios_index_js-node_modules_jquery-serializejson_jquery_serializejson_js-36d27d-8d3e88748d55727876c4.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-bcfdf8-b2ccbf8cbb49da7287fb.js",
+          "/decidim-packs/js/decidim_admin-d98072e7e6052a36647d.js"
+        ],
+        "css": [
+          "/decidim-packs/css/decidim_admin-8c04cfb5.css"
+        ]
+      }
+    },
+    "decidim_accountability": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_diff_lib_index_mjs-62bd81851233b08a6e8e.js",
+          "/decidim-packs/js/decidim_accountability-4801027fcb3c7d5e9187.js"
+        ]
+      }
+    },
+    "decidim_accountability_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_accountability_admin-8a5385aeae3fdebf696d.js"
+        ]
+      }
+    },
+    "decidim_assemblies": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js",
+          "/decidim-packs/js/decidim_assemblies-38e17be3a18822083f04.js"
+        ]
+      }
+    },
+    "decidim_assemblies_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_assemblies_admin-5c175f020aeeb014b821.js"
+        ]
+      }
+    },
+    "decidim_api_docs": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js",
+          "/decidim-packs/js/vendors-node_modules_react-dom_index_js-e13adff1907efb7805ad.js",
+          "/decidim-packs/js/vendors-node_modules_graphql-docs_dist_graphql-docs_js-3aa2bfb1e764db9e942f.js",
+          "/decidim-packs/js/decidim_api_docs-14d97ba9d0661a3a7442.js"
+        ],
+        "css": [
+          "/decidim-packs/css/decidim_api_docs-ac8b629a.css"
+        ]
+      }
+    },
+    "decidim_blogs": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_blogs-24dda13a1c2c0f44a907.js"
+        ]
+      }
+    },
+    "decidim_budgets": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_budgets-b46a24f645e5ea08a7fe.js"
+        ]
+      }
+    },
+    "decidim_conferences_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_conferences_admin-182fffc508fa7f7d97a1.js"
+        ]
+      }
+    },
+    "decidim_consultations": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_consultations-975aff0588c659dd21af.js"
+        ]
+      }
+    },
+    "decidim_core": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js",
+          "/decidim-packs/js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js",
+          "/decidim-packs/js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js",
+          "/decidim-packs/js/vendors-node_modules_foundation-datepicker_js_locales_foundation-datepicker_ar_js-node_module-679306-7b83150008d075b65df4.js",
+          "/decidim-packs/js/vendors-node_modules_zeitiger_appendaround_appendAround_js-node_modules_morphdom_dist_morphdo-a91934-42a0118289ce2af00358.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-bcfdf8-b2ccbf8cbb49da7287fb.js",
+          "/decidim-packs/js/decidim_core-196256f80be6cba90564.js"
+        ],
+        "css": [
+          "/decidim-packs/css/decidim_core-b20b2a2e.css"
+        ]
+      }
+    },
+    "decidim_conference_diploma": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_conference_diploma-f4511eb2.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_conference_diploma-5a81f535bc1b71ec6c23.js"
+        ]
+      }
+    },
+    "decidim_debates_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_debates_admin-ed8ea149fdab9ee54a43.js"
+        ]
+      }
+    },
+    "decidim_dev": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_axe-core_axe_js-ff9cfa8dc48a8a77d5f6.js",
+          "/decidim-packs/js/decidim_dev-3aed1d5ece50ed979c0a.js"
+        ],
+        "css": [
+          "/decidim-packs/css/decidim_dev-bc17b667.css"
+        ]
+      }
+    },
+    "decidim_elections": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_elections-2c2a88709a8a37b0e78e.js"
+        ]
+      }
+    },
+    "decidim_elections_election_log": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/decidim_elections_election_log-733f45ad02f9c599a7fc.js"
+        ]
+      }
+    },
+    "decidim_elections_onboarding": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_elections_onboarding-6046597ecfa73bb01e15.js"
+        ]
+      }
+    },
+    "decidim_elections_admin_pending_action": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/decidim_elections_admin_pending_action-2a59f9acd2deb48dc8b0.js"
+        ]
+      }
+    },
+    "decidim_elections_admin_vote_statistics": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_elections_admin_vote_statistics-dbe5e90732bd89c1b5ab.js"
+        ]
+      }
+    },
+    "decidim_elections_trustee_key_ceremony": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js",
+          "/decidim-packs/js/decidim_elections_trustee_key_ceremony-583884040d43305655aa.js"
+        ]
+      }
+    },
+    "decidim_elections_trustee_tally": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js",
+          "/decidim-packs/js/decidim_elections_trustee_tally-e96b4fc22b0458e01422.js"
+        ]
+      }
+    },
+    "decidim_elections_trustee_zone": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_elections_trustee_zone-74f87cba.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_elections_trustee_zone-c8020492de1f2673ea58.js"
+        ]
+      }
+    },
+    "decidim_elections_trustee_trustee_zone": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/decidim_elections_trustee_trustee_zone-33c84bf59a6aef0fdba7.js"
+        ]
+      }
+    },
+    "decidim_elections_voter_casting_vote": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/decidim_elections_voter_casting_vote-5cf56f9b83dffcb6baac.js"
+        ]
+      }
+    },
+    "decidim_elections_voter_new_vote": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/decidim_elections_voter_new_vote-20f0ee7b5874f13ad78b.js"
+        ]
+      }
+    },
+    "decidim_elections_voter_setup_preview": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/decidim_elections_voter_setup_preview-36f1d67c9697b777aa8d.js"
+        ]
+      }
+    },
+    "decidim_elections_voter_setup_vote": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js",
+          "/decidim-packs/js/decidim_elections_voter_setup_vote-c51e75da3f9d1682471c.js"
+        ]
+      }
+    },
+    "decidim_elections_voter_verify_vote": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+          "/decidim-packs/js/decidim_elections_voter_verify_vote-16ef1fa1ceb8c23eca5f.js"
+        ]
+      }
+    },
+    "decidim_email": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_email-01cfb872.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_email-c003b453e43cad0f9c9d.js"
+        ]
+      }
+    },
+    "decidim_votings_admin_monitoring_committee_members_form": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_admin_monitoring_committee_members_form-6dd1a217fcd882325c6b.js"
+        ]
+      }
+    },
+    "decidim_votings_admin_polling_officers_form": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_admin_polling_officers_form-d58f1629dd799f5f984a.js"
+        ]
+      }
+    },
+    "decidim_votings_admin_polling_officers_picker": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_admin_polling_officers_picker-693770aec636c73e1e43.js"
+        ]
+      }
+    },
+    "decidim_votings_voting_polling_officer_zone_new_closure": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_voting_polling_officer_zone_new_closure-80572e8ff35fcb17b8c2.js"
+        ]
+      }
+    },
+    "decidim_votings_voting_polling_officer_zone_edit_closure": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_voting_polling_officer_zone_edit_closure-e7843a2490623405227f.js"
+        ]
+      }
+    },
+    "decidim_votings_admin_polling_stations_form": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_admin_polling_stations_form-80492696a08e08f6c724.js"
+        ]
+      }
+    },
+    "decidim_votings_admin_update_census_dataset_status": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_admin_update_census_dataset_status-91fe649fb7d8feb4f5d6.js"
+        ]
+      }
+    },
+    "decidim_votings_voting_description_cell": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_votings_voting_description_cell-0e30ea077aeb892b56b5.js"
+        ]
+      }
+    },
+    "decidim_votings_admin_votings": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_votings_admin_votings-f73552e5.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_votings_admin_votings-13483ad1c4134eac3804.js"
+        ]
+      }
+    },
+    "decidim_forms": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_forms-2a78ea0192b5252d3ba6.js"
+        ]
+      }
+    },
+    "decidim_forms_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-admin-652167-5cd389e431b14eff0e80.js",
+          "/decidim-packs/js/decidim_forms_admin-4d1bd4805e414dff976b.js"
+        ]
+      }
+    },
+    "decidim_questionnaire_answers_pdf": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_questionnaire_answers_pdf-73f0b975.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_questionnaire_answers_pdf-273980c8bf48fedd5019.js"
+        ]
+      }
+    },
+    "decidim_initiatives": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+          "/decidim-packs/js/decidim_initiatives-4e4183f9fe2da2cbafbd.js"
+        ]
+      }
+    },
+    "decidim_initiatives_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_initiatives_admin-c1a9c98e5240b9fc57ca.js"
+        ]
+      }
+    },
+    "decidim_initiatives_print": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_initiatives_print-b9e59984.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_initiatives_print-3c1a318887e11b489df7.js"
+        ]
+      }
+    },
+    "decidim_initiatives_initiatives_votes": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_initiatives_initiatives_votes-4d88357c.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_initiatives_initiatives_votes-317d10d4d552d8b5624e.js"
+        ]
+      }
+    },
+    "decidim_map": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_map-bd3f29e0.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_map-40a36d00be8b77fdf449.js"
+        ]
+      }
+    },
+    "decidim_meetings": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_meetings-93b1d623eab1162c71c4.js"
+        ]
+      }
+    },
+    "decidim_meetings_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-admin-652167-5cd389e431b14eff0e80.js",
+          "/decidim-packs/js/decidim_meetings_admin-64468a01faef0641d954.js"
+        ]
+      }
+    },
+    "decidim_pages": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_pages-1d8054bd0b504270da89.js"
+        ]
+      }
+    },
+    "decidim_participatory_processes": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_participatory_processes-5bb13415d8e6e5445717.js"
+        ]
+      }
+    },
+    "decidim_participatory_processes_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_participatory_processes_admin-febbdc4548b2ecb82ba8.js"
+        ]
+      }
+    },
+    "decidim_proposals": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_proposals-af1c8315392eabe64adf.js"
+        ]
+      }
+    },
+    "decidim_proposals_admin": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_proposals_admin-cd23e6b76eda78f66d12.js"
+        ]
+      }
+    },
+    "decidim_sortitions": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_sortitions-6eec8c5cf3f96421a4e3.js"
+        ]
+      }
+    },
+    "decidim_system": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+          "/decidim-packs/js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js",
+          "/decidim-packs/js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+          "/decidim-packs/js/decidim_system-fe8c8e4d69d1f87253c8.js"
+        ],
+        "css": [
+          "/decidim-packs/css/decidim_system-bdfc5c4c.css"
+        ]
+      }
+    },
+    "decidim_templates": {
+      "assets": {
+        "css": [
+          "/decidim-packs/css/decidim_templates-0eba138d.css"
+        ],
+        "js": [
+          "/decidim-packs/js/decidim_templates-9b5e311dd45c07c62635.js"
+        ]
+      }
+    },
+    "decidim_geocoding_provider_photon": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js",
+          "/decidim-packs/js/decidim_geocoding_provider_photon-474554908455613d1579.js"
+        ]
+      }
+    },
+    "decidim_geocoding_provider_here": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js",
+          "/decidim-packs/js/decidim_geocoding_provider_here-d77c93fa6c89a5d7e64b.js"
+        ]
+      }
+    },
+    "decidim_map_provider_default": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_leaflet-svgicon_index_js-node_modules_leaflet_markercluster_dist_leaflet-b732f3-f0627f26cbe4aa00f0e1.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8d8188-1997147eb4e4b412b2d4.js",
+          "/decidim-packs/js/decidim_map_provider_default-da9323b08256f2585a83.js"
+        ]
+      }
+    },
+    "decidim_map_provider_here": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/vendors-node_modules_leaflet-svgicon_index_js-node_modules_leaflet_markercluster_dist_leaflet-b732f3-f0627f26cbe4aa00f0e1.js",
+          "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8d8188-1997147eb4e4b412b2d4.js",
+          "/decidim-packs/js/decidim_map_provider_here-aa1f9ae451413ea4c4a4.js"
+        ]
+      }
+    },
+    "decidim_widget": {
+      "assets": {
+        "js": [
+          "/decidim-packs/js/decidim_widget-25960c5f13936c18d51b.js"
+        ]
+      }
+    }
+  },
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-admin-652167-5cd389e431b14eff0e80.js": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-admin-652167-5cd389e431b14eff0e80.js",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-admin-652167-5cd389e431b14eff0e80.js.map": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-admin-652167-5cd389e431b14eff0e80.js.map",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js.map": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8b21d4-a252d46c2956a952bb84.js.map",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8d8188-1997147eb4e4b412b2d4.js": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8d8188-1997147eb4e4b412b2d4.js",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8d8188-1997147eb4e4b412b2d4.js.map": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-8d8188-1997147eb4e4b412b2d4.js.map",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-bcfdf8-b2ccbf8cbb49da7287fb.js": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-bcfdf8-b2ccbf8cbb49da7287fb.js",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-bcfdf8-b2ccbf8cbb49da7287fb.js.map": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-bcfdf8-b2ccbf8cbb49da7287fb.js.map",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js",
+  "js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js.map": "/decidim-packs/js/_asdf_installs_ruby_2_7_2_lib_ruby_gems_2_7_0_bundler_gems_decidim-d3b88afe90e5_decidim-core_-c726db-6fee8d4402663acb3534.js.map",
+  "js/decidim_accountability-4801027fcb3c7d5e9187.js.map": "/decidim-packs/js/decidim_accountability-4801027fcb3c7d5e9187.js.map",
+  "js/decidim_accountability_admin-8a5385aeae3fdebf696d.js.map": "/decidim-packs/js/decidim_accountability_admin-8a5385aeae3fdebf696d.js.map",
+  "js/decidim_admin-d98072e7e6052a36647d.js.map": "/decidim-packs/js/decidim_admin-d98072e7e6052a36647d.js.map",
+  "js/decidim_api_docs-14d97ba9d0661a3a7442.js.map": "/decidim-packs/js/decidim_api_docs-14d97ba9d0661a3a7442.js.map",
+  "js/decidim_assemblies-38e17be3a18822083f04.js.map": "/decidim-packs/js/decidim_assemblies-38e17be3a18822083f04.js.map",
+  "js/decidim_assemblies_admin-5c175f020aeeb014b821.js.map": "/decidim-packs/js/decidim_assemblies_admin-5c175f020aeeb014b821.js.map",
+  "js/decidim_blogs-24dda13a1c2c0f44a907.js.map": "/decidim-packs/js/decidim_blogs-24dda13a1c2c0f44a907.js.map",
+  "js/decidim_budgets-b46a24f645e5ea08a7fe.js.map": "/decidim-packs/js/decidim_budgets-b46a24f645e5ea08a7fe.js.map",
+  "js/decidim_conference_diploma-5a81f535bc1b71ec6c23.js.map": "/decidim-packs/js/decidim_conference_diploma-5a81f535bc1b71ec6c23.js.map",
+  "js/decidim_conferences_admin-182fffc508fa7f7d97a1.js.map": "/decidim-packs/js/decidim_conferences_admin-182fffc508fa7f7d97a1.js.map",
+  "js/decidim_consultations-975aff0588c659dd21af.js.map": "/decidim-packs/js/decidim_consultations-975aff0588c659dd21af.js.map",
+  "js/decidim_core-196256f80be6cba90564.js.map": "/decidim-packs/js/decidim_core-196256f80be6cba90564.js.map",
+  "js/decidim_debates_admin-ed8ea149fdab9ee54a43.js.map": "/decidim-packs/js/decidim_debates_admin-ed8ea149fdab9ee54a43.js.map",
+  "js/decidim_dev-3aed1d5ece50ed979c0a.js.map": "/decidim-packs/js/decidim_dev-3aed1d5ece50ed979c0a.js.map",
+  "js/decidim_elections-2c2a88709a8a37b0e78e.js.map": "/decidim-packs/js/decidim_elections-2c2a88709a8a37b0e78e.js.map",
+  "js/decidim_elections_admin_pending_action-2a59f9acd2deb48dc8b0.js.map": "/decidim-packs/js/decidim_elections_admin_pending_action-2a59f9acd2deb48dc8b0.js.map",
+  "js/decidim_elections_admin_vote_statistics-dbe5e90732bd89c1b5ab.js.map": "/decidim-packs/js/decidim_elections_admin_vote_statistics-dbe5e90732bd89c1b5ab.js.map",
+  "js/decidim_elections_election_log-733f45ad02f9c599a7fc.js.map": "/decidim-packs/js/decidim_elections_election_log-733f45ad02f9c599a7fc.js.map",
+  "js/decidim_elections_onboarding-6046597ecfa73bb01e15.js.map": "/decidim-packs/js/decidim_elections_onboarding-6046597ecfa73bb01e15.js.map",
+  "js/decidim_elections_trustee_key_ceremony-583884040d43305655aa.js.map": "/decidim-packs/js/decidim_elections_trustee_key_ceremony-583884040d43305655aa.js.map",
+  "js/decidim_elections_trustee_tally-e96b4fc22b0458e01422.js.map": "/decidim-packs/js/decidim_elections_trustee_tally-e96b4fc22b0458e01422.js.map",
+  "js/decidim_elections_trustee_trustee_zone-33c84bf59a6aef0fdba7.js.map": "/decidim-packs/js/decidim_elections_trustee_trustee_zone-33c84bf59a6aef0fdba7.js.map",
+  "js/decidim_elections_trustee_zone-c8020492de1f2673ea58.js.map": "/decidim-packs/js/decidim_elections_trustee_zone-c8020492de1f2673ea58.js.map",
+  "js/decidim_elections_voter_casting_vote-5cf56f9b83dffcb6baac.js.map": "/decidim-packs/js/decidim_elections_voter_casting_vote-5cf56f9b83dffcb6baac.js.map",
+  "js/decidim_elections_voter_new_vote-20f0ee7b5874f13ad78b.js.map": "/decidim-packs/js/decidim_elections_voter_new_vote-20f0ee7b5874f13ad78b.js.map",
+  "js/decidim_elections_voter_setup_preview-36f1d67c9697b777aa8d.js.map": "/decidim-packs/js/decidim_elections_voter_setup_preview-36f1d67c9697b777aa8d.js.map",
+  "js/decidim_elections_voter_setup_vote-c51e75da3f9d1682471c.js.map": "/decidim-packs/js/decidim_elections_voter_setup_vote-c51e75da3f9d1682471c.js.map",
+  "js/decidim_elections_voter_verify_vote-16ef1fa1ceb8c23eca5f.js.map": "/decidim-packs/js/decidim_elections_voter_verify_vote-16ef1fa1ceb8c23eca5f.js.map",
+  "js/decidim_email-c003b453e43cad0f9c9d.js.map": "/decidim-packs/js/decidim_email-c003b453e43cad0f9c9d.js.map",
+  "js/decidim_forms-2a78ea0192b5252d3ba6.js.map": "/decidim-packs/js/decidim_forms-2a78ea0192b5252d3ba6.js.map",
+  "js/decidim_forms_admin-4d1bd4805e414dff976b.js.map": "/decidim-packs/js/decidim_forms_admin-4d1bd4805e414dff976b.js.map",
+  "js/decidim_geocoding_provider_here-d77c93fa6c89a5d7e64b.js.map": "/decidim-packs/js/decidim_geocoding_provider_here-d77c93fa6c89a5d7e64b.js.map",
+  "js/decidim_geocoding_provider_photon-474554908455613d1579.js.map": "/decidim-packs/js/decidim_geocoding_provider_photon-474554908455613d1579.js.map",
+  "js/decidim_initiatives-4e4183f9fe2da2cbafbd.js.map": "/decidim-packs/js/decidim_initiatives-4e4183f9fe2da2cbafbd.js.map",
+  "js/decidim_initiatives_admin-c1a9c98e5240b9fc57ca.js.map": "/decidim-packs/js/decidim_initiatives_admin-c1a9c98e5240b9fc57ca.js.map",
+  "js/decidim_initiatives_initiatives_votes-317d10d4d552d8b5624e.js.map": "/decidim-packs/js/decidim_initiatives_initiatives_votes-317d10d4d552d8b5624e.js.map",
+  "js/decidim_initiatives_print-3c1a318887e11b489df7.js.map": "/decidim-packs/js/decidim_initiatives_print-3c1a318887e11b489df7.js.map",
+  "js/decidim_map-40a36d00be8b77fdf449.js.map": "/decidim-packs/js/decidim_map-40a36d00be8b77fdf449.js.map",
+  "js/decidim_map_provider_default-da9323b08256f2585a83.js.map": "/decidim-packs/js/decidim_map_provider_default-da9323b08256f2585a83.js.map",
+  "js/decidim_map_provider_here-aa1f9ae451413ea4c4a4.js.map": "/decidim-packs/js/decidim_map_provider_here-aa1f9ae451413ea4c4a4.js.map",
+  "js/decidim_meetings-93b1d623eab1162c71c4.js.map": "/decidim-packs/js/decidim_meetings-93b1d623eab1162c71c4.js.map",
+  "js/decidim_meetings_admin-64468a01faef0641d954.js.map": "/decidim-packs/js/decidim_meetings_admin-64468a01faef0641d954.js.map",
+  "js/decidim_pages-1d8054bd0b504270da89.js.map": "/decidim-packs/js/decidim_pages-1d8054bd0b504270da89.js.map",
+  "js/decidim_participatory_processes-5bb13415d8e6e5445717.js.map": "/decidim-packs/js/decidim_participatory_processes-5bb13415d8e6e5445717.js.map",
+  "js/decidim_participatory_processes_admin-febbdc4548b2ecb82ba8.js.map": "/decidim-packs/js/decidim_participatory_processes_admin-febbdc4548b2ecb82ba8.js.map",
+  "js/decidim_proposals-af1c8315392eabe64adf.js.map": "/decidim-packs/js/decidim_proposals-af1c8315392eabe64adf.js.map",
+  "js/decidim_proposals_admin-cd23e6b76eda78f66d12.js.map": "/decidim-packs/js/decidim_proposals_admin-cd23e6b76eda78f66d12.js.map",
+  "js/decidim_questionnaire_answers_pdf-273980c8bf48fedd5019.js.map": "/decidim-packs/js/decidim_questionnaire_answers_pdf-273980c8bf48fedd5019.js.map",
+  "js/decidim_sortitions-6eec8c5cf3f96421a4e3.js.map": "/decidim-packs/js/decidim_sortitions-6eec8c5cf3f96421a4e3.js.map",
+  "js/decidim_system-fe8c8e4d69d1f87253c8.js.map": "/decidim-packs/js/decidim_system-fe8c8e4d69d1f87253c8.js.map",
+  "js/decidim_templates-9b5e311dd45c07c62635.js.map": "/decidim-packs/js/decidim_templates-9b5e311dd45c07c62635.js.map",
+  "js/decidim_votings_admin_monitoring_committee_members_form-6dd1a217fcd882325c6b.js.map": "/decidim-packs/js/decidim_votings_admin_monitoring_committee_members_form-6dd1a217fcd882325c6b.js.map",
+  "js/decidim_votings_admin_polling_officers_form-d58f1629dd799f5f984a.js.map": "/decidim-packs/js/decidim_votings_admin_polling_officers_form-d58f1629dd799f5f984a.js.map",
+  "js/decidim_votings_admin_polling_officers_picker-693770aec636c73e1e43.js.map": "/decidim-packs/js/decidim_votings_admin_polling_officers_picker-693770aec636c73e1e43.js.map",
+  "js/decidim_votings_admin_polling_stations_form-80492696a08e08f6c724.js.map": "/decidim-packs/js/decidim_votings_admin_polling_stations_form-80492696a08e08f6c724.js.map",
+  "js/decidim_votings_admin_update_census_dataset_status-91fe649fb7d8feb4f5d6.js.map": "/decidim-packs/js/decidim_votings_admin_update_census_dataset_status-91fe649fb7d8feb4f5d6.js.map",
+  "js/decidim_votings_admin_votings-13483ad1c4134eac3804.js.map": "/decidim-packs/js/decidim_votings_admin_votings-13483ad1c4134eac3804.js.map",
+  "js/decidim_votings_voting_description_cell-0e30ea077aeb892b56b5.js.map": "/decidim-packs/js/decidim_votings_voting_description_cell-0e30ea077aeb892b56b5.js.map",
+  "js/decidim_votings_voting_polling_officer_zone_edit_closure-e7843a2490623405227f.js.map": "/decidim-packs/js/decidim_votings_voting_polling_officer_zone_edit_closure-e7843a2490623405227f.js.map",
+  "js/decidim_votings_voting_polling_officer_zone_new_closure-80572e8ff35fcb17b8c2.js.map": "/decidim-packs/js/decidim_votings_voting_polling_officer_zone_new_closure-80572e8ff35fcb17b8c2.js.map",
+  "js/decidim_widget-25960c5f13936c18d51b.js.map": "/decidim-packs/js/decidim_widget-25960c5f13936c18d51b.js.map",
+  "js/vendors-node_modules_axe-core_axe_js-ff9cfa8dc48a8a77d5f6.js": "/decidim-packs/js/vendors-node_modules_axe-core_axe_js-ff9cfa8dc48a8a77d5f6.js",
+  "js/vendors-node_modules_axe-core_axe_js-ff9cfa8dc48a8a77d5f6.js.map": "/decidim-packs/js/vendors-node_modules_axe-core_axe_js-ff9cfa8dc48a8a77d5f6.js.map",
+  "js/vendors-node_modules_axios_index_js-node_modules_jquery-serializejson_jquery_serializejson_js-36d27d-8d3e88748d55727876c4.js": "/decidim-packs/js/vendors-node_modules_axios_index_js-node_modules_jquery-serializejson_jquery_serializejson_js-36d27d-8d3e88748d55727876c4.js",
+  "js/vendors-node_modules_axios_index_js-node_modules_jquery-serializejson_jquery_serializejson_js-36d27d-8d3e88748d55727876c4.js.map": "/decidim-packs/js/vendors-node_modules_axios_index_js-node_modules_jquery-serializejson_jquery_serializejson_js-36d27d-8d3e88748d55727876c4.js.map",
+  "js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js": "/decidim-packs/js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js",
+  "js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js.map": "/decidim-packs/js/vendors-node_modules_bootstrap-tagsinput_dist_bootstrap-tagsinput_js-node_modules_core-js_mod-441536-6c69b72002e4f555c4c6.js.map",
+  "js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js": "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js",
+  "js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js.map": "/decidim-packs/js/vendors-node_modules_codegram_decidim-bulletin_board_src_index_js-364aac1e59626c41f816.js.map",
+  "js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js": "/decidim-packs/js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js",
+  "js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js.map": "/decidim-packs/js/vendors-node_modules_codegram_voting_schemes-dummy_src_index_js-node_modules_codegram_voting_-13cf33-9f0ddd605f7ed6bebe49.js.map",
+  "js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js": "/decidim-packs/js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js",
+  "js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js.map": "/decidim-packs/js/vendors-node_modules_d3_index_js-f5f40138f42129075712.js.map",
+  "js/vendors-node_modules_diff_lib_index_mjs-62bd81851233b08a6e8e.js": "/decidim-packs/js/vendors-node_modules_diff_lib_index_mjs-62bd81851233b08a6e8e.js",
+  "js/vendors-node_modules_diff_lib_index_mjs-62bd81851233b08a6e8e.js.map": "/decidim-packs/js/vendors-node_modules_diff_lib_index_mjs-62bd81851233b08a6e8e.js.map",
+  "js/vendors-node_modules_foundation-datepicker_js_locales_foundation-datepicker_ar_js-node_module-679306-7b83150008d075b65df4.js": "/decidim-packs/js/vendors-node_modules_foundation-datepicker_js_locales_foundation-datepicker_ar_js-node_module-679306-7b83150008d075b65df4.js",
+  "js/vendors-node_modules_foundation-datepicker_js_locales_foundation-datepicker_ar_js-node_module-679306-7b83150008d075b65df4.js.map": "/decidim-packs/js/vendors-node_modules_foundation-datepicker_js_locales_foundation-datepicker_ar_js-node_module-679306-7b83150008d075b65df4.js.map",
+  "js/vendors-node_modules_graphql-docs_dist_graphql-docs_js-3aa2bfb1e764db9e942f.js": "/decidim-packs/js/vendors-node_modules_graphql-docs_dist_graphql-docs_js-3aa2bfb1e764db9e942f.js",
+  "js/vendors-node_modules_graphql-docs_dist_graphql-docs_js-3aa2bfb1e764db9e942f.js.map": "/decidim-packs/js/vendors-node_modules_graphql-docs_dist_graphql-docs_js-3aa2bfb1e764db9e942f.js.map",
+  "js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js": "/decidim-packs/js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js",
+  "js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js.map": "/decidim-packs/js/vendors-node_modules_html5sortable_dist_html5sortable_es_js-ba52f5d19978c9b59aa6.js.map",
+  "js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js": "/decidim-packs/js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js",
+  "js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js.map": "/decidim-packs/js/vendors-node_modules_jquery_dist_jquery-exposed_js-1b07fc9ae6d9e61d4165.js.map",
+  "js/vendors-node_modules_leaflet-svgicon_index_js-node_modules_leaflet_markercluster_dist_leaflet-b732f3-f0627f26cbe4aa00f0e1.js": "/decidim-packs/js/vendors-node_modules_leaflet-svgicon_index_js-node_modules_leaflet_markercluster_dist_leaflet-b732f3-f0627f26cbe4aa00f0e1.js",
+  "js/vendors-node_modules_leaflet-svgicon_index_js-node_modules_leaflet_markercluster_dist_leaflet-b732f3-f0627f26cbe4aa00f0e1.js.map": "/decidim-packs/js/vendors-node_modules_leaflet-svgicon_index_js-node_modules_leaflet_markercluster_dist_leaflet-b732f3-f0627f26cbe4aa00f0e1.js.map",
+  "js/vendors-node_modules_react-dom_index_js-e13adff1907efb7805ad.js": "/decidim-packs/js/vendors-node_modules_react-dom_index_js-e13adff1907efb7805ad.js",
+  "js/vendors-node_modules_react-dom_index_js-e13adff1907efb7805ad.js.map": "/decidim-packs/js/vendors-node_modules_react-dom_index_js-e13adff1907efb7805ad.js.map",
+  "js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js": "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js",
+  "js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js.map": "/decidim-packs/js/vendors-node_modules_regenerator-runtime_runtime_js-de43f99c233c96771c59.js.map",
+  "js/vendors-node_modules_zeitiger_appendaround_appendAround_js-node_modules_morphdom_dist_morphdo-a91934-42a0118289ce2af00358.js": "/decidim-packs/js/vendors-node_modules_zeitiger_appendaround_appendAround_js-node_modules_morphdom_dist_morphdo-a91934-42a0118289ce2af00358.js",
+  "js/vendors-node_modules_zeitiger_appendaround_appendAround_js-node_modules_morphdom_dist_morphdo-a91934-42a0118289ce2af00358.js.map": "/decidim-packs/js/vendors-node_modules_zeitiger_appendaround_appendAround_js-node_modules_morphdom_dist_morphdo-a91934-42a0118289ce2af00358.js.map",
+  "media/documents/participatory_text.md": "/decidim-packs/media/documents/0e67170e72070b470a07.md",
+  "media/documents/participatory_text.odt": "/decidim-packs/media/documents/057f608bdff3d77526ff.odt",
+  "media/images/Source_Sans_Pro_400.ttf": "/decidim-packs/media/images/Source_Sans_Pro_400-9c6e4dfdd59c9f0df0f8.ttf",
+  "media/images/Source_Sans_Pro_400.woff": "/decidim-packs/media/images/Source_Sans_Pro_400-f8eb0fd7380512a226cd.woff",
+  "media/images/Source_Sans_Pro_400.woff2": "/decidim-packs/media/images/Source_Sans_Pro_400-c60b44947671d757833d.woff2",
+  "media/images/Source_Sans_Pro_600.ttf": "/decidim-packs/media/images/Source_Sans_Pro_600-a2c16f2d0995dcf36831.ttf",
+  "media/images/Source_Sans_Pro_600.woff": "/decidim-packs/media/images/Source_Sans_Pro_600-321eaeac03e6321b823f.woff",
+  "media/images/Source_Sans_Pro_600.woff2": "/decidim-packs/media/images/Source_Sans_Pro_600-079db4a1c8da8ec06700.woff2",
+  "media/images/Source_Sans_Pro_900.ttf": "/decidim-packs/media/images/Source_Sans_Pro_900-cdf7b11440b90af6a688.ttf",
+  "media/images/Source_Sans_Pro_900.woff": "/decidim-packs/media/images/Source_Sans_Pro_900-7852ed941061eb34f8a3.woff",
+  "media/images/Source_Sans_Pro_900.woff2": "/decidim-packs/media/images/Source_Sans_Pro_900-d5a56e0c3bdd31eaadd4.woff2",
+  "media/images/avatar-multiuser.png": "/decidim-packs/media/images/avatar-multiuser-67c042dbbc8661cd06df.png",
+  "media/images/cc-badge.png": "/decidim-packs/media/images/cc-badge-afa3eec02a18f532285b.png",
+  "media/images/decidim-logo.svg": "/decidim-packs/media/images/decidim-logo-318879ac2f9a6dd9ab6b.svg",
+  "media/images/decidim_accountability_icon.svg": "/decidim-packs/media/images/decidim_accountability_icon-55aaa6f0f7f85234bad7.svg",
+  "media/images/decidim_assemblies.svg": "/decidim-packs/media/images/decidim_assemblies-d9571d0b2d158eb891c8.svg",
+  "media/images/decidim_blogs.svg": "/decidim-packs/media/images/decidim_blogs-5c0bd36dad84fad9d502.svg",
+  "media/images/decidim_budgets.svg": "/decidim-packs/media/images/decidim_budgets-63f448a8ecee4f8376a0.svg",
+  "media/images/decidim_conferences.svg": "/decidim-packs/media/images/decidim_conferences-d8f8364c84ea50df120f.svg",
+  "media/images/decidim_consultations.svg": "/decidim-packs/media/images/decidim_consultations-b751dc698919e88293cc.svg",
+  "media/images/decidim_debates.svg": "/decidim-packs/media/images/decidim_debates-b8d6b95f59fdb4c76d08.svg",
+  "media/images/decidim_dev_dummy.svg": "/decidim-packs/media/images/decidim_dev_dummy-7c65732068c5ec7c313e.svg",
+  "media/images/decidim_elections.svg": "/decidim-packs/media/images/decidim_elections-15e5583a7f2834cd644e.svg",
+  "media/images/decidim_gamification_badges_accepted_proposals.svg": "/decidim-packs/media/images/decidim_gamification_badges_accepted_proposals-907eee548361dfee6abe.svg",
+  "media/images/decidim_gamification_badges_attended_meetings.svg": "/decidim-packs/media/images/decidim_gamification_badges_attended_meetings-0a385f1bbe5a6e378d14.svg",
+  "media/images/decidim_gamification_badges_commented_debates.svg": "/decidim-packs/media/images/decidim_gamification_badges_commented_debates-753fa30fa95d1cb600eb.svg",
+  "media/images/decidim_gamification_badges_followers.svg": "/decidim-packs/media/images/decidim_gamification_badges_followers-36313db34d9f324a71e6.svg",
+  "media/images/decidim_gamification_badges_initiatives.svg": "/decidim-packs/media/images/decidim_gamification_badges_initiatives-c956bd99a6da11e4c751.svg",
+  "media/images/decidim_gamification_badges_invitations.svg": "/decidim-packs/media/images/decidim_gamification_badges_invitations-c1fe9eaba927bd4898c5.svg",
+  "media/images/decidim_gamification_badges_proposal_votes.svg": "/decidim-packs/media/images/decidim_gamification_badges_proposal_votes-13426dd64ea84f600a64.svg",
+  "media/images/decidim_gamification_badges_proposals.svg": "/decidim-packs/media/images/decidim_gamification_badges_proposals-92b1e6ff9b790aad8550.svg",
+  "media/images/decidim_gamification_badges_test.svg": "/decidim-packs/media/images/decidim_gamification_badges_test-12369bee0baf637c42e9.svg",
+  "media/images/decidim_initiatives.svg": "/decidim-packs/media/images/decidim_initiatives-8822c933216741c5fd30.svg",
+  "media/images/decidim_meetings.svg": "/decidim-packs/media/images/decidim_meetings-f1cb40f132fbc2fa9a00.svg",
+  "media/images/decidim_pages.svg": "/decidim-packs/media/images/decidim_pages-ad2a544f33159fa4409a.svg",
+  "media/images/decidim_participatory_processes.svg": "/decidim-packs/media/images/decidim_participatory_processes-6418d7bb8c56608fe377.svg",
+  "media/images/decidim_proposals.svg": "/decidim-packs/media/images/decidim_proposals-15e5583a7f2834cd644e.svg",
+  "media/images/decidim_surveys.svg": "/decidim-packs/media/images/decidim_surveys-5771e3e945ff9473a563.svg",
+  "media/images/decidim_templates.svg": "/decidim-packs/media/images/decidim_templates-15e5583a7f2834cd644e.svg",
+  "media/images/decidim_votings.svg": "/decidim-packs/media/images/decidim_votings-d8f8364c84ea50df120f.svg",
+  "media/images/default-avatar.svg": "/decidim-packs/media/images/default-avatar-aaa9e55bac5d7159b847.svg",
+  "media/images/delicious.svg": "/decidim-packs/media/images/delicious-645ddfaca5163af23947.svg",
+  "media/images/douban.svg": "/decidim-packs/media/images/douban-59306a4ec1a7595eda35.svg",
+  "media/images/email.svg": "/decidim-packs/media/images/email-d79a53d1d223015094db.svg",
+  "media/images/facebook.svg": "/decidim-packs/media/images/facebook-0ada3788990cda55b9ba.svg",
+  "media/images/google.svg": "/decidim-packs/media/images/google-b8225d6a9b718fa1749f.svg",
+  "media/images/google_bookmark.svg": "/decidim-packs/media/images/google_bookmark-524f99e4fffb564dda37.svg",
+  "media/images/google_plus.svg": "/decidim-packs/media/images/google_plus-4118815a76b760dea8e7.svg",
+  "media/images/hacker_news.svg": "/decidim-packs/media/images/hacker_news-b117e036a024756086ab.svg",
+  "media/images/icon.svg": "/decidim-packs/media/images/icon-b430778003d66a91efc0.svg",
+  "media/images/icons.svg": "/decidim-packs/media/images/icons-c4fd0f43651700b0c768.svg",
+  "media/images/layers-2x.png": "/decidim-packs/media/images/layers-2x-8f2c4d11474275fbc161.png",
+  "media/images/layers.png": "/decidim-packs/media/images/layers-416d91365b44e4b4f477.png",
+  "media/images/linkedin.svg": "/decidim-packs/media/images/linkedin-96905a0a4097dc978626.svg",
+  "media/images/marker-icon-2x.png": "/decidim-packs/media/images/marker-icon-2x-680f69f3c2e6b90c1812.png",
+  "media/images/marker-icon.png": "/decidim-packs/media/images/marker-icon-2b3e1faf89f94a483539.png",
+  "media/images/marker-shadow.png": "/decidim-packs/media/images/marker-shadow-a0c6cc1401c107b501ef.png",
+  "media/images/odnoklassniki.svg": "/decidim-packs/media/images/odnoklassniki-cef3146ee2d5fdb32157.svg",
+  "media/images/pattern.png": "/decidim-packs/media/images/pattern-9e37fb0574a565bf2708.png",
+  "media/images/pinterest.svg": "/decidim-packs/media/images/pinterest-e1a7ea454b158f6c3fd6.svg",
+  "media/images/placeholder.jpg": "/decidim-packs/media/images/placeholder-61ceac35d772dbb11647.jpg",
+  "media/images/qq.svg": "/decidim-packs/media/images/qq-883b6ea8c69ef9ce093c.svg",
+  "media/images/reddit.svg": "/decidim-packs/media/images/reddit-f39b812702e7016a015a.svg",
+  "media/images/telegram.svg": "/decidim-packs/media/images/telegram-ca65ba180088505e1371.svg",
+  "media/images/tumblr.svg": "/decidim-packs/media/images/tumblr-4d59e5b74838fa10b52f.svg",
+  "media/images/twitter.svg": "/decidim-packs/media/images/twitter-ee390c342f9f90074a88.svg",
+  "media/images/vkontakte.svg": "/decidim-packs/media/images/vkontakte-e41f3b3192e8f0eab1d1.svg",
+  "media/images/wechat.svg": "/decidim-packs/media/images/wechat-28b576b3290e9cb55115.svg",
+  "media/images/weibo.svg": "/decidim-packs/media/images/weibo-20a80f206cb23e64c556.svg",
+  "media/images/whatsapp.svg": "/decidim-packs/media/images/whatsapp-8f3586f10ca30504aed4.svg",
+  "media/images/xing.svg": "/decidim-packs/media/images/xing-dc9a2b2304a9d39eea11.svg"
+}

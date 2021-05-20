@@ -1,0 +1,21 @@
+#not_supported_browser,
+#submit_identification_keys {
+  display: none;
+}
+#not_supported_browser.visible,
+#submit_identification_keys.visible {
+  display: inherit;
+}
+#not_supported_browser.visible + div,
+#submit_identification_keys.visible + div {
+  display: none;
+}
+
+.step_status span {
+  display: none;
+}
+.step_status[data-step-status=pending] .pending, .step_status[data-step-status=processing] .processing, .step_status[data-step-status=completed] .completed {
+  display: block;
+}
+
+/*# sourceMappingURL=decidim_elections_trustee_zone-74f87cba.css.map*/

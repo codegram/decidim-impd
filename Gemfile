@@ -3,18 +3,29 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "feat/file-uploads-question-type" }
 
-gem "decidim", DECIDIM_VERSION
+gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "develop"
+# gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch: "develop"
+# gem "decidim-consultations", git: "https://github.com/decidim/decidim.git", branch: "develop"
+# gem "decidim-elections", git: "https://github.com/decidim/decidim.git", branch: "develop"
+# gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "develop"
+# gem "decidim-templates", git: "https://github.com/decidim/decidim.git", branch: "develop"
 
-gem "puma", "~> 5"
 gem "bootsnap", "~> 1.3"
+
+gem "puma", ">= 5.0.0"
 gem "uglifier", "~> 4.1"
-gem "faker", "~> 1.9"
+
+gem "faker", "~> 2.14"
+
+gem "wicked_pdf", "~> 2.1"
+
+gem "webpacker", "6.0.0.beta.7"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
-  gem "decidim-dev", DECIDIM_VERSION
+
+  gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "develop"
 end
 
 group :development do
@@ -22,15 +33,5 @@ group :development do
   gem "listen", "~> 3.1"
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
-  gem "web-console", "~> 3.5"
-end
-
-group :production do
-  gem 'fog-aws'
-  gem 'dalli'
-  gem 'sendgrid-ruby'
-  gem 'newrelic_rpm'
-  gem 'lograge'
-  gem 'sentry-raven'
-  gem 'sidekiq'
+  gem "web-console", "~> 4.0"
 end
