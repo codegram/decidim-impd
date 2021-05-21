@@ -20,6 +20,7 @@ module Decidim
       end
 
       def valid?
+        return true if Rails.env.development?
         return false unless census_url.present?
         return false if response.blank?
 

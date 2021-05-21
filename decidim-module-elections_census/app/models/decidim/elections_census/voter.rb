@@ -23,6 +23,14 @@ module Decidim
       def unverify!
         update_column(:verified_at, nil)
       end
+
+      def voted?
+        voted_at.present?
+      end
+
+      def vote!
+        update_columns(voting_code: nil, voted_at: Time.current)
+      end
     end
   end
 end

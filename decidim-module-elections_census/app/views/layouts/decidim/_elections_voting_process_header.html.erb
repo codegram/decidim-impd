@@ -1,0 +1,26 @@
+<div class="process-header">
+  <div class="process-header__inner">
+    <div class="row column process-header__main" style="background-image:url("");"></div>
+    <div class="process-header__container row collapse column">
+      <div class="columns mediumlarge-8 process-header__info">
+        <div>
+          <h1 class="text-highlight heading2"> <%= t("elections_census.voting_title") %> </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%=
+    extended_navigation_bar([
+      {
+        name: t("elections_census.vote"),
+        url: decidim_elections_census.vote_voting_path,
+        active: is_active_link?(decidim_elections_census.vote_voting_path, :exclusive)
+      },
+      {
+        name: t("elections_census.check"),
+        url: decidim_elections_census.check_voting_path,
+        active: is_active_link?(decidim_elections_census.check_voting_path, :exclusive)
+      },
+    ])
+  %>
+</div>

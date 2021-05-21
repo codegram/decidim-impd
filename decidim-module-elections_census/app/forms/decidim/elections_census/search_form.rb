@@ -17,11 +17,13 @@ module Decidim
       validate :exists_in_census
 
       def self.from_params(params, additional_params = {})
-        year = params["voter"]["birthday(1i)"]
-        month = params["voter"]["birthday(2i)"]
-        day = params["voter"]["birthday(3i)"]
+        if params["voter"]
+          year = params["voter"]["birthday(1i)"]
+          month = params["voter"]["birthday(2i)"]
+          day = params["voter"]["birthday(3i)"]
 
-        params["voter"]["birthday"] = Date.new(year.to_i, month.to_i, day.to_i) if year.present? && month.present? && day.present?
+          params["voter"]["birthday"] = Date.new(year.to_i, month.to_i, day.to_i) if year.present? && month.present? && day.present?
+        end
 
         super(params)
       end

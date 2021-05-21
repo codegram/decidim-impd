@@ -14,3 +14,12 @@
  *= require_tree .
  *= require_self
  */
+
+.help-text, .help-text-form-required-fields {
+    font-style: normal;
+    font-size: 18px;
+}
+small.form-error {
+    font-style: normal;
+    font-size: 14px;
+}

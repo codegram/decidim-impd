@@ -3,3 +3,5 @@ ca:
     forms:
       question_type:
         files: Adjunts
+    sms:
+      text: "El teu codi per realitzar la votació és: %{code}"

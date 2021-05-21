@@ -14,6 +14,11 @@ module Decidim
           match "search" => "voters#search", as: :search, via: [:get, :post], on: :collection
         end
 
+        resource :voting, only: [:create, :new], as: :voting, controller: :voting do
+          match "vote" => "voting#vote", as: :vote, via: [:get, :post], on: :collection
+          match "check" => "voting#check", as: :check, via: [:get, :post], on: :collection
+        end
+
         root to: "voters#index"
       end
 
@@ -22,12 +27,20 @@ module Decidim
       end
 
       initializer "decidim_elections_census.menu" do |app|
+        if app.secrets.voting_active
+          Decidim.menu :menu do |menu|
+            menu.item I18n.t("menu.voting", scope: "decidim"),
+              decidim_elections_census.voting_path,
+              position: 3,
+              active: %r{^/elections\/voting/}
+          end
+        end
         if app.secrets.census_active
           Decidim.menu :menu do |menu|
             menu.item I18n.t("menu.census", scope: "decidim"),
               decidim_elections_census.root_path,
               position: 2,
-              active: %r{^/elections-census/}
+              active: %r{^/elections\/census/}
           end
         end
       end
@@ -38,5 +51,5 @@ end
 Decidim.register_global_engine(
   :decidim_elections_census,
   Decidim::ElectionsCensus::Engine,
-  at: "/elections-census"
+  at: "/elections"
 )

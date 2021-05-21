@@ -1,0 +1,9 @@
+VOTE
+          <p>
+            <%= t(".ok_instructions_1_html", disability: t(@voter.disability, scope: "decidim.elections_census.disabilities")) %>
+            <% if @voter.secondary_disability.present? %>
+              <%= t(".ok_instructions_2_html", disability: t(@voter.secondary_disability, scope: "decidim.elections_census.disabilities")) %>
+            <% end %>
+            .
+          </p>
+          <p><%= t(".ok_instructions_3_html", link: link_to(t(".ok_instructions_4_html"), new_voter_path)) %></p>

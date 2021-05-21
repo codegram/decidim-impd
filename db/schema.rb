@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_112944) do
+ActiveRecord::Schema.define(version: 2021_05_21_164638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -490,7 +490,10 @@ ActiveRecord::Schema.define(version: 2021_05_19_112944) do
     t.string "legal_guardian_second_lastname"
     t.integer "decidim_organization_id"
     t.datetime "verified_at"
+    t.string "voting_code"
+    t.datetime "voted_at"
     t.index ["document_number"], name: "index_decidim_elections_census_voters_on_document_number"
+    t.index ["voting_code"], name: "index_decidim_elections_census_voters_on_voting_code", unique: true
   end
 
   create_table "decidim_endorsements", force: :cascade do |t|

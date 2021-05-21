@@ -3,6 +3,8 @@ es:
     forms:
       question_type:
         files: Adjuntos
+    sms:
+      text: "El código para realizar la votación es: %{code}"
   activemodel:
     attributes:
       add_documents: Adjuntos

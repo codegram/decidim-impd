@@ -3,9 +3,12 @@ ca:
   elections_census:
     title: Cens electoral
     census_title: Cens electoral
+    voting_title: Votació
     intro: Informació
     new: Inscripció al cens
     search: Comprova la inscripció al cens
+    vote: Votar
+    check: Comprova el vot
   decidim:
     admin:
       actions:
@@ -21,6 +24,7 @@ ca:
         voters: Cens electoral
     menu:
       census: Cens electoral
+      voting: Eleccions
     elections_census:
       admin:
         voters: Cens electoral
@@ -42,6 +46,31 @@ ca:
         female: Dona
         male: Home
         other: No binari
+      voting:
+        vote:
+          title: Cabina de votació
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          start_voting: Pots començar la votació.
+          pending: Estàs inscrit/a al cens electoral però les teves dades encara no s'han verificat. Una vegada s'hagin verificat podràs votar.
+          not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
+          error: Hi ha hagut algun error al comprovar les teves dades.
+          already_voted: Ja has votat.
+          cant_vote_now: El vot electrònic no està obert.
+          pending_instructions_1_html: "Les teves dades consten al cens electoral, però encara no han estat verificades. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+          pending_instructions_2: Emplenar el formulari d’inscripció no garanteix el dret a vot de manera immediata. Les dades seran revisades a fi de comprovar que compleixes tots els requisits per poder votar. T’avisarem només en cas que hi hagi alguna incidència en la inscripció al cens.
+          already_voted_instructions_1_html: "Ja has emès el teu vot electrònic, si vols canviar el teu vot pots fer-ho de manera presencial."
+          already_voted_instructions_2_html: "Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>"
+          cant_vote_instructions_1_html: "El període de vot electrònic no està actiu. Recorda que es pot votar de l'1 al 16 de juny."
+          cant_vote_instructions_2_html: "Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>"
+        verify_form:
+          form_instructions_1: Per votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
+          form_instructions_2: Per començar el procés de votació, només has d’introduir les dades que demanem a les caselles inferiors.
+          form_instructions_3_html: "Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+        vote_form:
+          ok_instructions_1_html: "Estàs inscrit/a al cens <strong>%{disability}</strong>"
+          ok_instructions_2_html: "i/o <strong>%{disability}</strong>"
+          ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
+          ok_instructions_4_html: "següent formulari"
       voters:
         create:
           error: Hi ha hagut algun error amb la teva inscripció.

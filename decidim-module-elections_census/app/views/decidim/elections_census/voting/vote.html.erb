@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-10 medium-centered">
+        <% if @status == :form %>
+          <%= render partial: "verify_form" %>
+        <% elsif @status == :vote %>
+          <%= render partial: "vote_form" %>
+        <% elsif @status == :pending %>
+          <p><%= t(".pending_instructions_1_html") %></p>
+          <p><%= t(".pending_instructions_2") %></p>
+        <% elsif @status == :already_voted %>
+          <p><%= t(".already_voted_instructions_1_html") %></p>
+          <p><%= t(".already_voted_instructions_2_html") %></p>
+        <% elsif @status == :not_open %>
+          <p><%= t(".cant_vote_instructions_1_html") %></p>
+          <p><%= t(".cant_vote_instructions_2_html") %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
