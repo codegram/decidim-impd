@@ -1,30 +1,30 @@
-<div class="card">
-  <div class="card__content">
-    <div class="help-text help-text-form-required-fields">
-      <%= t(".voting_title", disability_title: t(".voting_disability_title.#{disability}"), max_votes: Decidim::ElectionsCensus::VoteForm::MAX_VOTES[disability]) %>
-    </div>
-    <div class="evote__options" data-max-selection="5" data-min-selection="1">
-      <% candidate_options(disability).each do |candidate| %>
-        <%= label_tag nil, data: { "disabled-by": "#check-nota" }, class: "evote__check evote__card", for: "vote_votes_#{candidate.value}" do %>
-          <%# <% if question.max_selections == 1 %>
-            <%#   <%= radio_button_tag question.slug, answer.slug, false, class: "answer_input" %>
-            <%# <% else %>
-              <%= check_box_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input", id: "vote_votes_#{candidate.value}" %>
-              <%# <% end %>
+<% @max_votes = Decidim::ElectionsCensus::VoteForm::MAX_VOTES[disability] %>
+<h3 class="heading3">
+  <%= t(".voting_title", disability_title: t(".voting_disability_title.#{disability}")) %>
+</h3>
+<p>
+  <%= t(".voting_subtitle", max_votes: @max_votes) %>
+</p>
 
-            <span class="evote__check-label">
-              <%= candidate.label %>
-              <%# <% if more_information?(answer) %>
-                <%#   <span class="evote__check-extra">
-                  <%#     <button type="button" class="link" data-toggle="show-focus-modal-<%= answer.slug "> %>
-                    <%#       <%= t("decidim.elections.votes.new.more_information") %>
-                    <%#     </button>
-                  <%#   </span>
-                <%# <% end %>
+<div class="evote__options" data-scope="<%= disability %>" data-max-selection="<%= @max_votes %>" data-min-selection="1">
+  <% candidate_options(disability).each do |candidate| %>
+    <%= label_tag nil, data: { "disabled-by": "#check-nota" }, class: "evote__check evote__card", for: "vote_votes_#{disability}_#{candidate.value}" do %>
+      <% if @max_votes == 1 %>
+          <%= radio_button_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input", id: "vote_votes_#{disability}_#{candidate.value}" %>
+        <% else %>
+          <%= check_box_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input", id: "vote_votes_#{disability}_#{candidate.value}" %>
+        <% end %>
+
+      <span class="evote__check-label">
+        <%= candidate.label %>
+        <% if candidate.value != "blank" %>
+          <span class="evote__check-extra">
+            <a href="https://impd.decidim.barcelona" type="button" class="link" target="_blank">
+              <%= t(".more_information") %>
+            </a>
           </span>
         <% end %>
-        <%# <%= render("new_question_modal", answer: answer) if more_information?(answer) %>
-      <% end %>
-    </div>
-  </div>
+      </span>
+    <% end %>
+  <% end %>
 </div>

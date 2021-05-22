@@ -15,7 +15,7 @@
  *= require_self
  */
 
-.help-text, .help-text-form-required-fields {
+.new_vote label, .help-text, .help-text-form-required-fields {
     font-style: normal;
     font-size: 18px;
 }

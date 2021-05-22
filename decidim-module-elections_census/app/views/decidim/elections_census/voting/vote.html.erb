@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="row collapse">
     <div class="row collapse">
-      <div class="columns large-8 large-centered text-center page-title">
+      <div class="columns large-12 large-centered text-center page-title">
         <% if @status == :form %>
           <%
               @title = t('.title')
@@ -24,9 +24,7 @@
           %>
         <% end %>
         <h1><%= @title %></h1>
-        <p>
-        <%= t('.subtitle') %>
-        </p>
+        <h2><%= t('.subtitle') %></h2>
       </div>
     </div>
     <div class="row">

@@ -96,6 +96,10 @@ module Decidim
         true
       end
 
+      def voter
+        @voter ||= Voter.where(id: voter_id).first
+      end
+
       private
 
       def intregrity
@@ -128,10 +132,6 @@ module Decidim
 
       def code_voter
         @code_voter ||= Voter.find_by(voting_code: voting_code.to_s.upcase)
-      end
-
-      def voter
-        @voter ||= Voter.where(id: voter_id).first
       end
 
       def correct_password

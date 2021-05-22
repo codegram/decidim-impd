@@ -6,7 +6,7 @@ es:
     sms:
       text: "El código para realizar la votación es: %{code}"
   candidates:
-    blank: "En blanco"
+    blank: "Voto en blanco"
     physical:
       carme_riu_pascual: "Carme Riu Pascual (Barcelona també és nostra)"
       bertrand_de_five_pragner: "Bertrand de Five Pragner (Barcelona també és nostra)"

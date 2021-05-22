@@ -29,6 +29,7 @@ module Decidim
           redirect_to "/"
         else
           @form.valid?
+          render layout: "decidim/elections_vote"
           set_voting_status :vote
         end
       end
@@ -44,6 +45,7 @@ module Decidim
             set_form VoteForm.new(voter_id: voter.id, voting_digest: voter.password_digest)
             set_voting_status :vote
             set_voter voter
+            render layout: "decidim/elections_vote"
           end
 
           on(:pending) do

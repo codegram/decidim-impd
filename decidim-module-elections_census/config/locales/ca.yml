@@ -9,6 +9,10 @@ ca:
     search: Comprova la inscripció al cens
     vote: Votar
     check: Comprova el vot
+  layouts:
+    decidim:
+      elections_vote:
+        exit: Sortir
   decidim:
     admin:
       actions:
@@ -78,7 +82,9 @@ ca:
           ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
           ok_instructions_4_html: "següent formulari"
         vote_options:
-          voting_title: "Sector de persones %{disability_title}. Pots votar un màxim de %{max_votes} persones."
+          voting_title: "Sector de persones %{disability_title}."
+          voting_subtitle: "Pots votar un màxim de %{max_votes} persones."
+          more_information: Més informació
           voting_disability_title:
             physical: amb discapacitat física o orgànica
             intellectual: amb discapacitat intel·lectual

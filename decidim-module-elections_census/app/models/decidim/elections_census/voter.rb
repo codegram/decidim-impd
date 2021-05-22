@@ -12,6 +12,10 @@ module Decidim
       scope :verified, -> { where.not(verified_at: nil) }
       scope :unverified, -> { where(verified_at: nil) }
 
+      def full_name
+        [name, lastname, second_lastname].join(" ")
+      end
+
       def verified?
         verified_at.present?
       end
