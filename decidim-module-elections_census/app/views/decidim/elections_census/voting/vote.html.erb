@@ -2,9 +2,30 @@
   <div class="row collapse">
     <div class="row collapse">
       <div class="columns large-8 large-centered text-center page-title">
-        <h1><%= t(".title") %></h1>
+        <% if @status == :form %>
+          <%
+              @title = t('.title')
+          %>
+        <% elsif @status == :vote %>
+          <%
+              @title = t('.vote_title')
+          %>
+        <% elsif @status == :pending %>
+          <%
+              @title = t('.title')
+          %>
+        <% elsif @status == :already_voted %>
+          <%
+              @title = t('.title')
+          %>
+        <% elsif @status == :not_open %>
+          <%
+              @title = t('.title')
+          %>
+        <% end %>
+        <h1><%= @title %></h1>
         <p>
-        <%= t(".subtitle") %>
+        <%= t('.subtitle') %>
         </p>
       </div>
     </div>

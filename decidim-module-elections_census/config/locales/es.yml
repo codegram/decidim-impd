@@ -67,10 +67,21 @@ es:
         form_instructions_2: "Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores."
         form_instructions_3_html: "Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
       vote_form:
+        title: Cabina de votación
+        subtitle: Selecciona las personas que quieres votar.
+        voting_code_help: Introduce el código que has recibido por SMS.
+        preview: Enviar y previsualizar
         ok_instructions_1_html: "Estás inscrito/a en el censo <strong>%{disability}</strong>"
         ok_instructions_2_html: "o <strong>%{disability}</strong>"
         ok_instructions_3_html: "Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}"
         ok_instructions_4_html: "siguiente formulario."
+        voting_title: "Sector de personas %{disability_title}. Puedes votar a un máximo de %{max_votes} personas."
+        voting_disability_title:
+          physical: con discapacidad física o orgánica
+          intellectual: con discapacidad intelectual
+          auditory_sensory: con discapacidad auditiva
+          visual_sensory: con discapacidad visual
+          mental_disorder: en situación de transtorno de salut mental
       voters:
         create:
           error: Ha habido algun error con tu inscripción.
@@ -162,6 +173,8 @@ es:
         created_at: Fecha de creación
         disability_certificate: Documento acreditativo de la discapacidad
         family_book: Libro de família
+      vote:
+        voting_code: Código de votación
     errors:
       models:
         answer:
@@ -172,6 +185,8 @@ es:
           email_or_phone_required: Tienes que introduir el correo electrónico o el teléfono
           must_be_different: Tiene que ser diferente de la discapacidad principal
           invalid_census: No existen estos datos en el padrón
+        voting:
+          phone_overuse: "Este número de teléfono ya se ha utilizado en otro voto."
   errors:
     messages:
       carrierwave_processing_error: no pudo ser procesado

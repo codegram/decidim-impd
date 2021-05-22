@@ -45,6 +45,7 @@ module Decidim
           generate_unique_code
         else
           voter.with_lock do
+            voter.mobile_phone_number = form.mobile_phone_number
             voter.voting_code = code
             voter.save!
           end
@@ -56,8 +57,8 @@ module Decidim
       def time_to_vote?
         return true
 
-        voting_starts = Time.new(2021, 6, 1, 0, 0, 0, "+02:00")
-        voting_ends = Time.new(2021, 6, 16, 23, 59, 59, "+02:00")
+        voting_starts = Rails.application.secrets.voting_starts
+        voting_ends = Rails.application.secrets.voting_ends
 
         Time.current >= voting_starts && Time.current <= voting_ends
       end

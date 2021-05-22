@@ -5,3 +5,32 @@ ca:
         files: Adjunts
     sms:
       text: "El teu codi per realitzar la votació és: %{code}"
+  candidates:
+    blank: "En blanc"
+    physical:
+      carme_riu_pascual: "Carme Riu Pascual (Barcelona també és nostra)"
+      bertrand_de_five_pragner: "Bertrand de Five Pragner (Barcelona també és nostra)"
+      vanessa_fuentes_heredero: "Vanessa Fuentes Heredero (Barcelona també és nostra)"
+      angel_urraca_bresciani: "Àngel Urraca Bresciani (Barcelona també és nostra)"
+      neus_mora_fernandez: "Neus Mora Fernández (Barcelona també és nostra)"
+      cesar_leon_ortega: "César León Ortega (Per una Barcelona per a tothom)"
+      ana_sune_peremiquel: "Ana Suñé Peremiquel (Per una Barcelona per a tothom)"
+      xavier_duacastilla_soler: "Xavier Duacastilla Soler (Per una Barcelona per a tothom)"
+      leticia_esporrin_sanclemente: "Leticia Esporrin Sanclemente (Per una Barcelona per a tothom)"
+      antonio_de_senillosa_de_olano_nico: "Antonio de Senillosa de Olano - Nico (Per una Barcelona per a tothom)"
+      francisco_javier_ona_sobrino: "Francisco Javier de Oña Sobrino"
+      oriol_roqueta_del_rio: "Oriol Roqueta del Río"
+    mental_disorder:
+      marta_delgadillo_fernandez: "Marta Delgadillo Fernández"
+      raquel_montllor_linares: "Raquel Montllor Linares"
+    intellectual:
+      montserrat_vilarrasa_monclus: "Montserrat Vilarrasa Monclús"
+      carles_marine_gea: "Carles Mariné Gea"
+      miquel_serra_albiac: "Miquel Serra Albiac"
+      carmen_piquer_piquer: "Carmen Piquer Piquer"
+    auditory_sensory:
+      encarna_munoz_chamorro: "Encarna Muñoz Chamorro"
+      rafel_tixe_milian: "Rafel Tixé i Milian"
+    visual_sensory:
+      anais_garcia_balmana: "Anaïs García Balmaña"
+      paquita_garcia_caballer: "Paquita García Caballero"

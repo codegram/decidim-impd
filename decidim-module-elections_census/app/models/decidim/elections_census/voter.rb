@@ -31,6 +31,21 @@ module Decidim
       def vote!
         update_columns(voting_code: nil, voted_at: Time.current)
       end
+
+      def password
+        @password ||= [
+          id,
+          voting_code,
+          document_type,
+          document_number,
+          mobile_phone_number,
+          Rails.application.secret_key_base
+        ].join("-")
+      end
+
+      def password_digest
+        BCrypt::Password.create(password)
+      end
     end
   end
 end
