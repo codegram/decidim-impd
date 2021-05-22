@@ -38,6 +38,7 @@
           <p><%= t(".cant_vote_instructions_2_html") %></p>
         <% elsif @status == :vote_casted %>
           <p>Vote casted</p>
+          <p><%= @vote.receipt %></p>
         <% else  %>
           <p>Missing valid status</p>
         <% end %>

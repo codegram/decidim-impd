@@ -3,7 +3,8 @@
 module Decidim
   module ElectionsCensus
     class VotingController < ApplicationController
-      layout "decidim/elections_voting"
+      include Rectify::ControllerHelpers
+      layout :choose_layout
       include Decidim::FormFactory
       helper_method :candidate_proposal_ids
 
@@ -23,6 +24,14 @@ module Decidim
 
       private
 
+      def choose_layout
+        if @status == :vote || @status == :preview || @status == :vote_casted
+          "decidim/elections_vote"
+        else
+          "decidim/elections_voting"
+        end
+      end
+
       def handle_vote
         @form = form(VoteForm).from_params(params)
         return redirect_to "/" if @form.tampered?
@@ -34,23 +43,40 @@ module Decidim
         elsif @form.valid? && !@form.preview? && params[:edit_vote]
           @status = :vote
         elsif @form.valid? && !@form.preview?
-          @status = :vote_casted
-        end
+          CastVote.call(@form) do
+            on(:ok) do |vote|
+              flash.now[:notice] = I18n.t("voting.vote.vote_casted", scope: "decidim.elections_census")
+              expose(vote: vote, status: :vote_casted)
+            end
 
-        render layout: "decidim/elections_vote"
+            on(:voting_not_open) do
+              flash.now[:warning] = I18n.t("voting.vote.cant_vote_now", scope: "decidim.elections_census")
+              set_voting_status :not_open
+            end
+
+            on(:invalid) do
+              flash.now[:alert] = I18n.t("voting.vote.error", scope: "decidim.elections_census")
+              set_voting_status :vote
+            end
+
+            on(:error) do
+              flash.now[:alert] = I18n.t("voting.vote.cast_vote_failed", scope: "decidim.elections_census")
+              set_voting_status :vote
+            end
+          end
+        end
       end
 
       def handle_voter_verification
         @form = form(VotingForm).from_params(params)
         @status = nil
-        @voter = nil
 
         VerifyVoter.call(@form) do
           on(:ok) do |voter|
             flash.now[:notice] = I18n.t("voting.vote.start_voting", scope: "decidim.elections_census")
-            set_form VoteForm.new(voter_id: voter.id, voting_digest: voter.password_digest)
+            expose(form: VoteForm.new(voter_id: voter.id, voting_digest: voter.password_digest))
             set_voting_status :vote
-            set_voter voter
+            expose(voter: voter)
             render layout: "decidim/elections_vote"
           end
 
@@ -84,14 +110,6 @@ module Decidim
 
       def set_voting_status(status)
         @status = status
-      end
-
-      def set_voter(voter)
-        @voter = voter
-      end
-
-      def set_form(form)
-        @form = form
       end
 
       def candidate_proposal_ids

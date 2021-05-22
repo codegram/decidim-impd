@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_164638) do
+ActiveRecord::Schema.define(version: 2021_05_22_204032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "decidim_accountability_results", id: :serial, force: :cascade do |t|
@@ -494,6 +495,13 @@ ActiveRecord::Schema.define(version: 2021_05_21_164638) do
     t.datetime "voted_at"
     t.index ["document_number"], name: "index_decidim_elections_census_voters_on_document_number"
     t.index ["voting_code"], name: "index_decidim_elections_census_voters_on_voting_code", unique: true
+  end
+
+  create_table "decidim_elections_census_votes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "code", null: false
+    t.jsonb "votes", null: false
+    t.string "receipt", null: false
+    t.index ["code"], name: "index_decidim_elections_census_votes_on_code", unique: true
   end
 
   create_table "decidim_endorsements", force: :cascade do |t|

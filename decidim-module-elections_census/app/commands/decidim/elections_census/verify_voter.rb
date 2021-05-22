@@ -41,7 +41,7 @@ module Decidim
         range = [*'0'..'9',*'A'..'Z']
         code = Array.new(8) { range.sample }.join
 
-        if Voter.where(voting_code: code).exists?
+        if Voter.where(voting_code: code).exists?  || Vote.where(code: code).exists?
           generate_unique_code
         else
           voter.with_lock do
