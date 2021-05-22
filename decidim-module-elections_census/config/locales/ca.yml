@@ -54,6 +54,7 @@ ca:
         vote:
           title: Identificació del/de la votant
           vote_title: Cabina de votació
+          preview_title: Confirmació de vot
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
           start_voting: Pots començar la votació.
           pending: Estàs inscrit/a al cens electoral però les teves dades encara no s'han verificat. Una vegada s'hagin verificat podràs votar.
@@ -91,6 +92,11 @@ ca:
             auditory_sensory: amb discapacitat auditiva
             visual_sensory: amb discapacitat visual
             mental_disorder: en situació de transtorn de salut mental
+        vote_preview:
+          available_answers: "Candidatures escollides:"
+          edit: "Modificar el meu vot"
+          vote: "Votar"
+          confirm_vote: "Vols continuar? Una vegada emès el teu vot només es pot canviar de manera presencial."
       voters:
         create:
           error: Hi ha hagut algun error amb la teva inscripció.

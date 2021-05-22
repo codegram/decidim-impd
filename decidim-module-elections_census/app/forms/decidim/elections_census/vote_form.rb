@@ -53,6 +53,7 @@ module Decidim
       attribute :voting_digest, String
       attribute :votes, Hash
       attribute :voter_id, Integer
+      attribute :preview, Boolean
 
       validates :voter_id, :voter, :voting_code, :voting_digest, presence: true
       validate :voting_code_exists
@@ -102,7 +103,7 @@ module Decidim
 
       private
 
-      def intregrity
+      def integrity
         errors.add(:base, :invalid) if tampered?
       end
 
@@ -136,8 +137,8 @@ module Decidim
 
       def correct_password
         return if voting_digest.blank?
+        return if code_voter.blank?
 
-        return errors.add(:voting_code, :invalid) if code_voter.blank?
         return errors.add(:voting_code, :invalid) if code_voter.id != voter.id
 
         return if BCrypt::Password.new(voting_digest) == code_voter.password

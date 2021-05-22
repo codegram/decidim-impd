@@ -3,25 +3,17 @@
     <div class="row collapse">
       <div class="columns large-12 large-centered text-center page-title">
         <% if @status == :form %>
-          <%
-              @title = t('.title')
-          %>
+          <% @title = t('.title') %>
         <% elsif @status == :vote %>
-          <%
-              @title = t('.vote_title')
-          %>
+          <% @title = t('.vote_title') %>
+        <% elsif @status == :preview %>
+          <% @title = t('.preview_title') %>
         <% elsif @status == :pending %>
-          <%
-              @title = t('.title')
-          %>
+          <% @title = t('.title') %>
         <% elsif @status == :already_voted %>
-          <%
-              @title = t('.title')
-          %>
+          <% @title = t('.title') %>
         <% elsif @status == :not_open %>
-          <%
-              @title = t('.title')
-          %>
+          <% @title = t('.title') %>
         <% end %>
         <h1><%= @title %></h1>
         <h2><%= t('.subtitle') %></h2>
@@ -33,6 +25,8 @@
           <%= render partial: "verify_form" %>
         <% elsif @status == :vote %>
           <%= render partial: "vote_form" %>
+        <% elsif @status == :preview %>
+          <%= render partial: "vote_preview" %>
         <% elsif @status == :pending %>
           <p><%= t(".pending_instructions_1_html") %></p>
           <p><%= t(".pending_instructions_2") %></p>
@@ -42,8 +36,68 @@
         <% elsif @status == :not_open %>
           <p><%= t(".cant_vote_instructions_1_html") %></p>
           <p><%= t(".cant_vote_instructions_2_html") %></p>
+        <% elsif @status == :vote_casted %>
+          <p>Vote casted</p>
+        <% else  %>
+          <p>Missing valid status</p>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<% if @status == :vote %>
+  <script type="text/javascript">
+    $(() => {
+        const $form = $("form.new_vote");
+        const handleOptionSelected = (event) => {
+          const $target = $(event.target);
+          const $label = $target.parents("label");
+          const $parent = $target.parents(".evote__options");
+          const $options = $parent.find(".answer_input.candidate");
+
+          if ($label.attr("aria-disabled") || $label.hasClass("is-disabled")) {
+            $target.prop("checked", false);
+          }
+
+          const blankChecked = $parent.find(".answer_input.blank").prop("checked") === true;
+          const maxOptionsSelected = $parent.find(".answer_input:checked").length === $parent.data("max-selection");
+
+          $options.each((_index, element) => {
+            $element = $(element);
+            if (blankChecked || maxOptionsSelected && $element.prop('checked') === false) {
+              $element.parents("label").addClass("is-disabled");
+              $element.parents("label").attr("aria-disabled", "");
+              $element.prop("checked", false);
+            } else {
+              $element.parents("label").removeClass("is-disabled");
+              $element.parents("label").removeAttr("aria-disabled");
+            }
+          });
+        };
+
+        const enoughOptionsSelected = () => {
+          $questions = $form.find(".evote__options");
+          $submit = $form.find(".actions button");
+
+          let minimumOptionsSelected = $questions.toArray().every((question) => {
+            $question = $(question);
+            let optionsSelected = $question.find(".answer_input:checked").length;
+            return optionsSelected >= $question.data("min-selection");
+          });
+
+          if (minimumOptionsSelected) {
+            $submit.removeAttr('disabled');
+          } else {
+            $submit.attr('disabled', 'disabled');
+          }
+        }
+
+        $form.find("input[type=checkbox].answer_input").on("change", (event) => {
+          handleOptionSelected(event);
+          enoughOptionsSelected();
+        });
+
+        enoughOptionsSelected();
+      })
+  </script>
+<% end %>

@@ -10,16 +10,16 @@
   <% candidate_options(disability).each do |candidate| %>
     <%= label_tag nil, data: { "disabled-by": "#check-nota" }, class: "evote__check evote__card", for: "vote_votes_#{disability}_#{candidate.value}" do %>
       <% if @max_votes == 1 %>
-          <%= radio_button_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input", id: "vote_votes_#{disability}_#{candidate.value}" %>
+          <%= radio_button_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input #{(candidate.value == 'blank' ? 'blank': 'candidate')}", id: "vote_votes_#{disability}_#{candidate.value}" %>
         <% else %>
-          <%= check_box_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input", id: "vote_votes_#{disability}_#{candidate.value}" %>
+          <%= check_box_tag "vote[votes][#{disability}][]", candidate.value, @form.option_selected?(disability, candidate.value), class: "answer_input #{(candidate.value == 'blank' ? 'blank': 'candidate')}", id: "vote_votes_#{disability}_#{candidate.value}" %>
         <% end %>
 
       <span class="evote__check-label">
         <%= candidate.label %>
         <% if candidate.value != "blank" %>
           <span class="evote__check-extra">
-            <a href="https://impd.decidim.barcelona" type="button" class="link" target="_blank">
+            <a href="https://impd.decidim.barcelona/processes/eleccions-consell-rector-impd-2021/f/3/proposals/<%= candidate_proposal_ids[candidate.value] %>" type="button" class="link" target="_blank">
               <%= t(".more_information") %>
             </a>
           </span>

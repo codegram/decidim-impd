@@ -5,6 +5,7 @@ module Decidim
     class VotingController < ApplicationController
       layout "decidim/elections_voting"
       include Decidim::FormFactory
+      helper_method :candidate_proposal_ids
 
       def check
       end
@@ -24,14 +25,19 @@ module Decidim
 
       def handle_vote
         @form = form(VoteForm).from_params(params)
+        return redirect_to "/" if @form.tampered?
 
-        if @form.tampered?
-          redirect_to "/"
-        else
-          @form.valid?
-          render layout: "decidim/elections_vote"
-          set_voting_status :vote
+        if !@form.valid?
+          @status = :vote
+        elsif @form.valid? && @form.preview?
+          @status = :preview
+        elsif @form.valid? && !@form.preview? && params[:edit_vote]
+          @status = :vote
+        elsif @form.valid? && !@form.preview?
+          @status = :vote_casted
         end
+
+        render layout: "decidim/elections_vote"
       end
 
       def handle_voter_verification
@@ -86,6 +92,33 @@ module Decidim
 
       def set_form(form)
         @form = form
+      end
+
+      def candidate_proposal_ids
+        {
+          carme_riu_pascual: "9",
+          bertrand_de_five_pragner: "15",
+          vanessa_fuentes_heredero: "16",
+          angel_urraca_bresciani: "17",
+          neus_mora_fernandez: "18",
+          cesar_leon_ortega: "11",
+          ana_sune_peremiquel: "19",
+          xavier_duacastilla_soler: "20",
+          leticia_esporrin_sanclemente: "21",
+          antonio_de_senillosa_de_olano_nico: "22",
+          francisco_javier_ona_sobrino: "6",
+          oriol_roqueta_del_rio: "13",
+          marta_delgadillo_fernandez: "10",
+          raquel_montllor_linares: "1",
+          montserrat_vilarrasa_monclus: "3",
+          carles_marine_gea: "4",
+          miquel_serra_albiac: "7",
+          carmen_piquer_pique: "14",
+          encarna_munoz_chamorro: "8",
+          rafel_tixe_milian: "2",
+          anais_garcia_balmana: "5",
+          paquita_garcia_caballer: "12"
+        }
       end
     end
   end
