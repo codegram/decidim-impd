@@ -16,12 +16,14 @@ module Decidim
           match :import, on: :collection, via: [:get, :post]
           get :export, on: :collection
         end
+
+        match :spoil_vote, via: [:get, :post], to: "votes#spoil"
         root to: "voters#index"
       end
 
       initializer "decidim_elections_census_admin.routes" do
         Decidim::Admin::Engine.routes do
-          mount Decidim::ElectionsCensus::AdminEngine => "/elections-census"
+          mount Decidim::ElectionsCensus::AdminEngine => "/elections"
         end
       end
 

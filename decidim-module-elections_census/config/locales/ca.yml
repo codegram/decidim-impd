@@ -19,20 +19,29 @@ ca:
       actions:
         verify: Verificar
         unverify: Desverificar
+        spoil_vote: Anul·lar vot
       voters:
         index:
-          pending: Pendents de verificar
-          verified: Verificats
+          pending: Cens pendents de verificar
+          verified: Cens verificat
           import: Importar cens
           export: Exportar pendents de verificar
+          votes: Vots
       titles:
         voters: Cens electoral
+        votes: Vots
+        elections: Eleccions
+        spoil_vote: Anul·lar vot
     menu:
       census: Cens electoral
       voting: Eleccions
     elections_census:
+      admin_log:
+        spoil_vote: "%{user_name} ha anul·lat el vot %{vote_receipt}"
+        verify_voter: "%{user_name} ha verificat el votant %{document_number}"
+        unverify_voter: "%{user_name} ha desverificat el votant %{document_number}"
       admin:
-        voters: Cens electoral
+        voters: Eleccions
       document_types:
         dni: DNI
         passport: Passaport
@@ -52,13 +61,6 @@ ca:
         male: Home
         other: No binari
       voting:
-        check:
-          check_failed: Error en la comprovació
-          check_ok: Comprovació correcta
-          vote_tampered: El teu vot existeix però ha estat modificat i no és vàlid. Posa't en contacte amb l'IMPD.
-          exists_but_spoiled: El teu vot existeix, però no es tindrà en compte al recompte perquè ha estat anul·lat.
-          exists: El teu vot existeix i formarà part del recompte.
-          no_vote_with_receipt: No existeix cap vot amb aquest rebut.
         vote:
           title: Identificació del/de la votant
           vote_title: Cabina de votació
@@ -81,21 +83,6 @@ ca:
           form_instructions_1: Per votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
           form_instructions_2: Per començar el procés de votació, només has d’introduir les dades que demanem a les caselles inferiors.
           form_instructions_3_html: "Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
-        check_vote_form:
-          title: Comprova el teu vot
-          subtitle: Aquí pots verificar que el teu vot s'ha emès correctament i que serà utilitzat en el recompte.
-          receipt_help: "Introdueix el codi que has obtingut al finalitzar la votació electrònica."
-          send: Enviar
-        vote_form:
-          title: Cabina de votació
-          subtitle: Selecciona les persones que vols votar.
-          voting_code_help: Introdueix el codi que has rebut per SMS.
-          voting_errors: "S'han produït els següents errors:"
-          preview: Enviar i previsualitzar
-          ok_instructions_1_html: "Estàs inscrit/a al cens <strong>%{disability}</strong>"
-          ok_instructions_2_html: "i/o <strong>%{disability}</strong>"
-          ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
-          ok_instructions_4_html: "següent formulari"
         vote_options:
           voting_title: "Sector de persones %{disability_title}."
           voting_subtitle: "Pots votar un màxim de %{max_votes} persones."
@@ -106,16 +93,48 @@ ca:
             auditory_sensory: amb discapacitat auditiva
             visual_sensory: amb discapacitat visual
             mental_disorder: en situació de transtorn de salut mental
+        vote_form:
+          title: Cabina de votació
+          subtitle: Selecciona les persones que vols votar.
+          voting_code_help: Introdueix el codi que has rebut per SMS.
+          voting_errors: "S'han produït els següents errors:"
+          preview: Enviar i previsualitzar
+          ok_instructions_1_html: "Estàs inscrit/a al cens <strong>%{disability}</strong>"
+          ok_instructions_2_html: "i/o <strong>%{disability}</strong>"
+          ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
+          ok_instructions_4_html: "següent formulari"
         vote_preview:
           available_answers: "Candidatures escollides:"
           edit: "Modificar el meu vot"
           vote: "Votar"
           confirm_vote: "Vols continuar? Una vegada emès el teu vot només es pot canviar de manera presencial."
+        check:
+          check_failed: Error en la comprovació
+          check_ok: Comprovació correcta
+          vote_tampered: El teu vot existeix però ha estat modificat i no és vàlid. Posa't en contacte amb l'IMPD.
+          exists_but_spoiled: El teu vot existeix, però no es tindrà en compte al recompte perquè ha estat anul·lat.
+          exists: El teu vot existeix i formarà part del recompte.
+          no_vote_with_receipt: No existeix cap vot amb aquest rebut.
+        check_vote_form:
+          title: Comprova el teu vot
+          subtitle: Aquí pots verificar que el teu vot s'ha emès correctament i que serà utilitzat en el recompte.
+          receipt_help: "Introdueix el codi que has obtingut al finalitzar la votació electrònica."
+          send: Enviar
         vote_casted:
           vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
           vote_receipt: "Aquest és el número d’identificació del teu vot: "
           verify_vote: "Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de "
           verify_vote_link: "comprovació del vot"
+      votes:
+        spoil:
+          success: "Vot anul·lat correctament"
+          error: "Hi ha algun error al formulari"
+          voter_not_found: "No existeix cap votant al cens amb aquestes dades"
+          vote_not_found: "No existeix cap vot amb aquestes dades"
+          not_verified: "El votant no està verificat al cens"
+          not_voted: "El votant no ha votat electrònicament"
+          already_spoiled: "Aquest vot ja ha estat anul·lat"
+          spoiling_not_open: "En aquests moments no està permès anul·lar vots"
       voters:
         create:
           error: Hi ha hagut algun error amb la teva inscripció.
@@ -178,6 +197,14 @@ ca:
       add_documents: Adjunts
       answer:
         add_documents: Adjunts
+      spoil:
+        document_type: Tipus de document
+        document_number: Número de document
+        birthday: Data de naixement
+        disability: Discapacitat principal
+        secondary_disability: Discapacitat secundària
+        vote_receipt: Rebut del vot
+        voting_code: Codi de votació
       voter:
         document_type: Tipus de document
         document_number: Número de document
@@ -209,6 +236,8 @@ ca:
         family_book: Llibre de família
       vote:
         voting_code: Codi de votació
+        spoiled_at: Data d'anul·lació
+        receipt: Rebut del vot
       check:
         receipt: Rebut del vot
     errors:

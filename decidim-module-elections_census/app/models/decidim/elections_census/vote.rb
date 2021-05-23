@@ -3,6 +3,9 @@
 module Decidim
   module ElectionsCensus
     class Vote < ApplicationRecord
+      include Decidim::Traceable
+      include Decidim::Loggable
+
       CANDIDATES = {
         physical: [
           :carme_riu_pascual,
@@ -55,7 +58,8 @@ module Decidim
       end
 
       def spoil!
-        update_column(:spoiled_at, Time.current)
+        self.spoiled_at = Time.current
+        save!
       end
 
       def generate_receipt
@@ -78,6 +82,10 @@ module Decidim
 
       def receipt_valid?(other_receipt)
         receipt == other_receipt
+      end
+
+      def self.log_presenter_class_for(_log)
+        Decidim::ElectionsCensus::AdminLog::VotePresenter
       end
     end
   end

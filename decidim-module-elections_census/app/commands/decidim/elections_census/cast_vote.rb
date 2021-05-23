@@ -29,7 +29,6 @@ module Decidim
           )
         end
       rescue ActiveRecord::ActiveRecordError => exception
-        byebug
         @vote = nil
       end
 
@@ -38,12 +37,12 @@ module Decidim
       end
 
       def time_to_vote?
-        return true
+        return true if Rails.env.development?
 
         voting_starts = Rails.application.secrets.voting_starts
         voting_ends = Rails.application.secrets.voting_ends
 
-        Time.current >= voting_starts && Time.current <= voting_ends
+        Time.current.between?(voting_starts, voting_ends)
       end
     end
   end

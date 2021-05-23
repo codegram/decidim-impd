@@ -23,9 +23,11 @@ module Decidim
       private
 
       def deliver_sms
-        return true if Rails.env.development?
-
-        SmsGateway.new(form.mobile_phone_number, generate_unique_code).deliver_code
+        if Rails.env.development?
+          generate_unique_code
+        else
+          SmsGateway.new(form.mobile_phone_number, generate_unique_code).deliver_code
+        end
       end
 
       def voter

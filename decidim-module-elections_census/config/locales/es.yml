@@ -19,20 +19,29 @@ es:
       actions:
         verify: Verificar
         unverify: Desverificar
+        spoil_vote: Anular voto
       voters:
         index:
-          pending: Pendientes de verificar
-          verified: Verificados
+          pending: Censo pendientes de verificar
+          verified: Censo verificado
           import: Importar censo
           export: Exportar pendientes de verificar
+          votes: Votos
       titles:
         voters: Censo electoral
+        votes: Votos
+        elections: Elecciones
+        spoil_vote: Anular voto
     menu:
       census: Censo electoral
       voting: Elecciones
     elections_census:
+      admin_log:
+        spoil_vote: "%{user_name} ha anulado el voto %{vote_receipt}"
+        verify_voter: "%{user_name} ha verificado el votante %{document_number}"
+        unverify_voter: "%{user_name} ha desverificado el votante %{document_number}"
       admin:
-        voters: Censo electoral
+        voters: Elecciones
       document_types:
         dni: DNI
         passport: Pasaporte
@@ -116,6 +125,16 @@ es:
           vote_receipt: "Este es el número de identificación de tu voto:"
           verify_vote: "Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de "
           verify_vote_link: "comprobación del voto"
+      votes:
+        spoil:
+           success: "Voto anulado correctamente"
+           error: "Hay algún error en el formulario"
+           voter_not_found: "No existe ningún votante en el censo con estos datos"
+           vote_not_found: "No existe ningún voto con estos datos"
+           not_verified: "El votante no está verificado en el censo"
+           not_voted: "El votante no ha votado electrónicamente"
+           already_spoiled: "Este voto ya ha sido anulado"
+           spoiling_not_open: "En estos momentos no está permitido anular votos"
       voters:
         create:
           error: Ha habido algun error con tu inscripción.
@@ -178,6 +197,14 @@ es:
       add_documents: Adjuntos
       answer:
         add_documents: Adjuntos
+      spoil:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        birthday: Fecha de nacimiento
+        disability: Discapacidad principal
+        secondary_disability: Discapacidad secundaria
+        vote_receipt: Recibo del voto
+        voting_code: Código de votación
       voter:
         document_type: Tipo de documento
         document_number: Número de documento
@@ -209,6 +236,8 @@ es:
         family_book: Libro de família
       vote:
         voting_code: Código de votación
+        spoiled_at: Fecha de anulación
+        receipt: Recibo del voto
       check:
         receipt: Recibo del voto
     errors:
