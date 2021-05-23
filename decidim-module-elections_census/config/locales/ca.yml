@@ -28,6 +28,7 @@ ca:
           export: Exportar pendents de verificar
           export_for_elections: Exportar cens verificat
           votes: Vots
+          tally: Recompte de vots
       titles:
         voters: Cens electoral
         votes: Vots
@@ -43,6 +44,14 @@ ca:
         unverify_voter: "%{user_name} ha desverificat el votant %{document_number}"
       admin:
         voters: Eleccions
+        tally:
+          show:
+            export_votes: Exportar vots
+            cant_export_votes_yet: No es poden exportar els vots fins que no finalitzi el procés de votació.
+            tally_votes: Recompte de vots
+            perform_tally: Recomptar
+            unencrypted_votes: Vots desencriptats
+            tally_results: Resultat del recompte
       document_types:
         dni: DNI
         passport: Passaport

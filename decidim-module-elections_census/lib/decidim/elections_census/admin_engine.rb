@@ -19,6 +19,8 @@ module Decidim
         end
 
         match :spoil_vote, via: [:get, :post], to: "votes#spoil"
+        get :tally, to: "tally#show"
+        get "tally/export_votes", to: "tally#export_votes"
         root to: "voters#index"
       end
 
