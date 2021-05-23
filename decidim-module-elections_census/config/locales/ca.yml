@@ -3,7 +3,7 @@ ca:
   elections_census:
     title: Cens electoral
     census_title: Cens electoral
-    voting_title: Votació
+    voting_title: Eleccions
     intro: Informació
     new: Inscripció al cens
     search: Comprova la inscripció al cens
@@ -51,6 +51,13 @@ ca:
         male: Home
         other: No binari
       voting:
+        check:
+          check_failed: Error en la comprovació
+          check_ok: Comprovació correcta
+          vote_tampered: El teu vot existeix però ha estat modificat i no és vàlid. Posa't en contacte amb l'IMPD.
+          exists_but_spoiled: El teu vot existeix, però no es tindrà en compte al recompte perquè ha estat anul·lat.
+          exists: El teu vot existeix i formarà part del recompte.
+          no_vote_with_receipt: No existeix cap vot amb aquest rebut.
         vote:
           title: Identificació del/de la votant
           vote_title: Cabina de votació
@@ -73,11 +80,16 @@ ca:
           form_instructions_1: Per votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
           form_instructions_2: Per començar el procés de votació, només has d’introduir les dades que demanem a les caselles inferiors.
           form_instructions_3_html: "Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+        check_vote_form:
+          title: Comprova el teu vot
+          subtitle: Aquí pots verificar que el teu vot s'ha emès correctament i que serà utilitzat en el recompte.
+          receipt_help: "Introdueix el codi que has obtingut al finalitzar la votació electrònica."
+          send: Enviar
         vote_form:
           title: Cabina de votació
           subtitle: Selecciona les persones que vols votar.
           voting_code_help: Introdueix el codi que has rebut per SMS.
-          voting_errors: "S'han produit els següents errors:"
+          voting_errors: "S'han produït els següents errors:"
           preview: Enviar i previsualitzar
           ok_instructions_1_html: "Estàs inscrit/a al cens <strong>%{disability}</strong>"
           ok_instructions_2_html: "i/o <strong>%{disability}</strong>"
@@ -196,6 +208,8 @@ ca:
         family_book: Llibre de família
       vote:
         voting_code: Codi de votació
+      check:
+        receipt: Rebut del vot
     errors:
       models:
         answer:
@@ -209,7 +223,7 @@ ca:
         voting:
           phone_overuse: Aquest número de telèfon ja s'ha utilitzat en un altre vot.
         vote:
-          too_many_votes: Has seleccionat massa persones.
+          too_many_votes: Has seleccionat massa opcions.
           at_least_one_vote: Has de seleccionar almenys una opció de vot per cada candidatura.
           invalid_options: Alguna de les opcions seleccionades no és vàlida.
   errors:

@@ -9,6 +9,10 @@ es:
     search: Comprueba la inscripción en el censo
     vote: Votar
     check: Comprueba el voto
+  layouts:
+    decidim:
+      elections_vote:
+        exit: Salir
   decidim:
     admin:
       actions:
@@ -47,8 +51,18 @@ es:
         male: Hombre
         other: No binario
       voting:
+        check:
+          check_failed: Error en la comprobación
+          check_ok: Comprobación correcta
+          vote_tampered: Tu voto existe pero ha sido modificado y no es válido. Ponte en contacto con el IMPD.
+          exists_but_spoiled: Tu voto existe, pero no se tendrá en cuenta al recuento porque ha sido anulado.
+          exists: Tu voto existe y formará parte del recuento.
+          no_vote_with_receipt: No existe ningún voto con este recibo.
         vote:
-          title: Cabina de votación
+          title: Identificación del/de la votante
+          vote_title: Cabina de votación
+          preview_title: Confirmación de voto
+          vote_casted_title: Voto registrado
           subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
           start_voting: Puedes empezar la votación.
           pending: Estás inscrito/a en el censo electoral pero tus datos todavía no se han verificado. Una vez se hayan verificado podrás votar.
@@ -62,26 +76,45 @@ es:
           already_voted_instructions_2_html: "Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>"
           cant_vote_instructions_1_html: "El periodo de voto electrónico no está activo. Recuerda que se puede votar del 1 al 16 de junio."
           cant_vote_instructions_2_html: "Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>"
-      verify_form:
-        form_instructions_1: "Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental."
-        form_instructions_2: "Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores."
-        form_instructions_3_html: "Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
-      vote_form:
-        title: Cabina de votación
-        subtitle: Selecciona las personas que quieres votar.
-        voting_code_help: Introduce el código que has recibido por SMS.
-        preview: Enviar y previsualizar
-        ok_instructions_1_html: "Estás inscrito/a en el censo <strong>%{disability}</strong>"
-        ok_instructions_2_html: "o <strong>%{disability}</strong>"
-        ok_instructions_3_html: "Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}"
-        ok_instructions_4_html: "siguiente formulario."
-        voting_title: "Sector de personas %{disability_title}. Puedes votar a un máximo de %{max_votes} personas."
-        voting_disability_title:
-          physical: con discapacidad física o orgánica
-          intellectual: con discapacidad intelectual
-          auditory_sensory: con discapacidad auditiva
-          visual_sensory: con discapacidad visual
-          mental_disorder: en situación de transtorno de salut mental
+        verify_form:
+          form_instructions_1: "Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental."
+          form_instructions_2: "Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores."
+          form_instructions_3_html: "Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
+        check_vote_form:
+          title: Comprova el teu vot
+          subtitle: Aquí pots verificar que el teu vot s'ha emès correctament i que serà utilitzat en el recompte.
+          receipt_help: "Introdueix el codi que has obtingut al finalitzar la votació electrònica."
+          send: Enviar
+        vote_form:
+          title: Cabina de votación
+          subtitle: Selecciona las personas que quieres votar.
+          voting_code_help: Introduce el código que has recibido por SMS.
+          voting_errors: "Se han producido los siguientes errores:"
+          preview: Enviar y previsualizar
+          ok_instructions_1_html: "Estás inscrito/a en el censo <strong>%{disability}</strong>"
+          ok_instructions_2_html: "o <strong>%{disability}</strong>"
+          ok_instructions_3_html: "Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}"
+          ok_instructions_4_html: "siguiente formulario."
+        vote_options:
+          voting_title: "Sector de personas %{disability_title}."
+          voting_subtitle: "Puedes votar un máximo de %{max_votes} personas."
+          more_information: Más información
+          voting_disability_title:
+            physical: con discapacidad física o orgánica
+            intellectual: con discapacidad intelectual
+            auditory_sensory: con discapacidad auditiva
+            visual_sensory: con discapacidad visual
+            mental_disorder: en situación de transtorno de salut mental
+        vote_preview:
+          available_answers: "Candidaturas escogidas:"
+          edit: "Modificar mi voto"
+          vote: "Votar"
+          confirm_vote: "¿Quieres continuar? Una vez emitido tu voto solo se puede cambiar de manera presencial"
+        vote_casted:
+          vote_casted: Ya has votado, tu voto ha sido correctamente grabado.
+          vote_receipt: "Este es el número de identificación de tu voto:"
+          verify_vote: "Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de "
+          verify_vote_link: "comprobación del voto"
       voters:
         create:
           error: Ha habido algun error con tu inscripción.
@@ -175,6 +208,8 @@ es:
         family_book: Libro de família
       vote:
         voting_code: Código de votación
+      check:
+        receipt: Recibo del voto
     errors:
       models:
         answer:
@@ -187,6 +222,10 @@ es:
           invalid_census: No existen estos datos en el padrón
         voting:
           phone_overuse: "Este número de teléfono ya se ha utilizado en otro voto."
+        vote:
+          too_many_votes: Has seleccionado demasiadas opciones.
+          at_least_one_vote: Tienes que seleccionar almenos una opción de voto para cada candidatura.
+          invalid_options: Alguna de las opciones seleccionades no es válida.
   errors:
     messages:
       carrierwave_processing_error: no pudo ser procesado
