@@ -15,6 +15,7 @@ module Decidim
           post :unverify, on: :member
           match :import, on: :collection, via: [:get, :post]
           get :export, on: :collection
+          get :elections_export, on: :collection
         end
 
         match :spoil_vote, via: [:get, :post], to: "votes#spoil"

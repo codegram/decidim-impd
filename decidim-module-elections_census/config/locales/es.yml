@@ -26,6 +26,7 @@ es:
           verified: Censo verificado
           import: Importar censo
           export: Exportar pendientes de verificar
+          export_for_elections: Exportar censo verificado
           votes: Votos
       titles:
         voters: Censo electoral

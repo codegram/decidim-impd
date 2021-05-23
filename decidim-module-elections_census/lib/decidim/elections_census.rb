@@ -9,5 +9,6 @@ module Decidim
   # allows users to create elections_census in a participatory space.
   module ElectionsCensus
     autoload :VoterSerializer, "decidim/elections_census/voter_serializer"
+    autoload :ElectionVoterSerializer, "decidim/elections_census/election_voter_serializer"
   end
 end

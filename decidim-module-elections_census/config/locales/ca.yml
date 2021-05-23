@@ -26,6 +26,7 @@ ca:
           verified: Cens verificat
           import: Importar cens
           export: Exportar pendents de verificar
+          export_for_elections: Exportar cens verificat
           votes: Vots
       titles:
         voters: Cens electoral

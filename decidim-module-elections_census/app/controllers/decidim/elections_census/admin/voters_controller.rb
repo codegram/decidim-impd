@@ -83,6 +83,15 @@ module Decidim
 
           redirect_to action: :index
         end
+
+        def elections_export
+          enforce_permission_to :export, :voter
+
+          ExportVotersForElectionsJob.perform_later(current_user, current_organization)
+          flash[:notice] = t("decidim.admin.exports.notice")
+
+          redirect_to action: :index
+        end
       end
     end
   end

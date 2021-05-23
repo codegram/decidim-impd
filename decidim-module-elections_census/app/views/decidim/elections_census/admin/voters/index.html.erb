@@ -11,6 +11,9 @@
         <% if admin_allowed_to? :export, :voter %>
           <%= link_to t("voters.index.export", scope: "decidim.admin"), decidim_elections_census_admin.export_voters_path, class: "button small new" %>
       <% end %>
+        <% if admin_allowed_to? :export, :voter %>
+          <%= link_to t("voters.index.export_for_elections", scope: "decidim.admin"), decidim_elections_census_admin.elections_export_voters_path, class: "button small new" %>
+      <% end %>
       </div>
     </h2>
   </div>
