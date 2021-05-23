@@ -60,6 +60,7 @@ module Decidim
             end
 
             on(:error) do
+              byebug
               flash.now[:alert] = I18n.t("voting.vote.cast_vote_failed", scope: "decidim.elections_census")
               set_voting_status :vote
             end

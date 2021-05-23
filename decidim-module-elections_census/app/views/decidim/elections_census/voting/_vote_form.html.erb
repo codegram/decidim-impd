@@ -1,42 +1,46 @@
-<%= decidim_form_for(@form, url: vote_voting_path) do |f| %>
-  <%= f.hidden_field :preview, value: true %>
-  <%= f.hidden_field :voting_digest %>
-  <%= f.hidden_field :voter_id %>
-  <%= invisible_captcha %>
-  <% if @form.errors[:votes].present? %>
-    <div class="card">
-      <div class="card__content">
-        <div class="help-text help-text-form-required-fields">
-          <%= t(".voting_errors") %>
+<div class="row">
+  <div class="columns large-7 large-centered text-center">
+    <%= decidim_form_for(@form, url: vote_voting_path) do |f| %>
+      <%= f.hidden_field :preview, value: true %>
+      <%= f.hidden_field :voting_digest %>
+      <%= f.hidden_field :voter_id %>
+      <%= invisible_captcha %>
+      <% if @form.errors[:votes].present? %>
+        <div class="card">
+          <div class="card__content">
+            <div class="help-text help-text-form-required-fields">
+              <%= t(".voting_errors") %>
+            </div>
+
+            <% @form.errors[:votes].uniq.each do |message| %>
+              <small class="form-error is-visible">
+                <%= message %>
+              </small>
+            <% end %>
+          </div>
         </div>
+      <% end %>
 
-        <% @form.errors[:votes].uniq.each do |message| %>
-          <small class="form-error is-visible">
-            <%= message %>
-          </small>
-        <% end %>
+      <% @form.allowed_disabilities.each do |disability| %>
+        <%= render partial: "vote_options", locals: {disability: disability} %>
+      <% end %>
+
+      <div class="card">
+        <div class="card__content">
+          <div class="field">
+            <%= f.text_field :voting_code %>
+            <p class="help-text"><%= t(".voting_code_help") %></p>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
 
-  <% @form.allowed_disabilities.each do |disability| %>
-    <%= render partial: "vote_options", locals: {disability: disability} %>
-  <% end %>
-
-  <div class="card">
-    <div class="card__content">
-      <div class="field">
-        <%= f.text_field :voting_code %>
-        <p class="help-text"><%= t(".voting_code_help") %></p>
+      <div class="card">
+        <div class="card__content">
+          <div class="actions">
+            <%= f.submit t(".preview"), class: "button expanded" %>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-
-  <div class="card">
-    <div class="card__content">
-      <div class="actions">
-        <%= f.submit t(".preview"), class: "button expanded" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>

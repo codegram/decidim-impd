@@ -6,49 +6,6 @@ module Decidim
     class VoteForm < Decidim::Form
       mimic :vote
 
-      CANDIDATES = {
-        physical: [
-          :carme_riu_pascual,
-          :bertrand_de_five_pragner,
-          :vanessa_fuentes_heredero,
-          :angel_urraca_bresciani,
-          :neus_mora_fernandez,
-          :cesar_leon_ortega,
-          :ana_sune_peremiquel,
-          :xavier_duacastilla_soler,
-          :leticia_esporrin_sanclemente,
-          :antonio_de_senillosa_de_olano_nico,
-          :francisco_javier_ona_sobrino,
-          :oriol_roqueta_del_rio
-        ],
-        mental_disorder: [
-          :marta_delgadillo_fernandez,
-          :raquel_montllor_linares
-        ],
-        intellectual: [
-          :montserrat_vilarrasa_monclus,
-          :carles_marine_gea,
-          :miquel_serra_albiac,
-          :carmen_piquer_piquer
-        ],
-        auditory_sensory: [
-          :encarna_munoz_chamorro,
-          :rafel_tixe_milian
-        ],
-        visual_sensory: [
-          :anais_garcia_balmana,
-          :paquita_garcia_caballero
-        ]
-      }
-
-      MAX_VOTES = {
-        physical: 5,
-        mental_disorder: 2,
-        intellectual: 1,
-        auditory_sensory: 1,
-        visual_sensory: 1
-      }
-
       attribute :voting_code, String
       attribute :voting_digest, String
       attribute :votes, Hash
@@ -79,7 +36,7 @@ module Decidim
       def allowed_disabilities
         return [] unless voter.present?
 
-        @allowed_disabilities ||= [voter.disability, voter.secondary_disability].reject(&:blank?).map(&:to_sym).select{|disability| CANDIDATES.keys.include?(disability) }
+        @allowed_disabilities ||= [voter.disability, voter.secondary_disability].reject(&:blank?).map(&:to_sym).select{|disability| Decidim::ElectionsCensus::Vote::CANDIDATES.keys.include?(disability) }
       end
 
       def option_selected?(disability, candidate)
@@ -110,14 +67,14 @@ module Decidim
       def number_of_votes
         allowed_disabilities.each do |disability|
           number_of_votes = votes.fetch(disability, []).length
-          errors.add(:votes, :too_many_votes) if number_of_votes > MAX_VOTES[disability]
+          errors.add(:votes, :too_many_votes) if number_of_votes > Decidim::ElectionsCensus::Vote::MAX_VOTES[disability]
           errors.add(:votes, :at_least_one_vote) if number_of_votes.zero?
         end
       end
 
       def valid_options
         allowed_disabilities.each do |disability|
-          valid_candidates = CANDIDATES.fetch(disability).map(&:to_s) + ["blank"]
+          valid_candidates = Decidim::ElectionsCensus::Vote::CANDIDATES.fetch(disability).map(&:to_s) + ["blank"]
           selected_candidates = votes.fetch(disability, [])
           all_selections_valid = selected_candidates.all?{|candidate| valid_candidates.include?(candidate)}
           errors.add(:votes, :invalid_options) unless all_selections_valid

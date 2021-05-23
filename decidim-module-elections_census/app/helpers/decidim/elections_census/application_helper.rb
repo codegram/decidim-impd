@@ -6,7 +6,7 @@ module Decidim
     #
     module ApplicationHelper
       def candidate_options(disability)
-        candidates = VoteForm::CANDIDATES.fetch(disability).map do |id|
+        candidates = Decidim::ElectionsCensus::Vote::CANDIDATES.fetch(disability).map do |id|
           OpenStruct.new(label: I18n.t(id, scope: "candidates.#{disability}"), value: id)
         end
 

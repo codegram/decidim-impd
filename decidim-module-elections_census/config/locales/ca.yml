@@ -55,6 +55,7 @@ ca:
           title: Identificació del/de la votant
           vote_title: Cabina de votació
           preview_title: Confirmació de vot
+          vote_casted_title: Vot enregistrat
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
           start_voting: Pots començar la votació.
           pending: Estàs inscrit/a al cens electoral però les teves dades encara no s'han verificat. Una vegada s'hagin verificat podràs votar.
@@ -97,6 +98,11 @@ ca:
           edit: "Modificar el meu vot"
           vote: "Votar"
           confirm_vote: "Vols continuar? Una vegada emès el teu vot només es pot canviar de manera presencial."
+        vote_casted:
+          vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
+          vote_receipt: "Aquest és el número d’identificació del teu vot: "
+          verify_vote: "Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de "
+          verify_vote_link: "comprovació del vot"
       voters:
         create:
           error: Hi ha hagut algun error amb la teva inscripció.

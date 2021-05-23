@@ -25,25 +25,16 @@ module Decidim
           Vote.create!(
             code: form.voting_code,
             votes: form.votes,
-            receipt: generate_receipt
+            ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
           )
         end
-      rescue ActiveRecord::ActiveRecordError
+      rescue ActiveRecord::ActiveRecordError => exception
+        byebug
         @vote = nil
       end
 
       def voter
         @voter ||= form.voter
-      end
-
-      def generate_receipt
-        content = form.votes.flat_map do |disability, votes|
-          [disability, votes]
-        end
-        content << form.voting_code
-        content = content.join("-")
-
-        Digest::SHA256.hexdigest(content)
       end
 
       def time_to_vote?

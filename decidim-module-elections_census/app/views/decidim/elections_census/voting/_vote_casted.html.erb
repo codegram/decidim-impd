@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="columns large-12 large-centered text-center">
+    <h3 class="heading3">
+      <%= t(".vote_casted") %>
+    </h3>
+    <div class="evote__content">
+      <p>
+      <%= t(".vote_receipt") %>
+      <strong class="evote__poll-id"><%= @vote.receipt %></strong>
+      </p>
+      <p>
+      <%= t(".verify_vote") %>
+      <%= link_to t(".verify_vote_link"), check_voting_path(receipt: @vote.receipt) %>.
+      </p>
+    </div>
+
+    <a href="/" class="button">
+      <%= t("layouts.decidim.elections_vote.exit") %>
+    </a>
+  </div>
+</div>
