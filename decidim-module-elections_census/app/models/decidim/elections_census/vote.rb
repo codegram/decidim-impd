@@ -49,8 +49,13 @@ module Decidim
       validates :code, uniqueness: true
       validates :code, :receipt, :votes, presence: true
       validates :ballot_style, presence: true, length: {minimum: 1, maximum: 2}
+
       before_validation(on: :create) do
         self.receipt = generate_receipt
+      end
+
+      def spoil!
+        update_column(:spoiled_at, Time.current)
       end
 
       def generate_receipt
@@ -65,6 +70,10 @@ module Decidim
 
       def tampered?
         generate_receipt != receipt
+      end
+
+      def spoiled?
+        spoiled_at.present?
       end
 
       def receipt_valid?(other_receipt)

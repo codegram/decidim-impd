@@ -30,7 +30,7 @@ module Decidim
         if app.secrets.voting_active
           Decidim.menu :menu do |menu|
             menu.item I18n.t("menu.voting", scope: "decidim"),
-              decidim_elections_census.voting_path,
+              decidim_elections_census.vote_voting_path,
               position: 3,
               active: %r{^/elections\/voting/}
           end

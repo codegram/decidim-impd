@@ -28,37 +28,37 @@
     </ul>
 
 
-<div class="card">
-  <div class="card__content">
-    <div class="actions">
-      <%= decidim_form_for(@form, url: vote_voting_path(edit_vote: true)) do |f| %>
-        <%= f.hidden_field :preview, value: false %>
-        <%= f.hidden_field :voting_digest %>
-        <%= f.hidden_field :voter_id %>
-        <%= f.hidden_field :voting_code %>
-        <%= invisible_captcha %>
-        <% @form.votes.each do |disability, votes| %>
-          <% votes.each do |vote| %>
-            <%= hidden_field_tag "vote[votes][#{disability}][]", vote %>
+    <div class="card">
+      <div class="card__content">
+        <div class="actions">
+          <%= decidim_form_for(@form, url: vote_voting_path(edit_vote: true)) do |f| %>
+            <%= f.hidden_field :preview, value: false %>
+            <%= f.hidden_field :voting_digest %>
+            <%= f.hidden_field :voter_id %>
+            <%= f.hidden_field :voting_code %>
+            <%= invisible_captcha %>
+            <% @form.votes.each do |disability, votes| %>
+              <% votes.each do |vote| %>
+                <%= hidden_field_tag "vote[votes][#{disability}][]", vote %>
+              <% end %>
+            <% end %>
+            <%= f.submit t(".edit"), class: "button expanded secondary", name: "edit_vote" %>
           <% end %>
-        <% end %>
-        <%= f.submit t(".edit"), class: "button expanded secondary", name: "edit_vote" %>
-      <% end %>
-      <%= decidim_form_for(@form, url: vote_voting_path) do |f| %>
-        <%= f.hidden_field :preview, value: false %>
-        <%= f.hidden_field :voting_digest %>
-        <%= f.hidden_field :voter_id %>
-        <%= f.hidden_field :voting_code %>
-        <%= invisible_captcha %>
-        <% @form.votes.each do |disability, votes| %>
-          <% votes.each do |vote| %>
-            <%= hidden_field_tag "vote[votes][#{disability}][]", vote %>
+          <%= decidim_form_for(@form, url: vote_voting_path) do |f| %>
+            <%= f.hidden_field :preview, value: false %>
+            <%= f.hidden_field :voting_digest %>
+            <%= f.hidden_field :voter_id %>
+            <%= f.hidden_field :voting_code %>
+            <%= invisible_captcha %>
+            <% @form.votes.each do |disability, votes| %>
+              <% votes.each do |vote| %>
+                <%= hidden_field_tag "vote[votes][#{disability}][]", vote %>
+              <% end %>
+            <% end %>
+            <%= f.submit t(".vote"), class: "button expanded", data: {confirm: t(".confirm_vote"), disable: true } %>
           <% end %>
-        <% end %>
-        <%= f.submit t(".vote"), class: "button expanded", data: {confirm: t(".confirm_vote"), disable: true } %>
-      <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   </div>
 </div>

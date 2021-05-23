@@ -4,11 +4,39 @@ module Decidim
   module ElectionsCensus
     class VotingController < ApplicationController
       include Rectify::ControllerHelpers
-      layout :choose_layout
       include Decidim::FormFactory
+      layout :choose_layout
       helper_method :candidate_proposal_ids
 
       def check
+        if params["check"] && params["check"]["receipt"].present? || params["receipt"].present?
+          @form = form(CheckVoteForm).from_params(params)
+
+          CheckVote.call(@form) do
+            on(:ok) do
+              expose(title: t(".check_ok"), content: t(".exists"))
+            end
+
+            on(:no_vote) do
+              expose(title: t(".check_failed"), content: t(".no_vote_with_receipt"))
+            end
+
+            on(:spoiled) do
+              expose(title: t(".check_ok"), content: t(".exists_but_spoiled"))
+            end
+
+            on(:tampered) do
+              expose(title: t(".check_failed"), content: t(".vote_tampered"))
+            end
+
+            on(:invalid) do
+              render :check_vote_form
+            end
+          end
+        else
+          @form = CheckVoteForm.new
+          render :check_vote_form
+        end
       end
 
       def vote
