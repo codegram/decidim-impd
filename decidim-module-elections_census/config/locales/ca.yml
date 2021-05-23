@@ -9,6 +9,7 @@ ca:
     search: Comprova la inscripció al cens
     vote: Votar
     check: Comprova el vot
+    elections: Les eleccions
   layouts:
     decidim:
       elections_vote:

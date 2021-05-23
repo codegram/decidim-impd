@@ -9,6 +9,7 @@ es:
     search: Comprueba la inscripción en el censo
     vote: Votar
     check: Comprueba el voto
+    elections: Las elecciones
   layouts:
     decidim:
       elections_vote:

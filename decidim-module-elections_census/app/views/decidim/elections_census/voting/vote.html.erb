@@ -1,5 +1,5 @@
   <div class="row collapse">
-    <div class="columns large-12 large-centered text-center page-title">
+    <div class="columns large-10 large-centered text-center page-title">
       <% if @status == :form %>
         <% @title = t('.title') %>
       <% elsif @status == :vote %>
@@ -17,7 +17,7 @@
       <% end %>
       <h2><%= @title %></h2>
     </div>
-    <div class="columns large-12 medium-10">
+    <div class="columns large-10">
       <% if @status == :form %>
         <%= render partial: "verify_form" %>
       <% elsif @status == :vote %>

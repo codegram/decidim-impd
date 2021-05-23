@@ -8,6 +8,9 @@ module Decidim
       layout :choose_layout
       helper_method :candidate_proposal_ids
 
+      def index
+      end
+
       def check
         if params["check"] && params["check"]["receipt"].present? || params["receipt"].present?
           @form = form(CheckVoteForm).from_params(params)

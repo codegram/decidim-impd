@@ -14,7 +14,8 @@ module Decidim
           match "search" => "voters#search", as: :search, via: [:get, :post], on: :collection
         end
 
-        resource :voting, only: [:create, :new], as: :voting, controller: :voting do
+        resource :voting, only: [:index], as: :voting, controller: :voting do
+          match "/" => "voting#index", as: :elections, via: [:get], on: :collection
           match "vote" => "voting#vote", as: :vote, via: [:get, :post], on: :collection
           match "check" => "voting#check", as: :check, via: [:get, :post], on: :collection
         end
@@ -30,7 +31,7 @@ module Decidim
         if app.secrets.voting_active
           Decidim.menu :menu do |menu|
             menu.item I18n.t("menu.voting", scope: "decidim"),
-              decidim_elections_census.vote_voting_path,
+              decidim_elections_census.elections_voting_path,
               position: 3,
               active: %r{^/elections\/voting/}
           end
