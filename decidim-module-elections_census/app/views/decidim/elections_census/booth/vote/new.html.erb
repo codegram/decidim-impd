@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="columns large-7 large-centered text-center">
+    <%= decidim_form_for(@form, url: booth_preview_path) do |f| %>
+      <%= f.hidden_field :preview, value: true %>
+      <%= f.hidden_field :voting_digest %>
+      <%= f.hidden_field :voter_id %>
+      <%= invisible_captcha %>
+      <% if @form.errors[:votes].present? %>
+        <div class="card">
+          <div class="card__content">
+            <div class="help-text help-text-form-required-fields">
+              <%= t(".voting_errors") %>
+            </div>
+
+            <% @form.errors[:votes].uniq.each do |message| %>
+              <small class="form-error is-visible">
+                <%= message %>
+              </small>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <% @form.allowed_disabilities.each do |disability| %>
+        <%= render partial: "decidim/elections_census/booth/vote/vote_options", locals: {disability: disability} %>
+      <% end %>
+
+      <div class="card">
+        <div class="card__content">
+          <div class="field">
+            <%= f.text_field :voting_code %>
+            <p class="help-text"><%= t(".voting_code_help") %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__content">
+          <div class="actions">
+            <%= f.submit t(".preview"), class: "button expanded" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(() => {
+        const $form = $("form.new_vote");
+        const handleOptionSelected = (event) => {
+          const $target = $(event.target);
+          const $label = $target.parents("label");
+          const $parent = $target.parents(".evote__options");
+          const $options = $parent.find(".answer_input.candidate");
+
+          if ($label.attr("aria-disabled") || $label.hasClass("is-disabled")) {
+                $target.prop("checked", false);
+              }
+
+          const blankChecked = $parent.find(".answer_input.blank").prop("checked") === true;
+          const maxOptionsSelected = $parent.find(".answer_input:checked").length === $parent.data("max-selection");
+
+          $options.each((_index, element) => {
+                $element = $(element);
+                if (blankChecked || maxOptionsSelected && $element.prop('checked') === false) {
+                      $element.parents("label").addClass("is-disabled");
+                      $element.parents("label").attr("aria-disabled", "");
+                      $element.prop("checked", false);
+                    } else {
+                          $element.parents("label").removeClass("is-disabled");
+                          $element.parents("label").removeAttr("aria-disabled");
+                        }
+              });
+        };
+
+        const enoughOptionsSelected = () => {
+              $questions = $form.find(".evote__options");
+              $submit = $form.find(".actions button");
+
+              let minimumOptionsSelected = $questions.toArray().every((question) => {
+                    $question = $(question);
+                    let optionsSelected = $question.find(".answer_input:checked").length;
+                    return optionsSelected >= $question.data("min-selection");
+                  });
+
+              if (minimumOptionsSelected) {
+                    $submit.removeAttr('disabled');
+                  } else {
+                        $submit.attr('disabled', 'disabled');
+                      }
+            }
+
+        $form.find("input[type=checkbox].answer_input").on("change", (event) => {
+          handleOptionSelected(event);
+        });
+
+        $form.find(".answer_input").on("change", (event) => {
+          enoughOptionsSelected();
+        });
+
+        enoughOptionsSelected();
+      })
+</script>

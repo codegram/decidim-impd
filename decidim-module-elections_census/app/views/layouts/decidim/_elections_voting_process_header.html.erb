@@ -13,18 +13,18 @@
     extended_navigation_bar([
       {
         name: t("elections_census.elections"),
-        url: decidim_elections_census.elections_voting_path,
-        active: is_active_link?(decidim_elections_census.elections_voting_path, :exclusive)
+        url: decidim_elections_census.elections_path,
+        active: is_active_link?(decidim_elections_census.elections_path, :exclusive)
       },
       {
         name: t("elections_census.vote"),
-        url: decidim_elections_census.vote_voting_path,
-        active: is_active_link?(decidim_elections_census.vote_voting_path, :exclusive)
+        url: decidim_elections_census.booth_auth_path,
+        active: is_active_link?(decidim_elections_census.booth_auth_path, /^\/elections\/booth/)
       },
       {
         name: t("elections_census.check"),
-        url: decidim_elections_census.check_voting_path,
-        active: is_active_link?(decidim_elections_census.check_voting_path, :exclusive)
+        url: decidim_elections_census.verify_path,
+        active: is_active_link?(decidim_elections_census.verify_path, :exclusive)
       },
     ])
   %>

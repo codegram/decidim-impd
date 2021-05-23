@@ -45,7 +45,7 @@
     </div>
     <% Decidim::ElectionsCensus::Vote::CANDIDATES.each do |disability, candidates| %>
       <div class="row column">
-        <h3><%= t("decidim.elections_census.voting.vote_options.voting_title", disability_title: t("decidim.elections_census.voting.vote_options.voting_disability_title.#{disability}")) %></h3>
+        <h3><%= t("decidim.elections_census.booth.new.vote_options.voting_title", disability_title: t("decidim.elections_census.booth.new.vote_options.voting_disability_title.#{disability}")) %></h3>
         <ul>
           <% candidates.each do |candidate| %>
             <li id="<%= disability%>-<%= candidate %>"><%= I18n.t(candidate, scope: "candidates.#{disability}") %>: <strong>0</strong></li>
