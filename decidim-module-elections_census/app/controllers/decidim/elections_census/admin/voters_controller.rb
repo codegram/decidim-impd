@@ -23,14 +23,33 @@ module Decidim
 
         def verify
           enforce_permission_to :verify, :voter
-          Decidim::ElectionsCensus::Voter.find(params[:id]).verify!
+          voter = Decidim::ElectionsCensus::Voter.find(params[:id])
+
+          Decidim.traceability.perform_action!(
+            "verify",
+            voter,
+            current_user,
+            { visibility: "admin-only", document_number: voter.document_number }
+          ) do
+            voter.verify!
+          end
+
           flash[:notice] = I18n.t("voters.verify.success", scope: "decidim.elections_census")
           redirect_back(fallback_location: { action: :index })
         end
 
         def unverify
           enforce_permission_to :unverify, :voter
-          Decidim::ElectionsCensus::Voter.find(params[:id]).unverify!
+          voter = Decidim::ElectionsCensus::Voter.find(params[:id])
+
+          Decidim.traceability.perform_action!(
+            "unverify",
+            voter,
+            current_user,
+            { visibility: "admin-only", document_number: voter.document_number }
+          ) do
+            voter.unverify!
+          end
           flash[:notice] = I18n.t("voters.unverify.success", scope: "decidim.elections_census")
           redirect_back(fallback_location: { action: :index })
         end

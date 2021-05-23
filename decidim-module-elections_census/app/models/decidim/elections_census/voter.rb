@@ -8,6 +8,8 @@ module Decidim
                  class_name: "Decidim::Organization"
 
       include Decidim::HasAttachments
+      include Decidim::Traceable
+      include Decidim::Loggable
 
       scope :verified, -> { where.not(verified_at: nil) }
       scope :unverified, -> { where(verified_at: nil) }
@@ -21,11 +23,13 @@ module Decidim
       end
 
       def verify!
-        update_column(:verified_at, Time.current)
+        self.verified_at = Time.current
+        save!
       end
 
       def unverify!
-        update_column(:verified_at, nil)
+        self.verified_at = nil
+        save!
       end
 
       def voted?
@@ -49,6 +53,10 @@ module Decidim
 
       def password_digest
         BCrypt::Password.create(password)
+      end
+
+      def self.log_presenter_class_for(_log)
+        Decidim::ElectionsCensus::AdminLog::VoterPresenter
       end
     end
   end

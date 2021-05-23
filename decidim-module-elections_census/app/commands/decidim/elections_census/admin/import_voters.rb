@@ -34,7 +34,7 @@ module Decidim
             next if voter["TIPUS_DOCUMENT"].blank?
             next if voter["DOCUMENT"].blank?
 
-            ImportVoterJob.perform_later(voter, form.current_organization)
+            ImportVoterJob.perform_later(voter, form.current_organization, form.current_user)
           end
         end
       end

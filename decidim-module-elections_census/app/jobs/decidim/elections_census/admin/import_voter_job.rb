@@ -4,7 +4,7 @@ module Decidim
   module ElectionsCensus
     module Admin
       class ImportVoterJob < ApplicationJob
-        def perform(voter_data, organization)
+        def perform(voter_data, organization, importer)
           voter = Voter.find_or_initialize_by(document_number: voter_data["DOCUMENT"], organization: organization)
 
           disability = parse_disability(voter_data["DISCAPACITAT_1"]) unless voter_data["DISCAPACITAT_1"].blank?
@@ -24,7 +24,14 @@ module Decidim
 
           return if voter.disability.blank? || voter.lastname.blank?
 
-          voter.save!
+          Decidim.traceability.perform_action!(
+            "verify",
+            voter,
+            importer,
+            { visibility: "admin-only", document_number: voter.document_number }
+          ) do
+            voter.save!
+          end
         end
 
         private
