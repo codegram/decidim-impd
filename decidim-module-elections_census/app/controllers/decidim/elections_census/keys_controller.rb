@@ -8,7 +8,10 @@ module Decidim
       def generate
       end
 
-      def verify
+      def verify_encryption
+      end
+
+      def verify_decryption
       end
     end
   end

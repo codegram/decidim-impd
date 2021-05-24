@@ -24,7 +24,8 @@ module Decidim
         end
 
         match "keys/generate" => "keys#generate", via: [:get]
-        match "keys/verify" => "keys#verify", via: [:get]
+        match "keys/verify-encryption" => "keys#verify_encryption", via: [:get]
+        match "keys/verify-decryption" => "keys#verify_decryption", via: [:get]
 
         match "about" => "about#show", as: :elections, via: [:get]
         match "verify" => "verify#new", via: [:get]

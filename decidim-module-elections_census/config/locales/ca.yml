@@ -71,15 +71,24 @@ ca:
         male: Home
         other: No binari
       keys:
+        verify_decryption:
+          title: Verificació de desencriptació
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          encrypted_content: Contingut a desencriptar
+          decrypted_content: Contingut desencriptat
+          decrypt: Desencriptar
+        encryption_key:
+          encrypt_key: Clau per encriptar vots
+        verify_encryption:
+          title: Verificació d'encriptació
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          encrypt_content: Contingut a encriptar
+          encrypted_content: Contingut encriptat
+          encrypt: Encriptar
         generate:
           title: Generació de claus d'encriptació
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          encrypt_key: Clau per encriptar vots
           generate_key_pair: Generar claus
-          encrypt_content: Contingut a encriptar
-          decrypt_content: Contingut a desencriptar
-          encrypt: Encriptar
-          decrypt: Desencriptar
           quorum: Quorum necessari per poder desencriptar els vots
       booth:
         authentication:
