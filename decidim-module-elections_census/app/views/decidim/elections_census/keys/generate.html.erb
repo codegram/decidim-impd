@@ -10,16 +10,12 @@
     </div>
     <div class="row">
       <div class="columns large-6 medium-centered">
-        <form id="key-generation">
+        <form>
           <div class="card">
             <div class="card__content">
               <div class="field">
-                <label for="decrypt-key"><%= t(".decrypt_key") %></label>
-                <textarea id="decrypt-key" rows="10"></textarea>
-              </div>
-              <div class="field">
-                <label for="encrypt-key"><%= t(".encrypt_key") %></label>
-                <textarea id="encrypt-key" rows="5"></textarea>
+                <label for="quorum"><%= t(".quorum") %></label>
+                <input id="quorum" type="number" value="5" min="2" max="7" name="quorum"></textarea>
               </div>
             </div>
           </div>
@@ -27,8 +23,30 @@
           <div class="card">
             <div class="card__content">
               <div class="actions">
-                <button class="button expanded"><%= t(".generate_key_pair") %></button>
+                <button id="key-generation" class="button expanded"><%= t(".generate_key_pair") %></button>
               </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="encrypt-key"><%= t(".encrypt_key") %></label>
+                <textarea id="encrypt-key" rows="5"></textarea>
+                <button data-download-for="encrypt-key" data-download-as="clau-publica" class="button expanded download-key">Descarregar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <% (1..7).to_a.each do |index| %>
+                <div class="field">
+                  <label for="tally-key-part-<%= index %>">Part <%= index %></label>
+                  <textarea class="tally-key-part" id="tally-key-part-<%= index %>" rows="5"></textarea>
+                  <button data-download-for="tally-key-part-<%= index %>" data-download-as="clau-privada-part-<%= index %>" class="button expanded download-key">Descarregar</button>
+                </div>
+              <% end %>
             </div>
           </div>
         </form>
@@ -65,4 +83,6 @@
 </div>
 
 <%= javascript_include_tag "decidim/unibabel.js" %>
+<%= javascript_include_tag "decidim/secrets.js" %>
 <%= javascript_include_tag "decidim/keys.js" %>
+<%= javascript_include_tag "decidim/FileSaver.js" %>

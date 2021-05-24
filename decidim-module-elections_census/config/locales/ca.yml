@@ -74,13 +74,13 @@ ca:
         generate:
           title: Generació de claus d'encriptació
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          decrypt_key: Clau per desencriptar vots
           encrypt_key: Clau per encriptar vots
           generate_key_pair: Generar claus
           encrypt_content: Contingut a encriptar
-          decrypt_content: Contingut desencriptar
+          decrypt_content: Contingut a desencriptar
           encrypt: Encriptar
           decrypt: Desencriptar
+          quorum: Quorum necessari per poder desencriptar els vots
       booth:
         authentication:
           new:
