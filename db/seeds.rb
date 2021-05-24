@@ -75,7 +75,7 @@ disabilities.each do |disability|
     params = {
       "disability" => disability,
       "document_number" => counter.to_s.rjust(9, "0"),
-        "organization" => organization
+      "organization" => organization
     }
 
     create_voter(params)
@@ -97,32 +97,48 @@ disabilities.each do |disability|
   end
 end
 
-# if Rails.env.development?
-  # def votes_for(disability)
-  #   return [] if disability.blank?
-  #   options = Decidim::ElectionsCensus::Vote::CANDIDATES.fetch(disability.to_sym)
-  #   options = options.shuffle
-  #
-  #   number = Decidim::ElectionsCensus::Vote::MAX_VOTES.fetch(disability.to_sym)
-  #   options.sample(number).uniq
-  # end
-  #
-  # require 'securerandom'
-  #
-  # Decidim::ElectionsCensus::Voter.find_each do |voter|
-  #   disability = voter.disability
-  #   secondary_disability = voter.secondary_disability
-  #
-  #   votes = {disability => votes_for(disability)}
-  #   votes = votes.update(secondary_disability => votes_for(secondary_disability)) if secondary_disability.present?
-  #
-  #   Decidim::ElectionsCensus::Vote.create!(
-  #     code: SecureRandom.uuid,
-  #     votes: votes,
-  #     ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
-  #   )
-  # end
-# end
+if Rails.env.development? && Rails.application.secrets.vote_encryption_key.present?
+  require 'securerandom'
+  require 'jose'
+
+  jwk = Rails.application.secrets.vote_encryption_key
+  key = JWT::JWK::RSA.import(jwk).keypair
+
+  def votes_for(disability)
+    return [] if disability.blank?
+    options = Decidim::ElectionsCensus::Vote::CANDIDATES.fetch(disability.to_sym)
+    options = options.shuffle
+
+    number = Decidim::ElectionsCensus::Vote::MAX_VOTES.fetch(disability.to_sym)
+    options.sample(number).uniq
+  end
+
+  Decidim::ElectionsCensus::Voter.find_each do |voter|
+    disability = voter.disability
+    secondary_disability = voter.secondary_disability
+
+    votes = {disability => votes_for(disability)}
+    votes = votes.update(secondary_disability => votes_for(secondary_disability)) if secondary_disability.present?
+    serialized_ballot = votes.flat_map do |disability, selected|
+      if selected.first == "blank"
+        Decidim::ElectionsCensus::Vote::CANDIDATES_IDS["#{disability}_blank".to_sym]
+      else
+        selected.map do |candidate|
+          Decidim::ElectionsCensus::Vote::CANDIDATES_IDS[candidate.to_sym]
+        end
+      end
+    end.join("#")
+    byebug if serialized_ballot.include?("##")
+
+    encrypted_ballot = Base64.strict_encode64(JOSE::JWA::PKCS1.rsaes_oaep_encrypt(OpenSSL::Digest::SHA256, serialized_ballot, key))
+
+    Decidim::ElectionsCensus::Vote.create!(
+      code: SecureRandom.uuid,
+      ballot: encrypted_ballot,
+      ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
+    )
+  end
+end
 
 puts ["Tipus de document", "Número de document", "Discapacitat", "Discapacitat secundària", "Data de naixement"].join(", ")
 Decidim::ElectionsCensus::Voter.all.each do |voter|
