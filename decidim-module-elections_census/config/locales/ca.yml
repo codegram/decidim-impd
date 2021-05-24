@@ -105,6 +105,9 @@ ca:
           error: Hi ha hagut algun error al comprovar les teves dades.
           already_voted: "Ja has emès el teu vot electrònic, si vols canviar el teu vot pots fer-ho de manera presencial."
           cant_vote_now: "El període de vot electrònic no està actiu. Recorda que es pot votar de l'1 al 16 de juny."
+          vote_casted: Vot emès correctament.
+          invalid_ballot: Les dades del vot encriptat no són vàlides.
+          cast_vote_failed: No s'ha pogut processar el teu vot, torna-ho a intentar.
           new:
             title: Cabina de votació
             subtitle: Selecciona les persones que vols votar.

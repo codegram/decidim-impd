@@ -1,4 +1,6 @@
-$(() => {
+((exports) => {
+  const $ = exports.$; // eslint-disable-line
+
   const Crypto = window.crypto || window.msCrypto;
   const Unibabel = window.Unibabel;
   const SecretSharing = window.secrets;
@@ -46,8 +48,8 @@ $(() => {
     event.preventDefault()
 
     let parts = $(".tally-key-part")
-                .map((_index, element) => $(element).val())
-                .filter((_index, part) => part !== undefined && part.length > 0)
+      .map((_index, element) => $(element).val())
+      .filter((_index, part) => part !== undefined && part.length > 0)
 
     let encryptedContent = $("#decrypt-content").val()
 
@@ -122,5 +124,16 @@ $(() => {
 
   async function exportCryptoKey(key) {
     return JSON.stringify(await Crypto.subtle.exportKey("jwk", key));
- }
-});
+  }
+
+  const encryptVote = async (jwk, vote) => {
+    let key = await Crypto.subtle.importKey("jwk", jwk, {name: "RSA-OAEP", hash: {name: "SHA-256"}}, false, ["encrypt"])
+    let encryptedContent = await encryptContent(key, vote)
+    return encryptedContent;
+  }
+
+  exports.Decidim = exports.Decidim || {};
+  exports.Decidim.encryptContent = encryptContent;
+  exports.Decidim.encryptVote = encryptVote;
+  exports.Decidim.decryptContent = decryptContent;
+})(window);

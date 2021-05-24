@@ -11,6 +11,7 @@ module Decidim
 
       def call
         return broadcast(:invalid) if form.invalid?
+        return broadcast(:invalid_ballot) unless valid_ballot?
         return broadcast(:voting_not_open) unless time_to_vote?
         return broadcast(:error) unless cast_vote
 
@@ -24,12 +25,18 @@ module Decidim
           voter.vote!
           Vote.create!(
             code: form.voting_code,
-            votes: form.votes,
+            ballot: form.encrypted_ballot,
             ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
           )
         end
       rescue ActiveRecord::ActiveRecordError => exception
         @vote = nil
+      end
+
+      def valid_ballot?
+        value = form.encrypted_ballot
+
+        value.is_a?(String) && value.present? && Base64.strict_encode64(Base64.decode64(value)) == value
       end
 
       def voter

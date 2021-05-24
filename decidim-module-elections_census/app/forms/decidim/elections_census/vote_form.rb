@@ -11,6 +11,7 @@ module Decidim
       attribute :votes, Hash
       attribute :voter_id, Integer
       attribute :preview, Boolean
+      attribute :encrypted_ballot, String
 
       validates :voter_id, :voter, :voting_code, :voting_digest, presence: true
       validate :voting_code_exists
@@ -31,6 +32,18 @@ module Decidim
         end
 
         super(params)
+      end
+
+      def serialized_ballot
+        @serialized_ballot ||= votes.flat_map do |disability, selected|
+          if selected.first == "blank"
+            Vote::CANDIDATES_IDS["#{disability}_blank".to_sym]
+          else
+            selected.map do |candidate|
+              Vote::CANDIDATES_IDS[candidate.to_sym]
+            end
+          end
+        end.join("#")
       end
 
       def allowed_disabilities
@@ -65,6 +78,8 @@ module Decidim
       end
 
       def number_of_votes
+        return if encrypted_ballot.present?
+
         allowed_disabilities.each do |disability|
           number_of_votes = votes.fetch(disability, []).length
           errors.add(:votes, :too_many_votes) if number_of_votes > Decidim::ElectionsCensus::Vote::MAX_VOTES[disability]

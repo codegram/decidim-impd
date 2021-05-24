@@ -39,7 +39,37 @@ module Decidim
           :anais_garcia_balmana,
           :paquita_garcia_caballero
         ]
-      }
+      }.freeze
+
+      CANDIDATES_IDS = {
+        carme_riu_pascual: "p_1",
+        bertrand_de_five_pragner: "p_2",
+        vanessa_fuentes_heredero: "p_3",
+        angel_urraca_bresciani: "p_4",
+        neus_mora_fernandez: "p_5",
+        cesar_leon_ortega: "p_6",
+        ana_sune_peremiquel: "p_7",
+        xavier_duacastilla_soler: "p_8",
+        leticia_esporrin_sanclemente: "p_9",
+        antonio_de_senillosa_de_olano_nico: "p_10",
+        francisco_javier_ona_sobrino: "p_11",
+        oriol_roqueta_del_ri: "p_1w",
+        marta_delgadillo_fernandez: "m_1",
+        raquel_montllor_linare: "m_2",
+        montserrat_vilarrasa_monclus: "i_1",
+        carles_marine_gea: "i_2",
+        miquel_serra_albiac: "i_3",
+        carmen_piquer_pique: "i_4",
+        encarna_munoz_chamorro: "a_1",
+        rafel_tixe_milia: "a_2",
+        anais_garcia_balmana: "v_1",
+        paquita_garcia_caballer: "v_2",
+        physical_blank: "p_0",
+        mental_disorder_blank: "m_0",
+        intellectual_blank: "i_0",
+        auditory_sensory_blank: "a_0",
+        visual_sensory_blank: "v_0"
+      }.freeze
 
       MAX_VOTES = {
         physical: 5,
@@ -47,10 +77,10 @@ module Decidim
         intellectual: 1,
         auditory_sensory: 1,
         visual_sensory: 1
-      }
+      }.freeze
 
       validates :code, uniqueness: true
-      validates :code, :receipt, :votes, presence: true
+      validates :code, :receipt, :ballot, presence: true
       validates :ballot_style, presence: true, length: {minimum: 1, maximum: 2}
 
       before_validation(on: :create) do
@@ -63,11 +93,7 @@ module Decidim
       end
 
       def generate_receipt
-        content = votes.flat_map do |disability, votes|
-          [disability, votes]
-        end
-        content << code
-        content = content.join("-")
+        content = [ballot, code].join("-")
 
         Digest::SHA256.hexdigest(content)
       end

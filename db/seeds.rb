@@ -97,32 +97,32 @@ disabilities.each do |disability|
   end
 end
 
-if Rails.env.development?
-  def votes_for(disability)
-    return [] if disability.blank?
-    options = Decidim::ElectionsCensus::Vote::CANDIDATES.fetch(disability.to_sym)
-    options = options.shuffle
-
-    number = Decidim::ElectionsCensus::Vote::MAX_VOTES.fetch(disability.to_sym)
-    options.sample(number).uniq
-  end
-
-  require 'securerandom'
-
-  Decidim::ElectionsCensus::Voter.find_each do |voter|
-    disability = voter.disability
-    secondary_disability = voter.secondary_disability
-
-    votes = {disability => votes_for(disability)}
-    votes = votes.update(secondary_disability => votes_for(secondary_disability)) if secondary_disability.present?
-
-    Decidim::ElectionsCensus::Vote.create!(
-      code: SecureRandom.uuid,
-      votes: votes,
-      ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
-    )
-  end
-end
+# if Rails.env.development?
+  # def votes_for(disability)
+  #   return [] if disability.blank?
+  #   options = Decidim::ElectionsCensus::Vote::CANDIDATES.fetch(disability.to_sym)
+  #   options = options.shuffle
+  #
+  #   number = Decidim::ElectionsCensus::Vote::MAX_VOTES.fetch(disability.to_sym)
+  #   options.sample(number).uniq
+  # end
+  #
+  # require 'securerandom'
+  #
+  # Decidim::ElectionsCensus::Voter.find_each do |voter|
+  #   disability = voter.disability
+  #   secondary_disability = voter.secondary_disability
+  #
+  #   votes = {disability => votes_for(disability)}
+  #   votes = votes.update(secondary_disability => votes_for(secondary_disability)) if secondary_disability.present?
+  #
+  #   Decidim::ElectionsCensus::Vote.create!(
+  #     code: SecureRandom.uuid,
+  #     votes: votes,
+  #     ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
+  #   )
+  # end
+# end
 
 puts ["Tipus de document", "Número de document", "Discapacitat", "Discapacitat secundària", "Data de naixement"].join(", ")
 Decidim::ElectionsCensus::Voter.all.each do |voter|

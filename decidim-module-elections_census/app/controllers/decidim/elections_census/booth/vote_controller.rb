@@ -24,6 +24,8 @@ module Decidim
             on(:ok) do |vote|
               flash.now[:notice] = I18n.t("booth.vote.vote_casted", scope: "decidim.elections_census")
               expose(vote: vote)
+
+              render action: :create
             end
 
             on(:voting_not_open) do
@@ -34,6 +36,12 @@ module Decidim
 
             on(:invalid) do
               flash.now[:alert] = I18n.t("booth.vote.error", scope: "decidim.elections_census")
+
+              render action: :new
+            end
+
+            on(:invalid_ballot) do
+              flash.now[:alert] = I18n.t("booth.vote.invalid_ballot", scope: "decidim.elections_census")
 
               render action: :new
             end

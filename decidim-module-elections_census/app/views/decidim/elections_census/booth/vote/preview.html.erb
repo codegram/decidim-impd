@@ -48,14 +48,20 @@
             <%= f.hidden_field :voting_digest %>
             <%= f.hidden_field :voter_id %>
             <%= f.hidden_field :voting_code %>
+            <%= f.hidden_field :encrypted_ballot %>
             <%= invisible_captcha %>
-            <% @form.votes.each do |disability, votes| %>
-              <% votes.each do |vote| %>
-                <%= hidden_field_tag "vote[votes][#{disability}][]", vote %>
-              <% end %>
-            <% end %>
-            <%= f.submit t(".vote"), class: "button expanded", data: {confirm: t(".confirm_vote"), disable: true } %>
+            <%= f.submit t(".vote"), class: "button expanded", disabled: "disabled", id: "vote-button", data: {confirm: t(".confirm_vote"), disable: true } %>
           <% end %>
+          <script type="text/javascript">
+            $(() => {
+              let serializedBallot = "<%= @form.serialized_ballot %>";
+              let voteEncryptionKey = <%= Rails.application.secrets.vote_encryption_key.to_json.html_safe %>;
+              window.Decidim.encryptVote(voteEncryptionKey, serializedBallot).then(function(encryptedContent) {
+                $("#vote_encrypted_ballot").val(encryptedContent);
+                $("#vote-button").removeAttr("disabled");
+              });
+            });
+          </script>
         </div>
       </div>
     </div>

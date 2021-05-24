@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_23_073050) do
+ActiveRecord::Schema.define(version: 2021_05_24_175844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -499,10 +499,10 @@ ActiveRecord::Schema.define(version: 2021_05_23_073050) do
 
   create_table "decidim_elections_census_votes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "code", null: false
-    t.jsonb "votes", null: false
     t.string "receipt", null: false
     t.string "ballot_style", default: [], null: false, array: true
     t.datetime "spoiled_at"
+    t.text "ballot", null: false
     t.index ["code"], name: "index_decidim_elections_census_votes_on_code", unique: true
   end
 
