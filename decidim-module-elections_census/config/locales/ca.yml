@@ -70,6 +70,17 @@ ca:
         female: Dona
         male: Home
         other: No binari
+      keys:
+        generate:
+          title: Generació de claus d'encriptació
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          decrypt_key: Clau per desencriptar vots
+          encrypt_key: Clau per encriptar vots
+          generate_key_pair: Generar claus
+          encrypt_content: Contingut a encriptar
+          decrypt_content: Contingut desencriptar
+          encrypt: Encriptar
+          decrypt: Desencriptar
       booth:
         authentication:
           new:

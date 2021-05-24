@@ -23,6 +23,9 @@ module Decidim
           match "cast" => "vote#create", via: [:post]
         end
 
+        match "keys/generate" => "keys#generate", via: [:get]
+        match "keys/verify" => "keys#verify", via: [:get]
+
         match "about" => "about#show", as: :elections, via: [:get]
         match "verify" => "verify#new", via: [:get]
         match "verify" => "verify#create", via: [:post]

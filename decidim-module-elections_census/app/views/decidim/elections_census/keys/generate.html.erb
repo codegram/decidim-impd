@@ -1,0 +1,68 @@
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <form id="key-generation">
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="decrypt-key"><%= t(".decrypt_key") %></label>
+                <textarea id="decrypt-key" rows="10"></textarea>
+              </div>
+              <div class="field">
+                <label for="encrypt-key"><%= t(".encrypt_key") %></label>
+                <textarea id="encrypt-key" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <button class="button expanded"><%= t(".generate_key_pair") %></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <form id="encrypt-decrypt">
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="encrypt-content"><%= t(".encrypt_content") %></label>
+                <textarea id="encrypt-content" rows="5"></textarea>
+              </div>
+              <div class="field">
+                <label for="decrypt-content"><%= t(".decrypt_content") %></label>
+                <textarea id="decrypt-content" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <button id="encrypt" class="button expanded"><%= t(".encrypt") %></button>
+                <button id="decrypt" class="button expanded"><%= t(".decrypt") %></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "decidim/unibabel.js" %>
+<%= javascript_include_tag "decidim/keys.js" %>
