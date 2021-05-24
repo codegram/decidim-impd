@@ -53,18 +53,28 @@
 
     let encryptedContent = $("#decrypt-content").val()
 
-    let decryptedContent = await decryptContent(parts, encryptedContent)
+    let key = await buildKey(parts)
+    let decryptedContent = await decryptContent(key, encryptedContent)
 
     $("#encrypt-content").val(decryptedContent)
     $("#decrypt-content").val("")
   })
 
-  const decryptContent = async (parts, encryptedContent) => {
+  const buildKey = async (parts) => {
     try {
       let hex = SecretSharing.combine(parts)
       let json = SecretSharing.hex2str(hex)
       let jwk = JSON.parse(json)
       let key = await Crypto.subtle.importKey("jwk", jwk, {name: "RSA-OAEP", hash: {name: "SHA-256"}}, false, ["decrypt"])
+
+      return key
+    } catch(error) {
+      alert(`S'ha produït un error al regenerar la clau: ${error}`)
+      return ""
+    }
+  }
+  const decryptContent = async (key, encryptedContent) => {
+    try {
       let ciphertext = Unibabel.base64ToBuffer(encryptedContent)
       let encoded = await Crypto.subtle.decrypt( { name: "RSA-OAEP" }, key, ciphertext);
       let decrypted = new TextDecoder().decode(encoded)
@@ -136,4 +146,5 @@
   exports.Decidim.encryptContent = encryptContent;
   exports.Decidim.encryptVote = encryptVote;
   exports.Decidim.decryptContent = decryptContent;
+  exports.Decidim.buildKey = buildKey;
 })(window);
