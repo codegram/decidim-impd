@@ -55,6 +55,8 @@ $(() => {
 
       let votes = parseInt(result.votes) || "0"
 
+      $progressBar.attr("aria-valuenow", result.percentage)
+      $progressBar.attr("aria-valuetext", `${result.percentage} percent`)
       $progressBarComplete.attr("style", `width: ${result.percentage}%`)
       $progressBarIncomplete.attr("style", `width: ${100 - result.percentage}%`)
       $percentage.html(`${result.percentage.toLocaleString('es', {minimumFractionDigits: 2})}%`)
