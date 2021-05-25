@@ -28,9 +28,9 @@
           <div class="accordion-content" data-tab-content>
             <% (answers + [:blank]).each do |candidate| %>
               <% if candidate.to_s == "blank" %>
-                <div class="evote__preview-result" data-candidate-id="<%= [question, candidate].join("_") %>">
+                <div class="evote__preview-result" data-question-id="<%= question %>" data-candidate-id="<%= [question, candidate].join("_") %>">
               <% else %>
-                <div class="evote__preview-result" data-candidate-id="<%= candidate %>">
+                <div class="evote__preview-result" data-question-id="<%= question %>" data-candidate-id="<%= candidate %>">
               <% end %>
                 <h3 class="evote__preview-option">
                   <% if candidate.to_s == "blank" %>
