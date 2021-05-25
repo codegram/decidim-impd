@@ -39,7 +39,7 @@ module Decidim
         end
 
         def vote
-          @vote ||= Vote.find_by(receipt: form.vote_receipt, code: form.voting_code, ballot_style: form.ballot_style)
+          @vote ||= Vote.where(ballot_style: form.ballot_style).where("receipt = ? OR code = ?", form.vote_id, form.vote_id).first
         end
 
         def spoiled?

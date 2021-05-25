@@ -5,9 +5,10 @@
     </h3>
     <div class="evote__content">
       <p>
-      <%= t(".vote_receipt") %>
-      <strong class="evote__poll-id"><%= @vote.receipt %></strong>
+        <%= t(".vote_receipt") %>
+        <strong class="evote__poll-id"><%= @vote.receipt %></strong>
       </p>
+      <p> <strong><%= t(".save_receipt_information") %></strong> </p>
       <p>
       <%= t(".verify_vote") %>
       <%= link_to t(".verify_vote_link"), verify_path %>.

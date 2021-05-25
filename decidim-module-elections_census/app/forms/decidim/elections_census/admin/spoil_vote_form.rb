@@ -10,11 +10,10 @@ module Decidim
         attribute :document_number, String
         attribute :disability, String
         attribute :secondary_disability, String
-        attribute :voting_code, String
-        attribute :vote_receipt, String
+        attribute :vote_id, String
         attribute :birthday, Date
 
-        validates :document_type, :document_number, :disability, :voting_code, :vote_receipt, :birthday, presence: true
+        validates :document_type, :document_number, :disability, :vote_id, :birthday, presence: true
 
         def self.from_params(params, additional_params = {})
           year = params["spoil"]["birthday(1i)"]
