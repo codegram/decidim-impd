@@ -98,6 +98,51 @@ es:
         spoil_vote: "%{user_name} ha anulado el voto %{vote_receipt}"
         unverify_voter: "%{user_name} ha desverificado el votante %{document_number}"
         verify_voter: "%{user_name} ha verificado el votante %{document_number}"
+      booth:
+        authentication:
+          new:
+            form_instructions_1: Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental.
+            form_instructions_2: Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores.
+            form_instructions_3_html: Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+            subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+            title: Identificación del/de la votante
+        vote:
+          already_voted: Ya has emitido tu voto electrónico, si quieres cambiar tu voto puedes hacerlo de manera presencial. Para hacerlo, hará falta que facilites el código de votación recibido por SMS o el recibo del voto que has obtenido al finalizar la votación.
+          cant_vote_now: El periodo de voto electrónico no está activo. Recuerda que se puede votar del 1 al 16 de junio.
+          cast_vote_failed: No se ha podido procesar tu voto, vuélvelo a intentar.
+          create:
+            save_receipt_information: Por favor, asegúrate que guardas esta información hasta la finalización del proceso electoral, necesitarás este código en caso de que quieras cambiar tu voto de manera presencial y también si quieres verificar que tu voto ah estado contabilizado en el recuento.
+            verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
+            verify_vote_link: comprobación del voto
+            vote_casted: Ya has votado, tu voto ha sido correctamente grabado.
+            vote_receipt: 'Este es el número de identificación de tu voto:'
+          error: Ha habido algun error al comprobar tus datos.
+          invalid_ballot: Los datos del voto encriptado no son válidos.
+          new:
+            preview: Enviar y previsualizar
+            subtitle: Selecciona las personas que quieres votar.
+            title: Cabina de votación
+            voting_code_help: Introduce el código que has recibido por SMS.
+            voting_errors: 'Se han producido los siguientes errores:'
+          not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
+          pending: Tus datos se constan en el censo electoral, pero aún no han estado verificados.
+          preview:
+            available_answers: 'Candidaturas escogidas:'
+            confirm_vote: "¿Quieres continuar? Una vez emitido tu voto solo se puede cambiar de manera presencial"
+            edit: Modificar mi voto
+            vote: Votar
+          start_voting: Puedes empezar la votación.
+          vote_casted: Voto registrado correctament.
+          vote_options:
+            more_information: Más información
+            voting_disability_title:
+              auditory_sensory: con discapacidad auditiva
+              intellectual: con discapacidad intelectual
+              mental_disorder: en situación de transtorno de salut mental
+              physical: con discapacidad física o orgánica
+              visual_sensory: con discapacidad visual
+            voting_subtitle: Puedes votar un máximo de %{max_votes} personas.
+            voting_title: Sector de personas %{disability_title}.
       disabilities:
         auditory_sensory: Discapacidad auditiva
         intellectual: Discapacidad intelectual
@@ -116,6 +161,39 @@ es:
         female: Mujer
         male: Hombre
         other: No binario
+      keys:
+        encryption_key:
+          encrypt_key: Clave para encriptar votos
+        generate:
+          generate_key_pair: Generar llaves
+          quorum: Quorum necesario para poder desencriptar los votos
+          subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Generación de llaves de encriptación
+        verify_decryption:
+          decrypt: Desencriptar
+          decrypted_content: Contenido desencriptado
+          encrypted_content: Contenido a desencriptar
+          subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Verificación de desencriptación
+        verify_encryption:
+          encrypt: Encriptar
+          encrypt_content: Contenido a encriptar
+          encrypted_content: Contenido encriptado
+          subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Verificació d'encriptació
+      verify:
+        create:
+          check_failed: Error en la comprobación
+          check_ok: Comprobación correcta
+          exists: Tu voto existe y formará parte del recuento.
+          exists_but_spoiled: Tu voto existe, pero no se tendrá en cuenta al recuento porque ha sido anulado.
+          no_vote_with_receipt: No existe ningún voto con este recibo.
+          vote_tampered: Tu voto existe pero ha sido modificado y no es válido. Ponte en contacto con el IMPD.
+        new:
+          receipt_help: Introduce el código que has obtenido al finalizar la votación electrónica.
+          send: Enviar
+          subtitle: Aquí puedes verificar que tu voto se ha emitido correctamente y que será utilizado en el recuento.
+          title: Comprueba tu voto
       voters:
         create:
           error: Ha habido algun error con tu inscripción.
@@ -183,62 +261,6 @@ es:
           success: Voto anulado correctamente
           vote_not_found: No existe ningún voto con estos datos
           voter_not_found: No existe ningún votante en el censo con estos datos
-      voting:
-        check:
-          check_failed: Error en la comprobación
-          check_ok: Comprobación correcta
-          exists: Tu voto existe y formará parte del recuento.
-          exists_but_spoiled: Tu voto existe, pero no se tendrá en cuenta al recuento porque ha sido anulado.
-          no_vote_with_receipt: No existe ningún voto con este recibo.
-          vote_tampered: Tu voto existe pero ha sido modificado y no es válido. Ponte en contacto con el IMPD.
-        check_vote_form:
-          receipt_help: Introduce el código que has obtenido al finalizar la votación electrónica.
-          send: Enviar
-          subtitle: Aquí puedes verificar que tu voto se ha emitido correctamente y que será utilizado en el recuento.
-          title: Comprueba tu voto
-        verify_form:
-          form_instructions_1: Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental.
-          form_instructions_2: Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores.
-          form_instructions_3_html: Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
-        vote:
-          already_voted: Ya has emitido tu voto electrónico, si quieres cambiar tu voto puedes hacerlo de manera presencial. Para hacerlo, hará falta que facilites el código de votación recibido por SMS o el recibo del voto que has obtenido al finalizar la votación.
-          cant_vote_now: El periodo de voto electrónico no está activo. Recuerda que se puede votar del 1 al 16 de junio.
-          error: Ha habido algun error al comprobar tus datos.
-          not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
-          pending: Tus datos se constan en el censo electoral, pero aún no han estado verificados.
-          start_voting: Puedes empezar la votación.
-          subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
-          vote_casted: Voto registrado correctament.
-        vote_casted:
-          verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
-          verify_vote_link: comprobación del voto
-          vote_casted: Ya has votado, tu voto ha sido correctamente grabado.
-          vote_receipt: 'Este es el número de identificación de tu voto:'
-        vote_form:
-          ok_instructions_1_html: Estás inscrito/a en el censo <strong>%{disability}</strong>
-          ok_instructions_2_html: o <strong>%{disability}</strong>
-          ok_instructions_3_html: Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}
-          ok_instructions_4_html: siguiente formulario.
-          preview: Enviar y previsualizar
-          subtitle: Selecciona las personas que quieres votar.
-          title: Cabina de votación
-          voting_code_help: Introduce el código que has recibido por SMS.
-          voting_errors: 'Se han producido los siguientes errores:'
-        vote_options:
-          more_information: Más información
-          voting_disability_title:
-            auditory_sensory: con discapacidad auditiva
-            intellectual: con discapacidad intelectual
-            mental_disorder: en situación de transtorno de salut mental
-            physical: con discapacidad física o orgánica
-            visual_sensory: con discapacidad visual
-          voting_subtitle: Puedes votar un máximo de %{max_votes} personas.
-          voting_title: Sector de personas %{disability_title}.
-        vote_preview:
-          available_answers: 'Candidaturas escogidas:'
-          confirm_vote: "¿Quieres continuar? Una vez emitido tu voto solo se puede cambiar de manera presencial"
-          edit: Modificar mi voto
-          vote: Votar
     menu:
       census: Censo electoral
       voting: Elecciones
