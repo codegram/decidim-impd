@@ -52,14 +52,19 @@
             <%= invisible_captcha %>
             <%= f.submit t(".vote"), class: "button expanded", disabled: "disabled", id: "vote-button", data: {confirm: t(".confirm_vote"), disable: true } %>
           <% end %>
+
           <script type="text/javascript">
             $(() => {
+              let Elections = window.Decidim.Elections;
               let serializedBallot = "<%= @form.serialized_ballot %>";
               let voteEncryptionKey = <%= Rails.application.secrets.vote_encryption_key.to_json.html_safe %>;
-              window.Decidim.encryptVote(voteEncryptionKey, serializedBallot).then(function(encryptedContent) {
-                $("#vote_encrypted_ballot").val(encryptedContent);
-                $("#vote-button").removeAttr("disabled");
-              });
+
+              Elections.importCryptoKey(voteEncryptionKey).then(function(key) {
+                Elections.encryptContent(key, serializedBallot).then(function(encryptedContent) {
+                  $("#vote_encrypted_ballot").val(encryptedContent);
+                  $("#vote-button").removeAttr("disabled");
+                })
+              })
             });
           </script>
         </div>
