@@ -3,5 +3,5 @@
 //= link decidim/FileSaver.js
 //= link decidim/elections.js
 //= link decidim/keys.js
-//= link decidim/admin/tally.js
+//= link decidim/tally.js
 //= link decidim-elections_census.js

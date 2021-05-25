@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <%= render partial: "decidim/elections_census/keys/private_key_parts", locals: {download: false} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <form>
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="encrypted-votes"><%= t(".encrypted_votes") %></label>
+                <textarea id="encrypted-votes" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <button id="decrypt-votes" class="button expanded"><%= t(".decrypt") %></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="decrypted-votes"><%= t(".decrypted_votes") %></label>
+                <textarea id="decrypted-votes" rows="5" disabled="disabled"></textarea>
+                <button id="download-votes" data-download-for="decrypted-votes" data-download-as="vots-desencriptats" class="button expanded"><%= t(".download") %></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "decidim/tally" %>

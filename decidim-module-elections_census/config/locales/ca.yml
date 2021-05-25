@@ -84,6 +84,14 @@ ca:
           verified: Cens verificat
           votes: Vots
     elections_census:
+      tally:
+        decrypt:
+          title: Desencriptar vots
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          encrypted_votes: Vots encriptats
+          decrypt: Desencriptar
+          decrypted_votes: Vots desencriptats
+          download: Descarregar
       admin:
         tally:
           show:
@@ -111,7 +119,7 @@ ca:
           cant_vote_now: El període de vot electrònic no està actiu. Recorda que es pot votar de l'1 al 16 de juny.
           cast_vote_failed: No s'ha pogut processar el teu vot, torna-ho a intentar.
           create:
-            save_receipt_information: Si us plau, assegura't que guardes aquesta informació fins a la finalització del procés electoral, necessitaràs aquest codi en cas que vulguis canviar el teu vot de manera presencial i també si vols verificar que el teu vot ah estat comptabilitzat en el recompte.
+            save_receipt_information: Si us plau, assegura't que guardes aquesta informació fins a la finalització del procés electoral, necessitaràs aquest codi en cas que vulguis canviar el teu vot de manera presencial i també si vols verificar que el teu vot ha estat comptabilitzat en el recompte.
             verify_vote: 'Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de '
             verify_vote_link: comprovació del vot
             vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
@@ -271,7 +279,7 @@ ca:
     intro: Informació
     new: Inscripció al cens
     search: Comprova la inscripció al cens
-    title: Cens electoral
+    title: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
     vote: Votar
     voting_title: Eleccions
   errors:

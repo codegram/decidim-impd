@@ -21,7 +21,7 @@
   $("button.download-key").on("click", async (event) => {
     event.preventDefault()
     let $button = $(event.target)
-    let digest = await Elections.digestMessage($encryptKey.val())
+    let digest = await Elections.generateDigest($encryptKey.val())
     let fileName = `${$button.data("download-as")}-${digest}.txt`
     let target = $(`#${$button.data("download-for")}`)
     let content = target.val()
@@ -33,12 +33,12 @@
   $("#encrypt-decrypt button#encrypt").on("click", async (event) => {
     event.preventDefault()
 
-    let content = $("#encrypt-content").val()
+    let content = $("#decrypted-content").val()
     let key = await Elections.importCryptoKey($encryptKey.val())
     let encryptedContent = await Elections.encryptContent(key, content)
 
-    $("#decrypt-content").val(encryptedContent)
-    $("#encrypt-content").val("")
+    $("#encrypted-content").val(encryptedContent)
+    $("#decrypted-content").val("")
   })
 
   $("#encrypt-decrypt button#decrypt").on("click", async (event) => {
@@ -48,12 +48,12 @@
       .map((_index, element) => $(element).val())
       .filter((_index, part) => part !== undefined && part.length > 0)
 
-    let encryptedContent = $("#decrypt-content").val()
+    let encryptedContent = $("#encrypted-content").val()
 
     let key = await Elections.buildKey(parts)
     let decryptedContent = await Elections.decryptContent(key, encryptedContent)
 
-    $("#encrypt-content").val(decryptedContent)
-    $("#decrypt-content").val("")
+    $("#decrypted-content").val(decryptedContent)
+    $("#encrypted-content").val("")
   })
-});
+})();

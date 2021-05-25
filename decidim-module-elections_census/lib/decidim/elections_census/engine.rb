@@ -27,6 +27,9 @@ module Decidim
         match "keys/verify-encryption" => "keys#verify_encryption", via: [:get]
         match "keys/verify-decryption" => "keys#verify_decryption", via: [:get]
 
+        match "tally/decrypt" => "tally#decrypt", via: [:get]
+        match "tally" => "tally#tally", via: [:get]
+
         match "about" => "about#show", as: :elections, via: [:get]
         match "verify" => "verify#new", via: [:get]
         match "verify" => "verify#create", via: [:post]

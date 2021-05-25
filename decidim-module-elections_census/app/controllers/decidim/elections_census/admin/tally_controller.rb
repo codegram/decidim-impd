@@ -15,7 +15,7 @@ module Decidim
             {
               receipt: vote.receipt,
               ballot_style: vote.ballot_style,
-              ballot: vote.votes,
+              ballot: vote.ballot,
               spoiled_at: vote.spoiled_at
             }
           end
