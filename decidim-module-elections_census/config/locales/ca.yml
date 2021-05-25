@@ -1,293 +1,293 @@
 ---
 ca:
-  elections_census:
-    title: Cens electoral
-    census_title: Cens electoral
-    voting_title: Eleccions
-    intro: Informació
-    new: Inscripció al cens
-    search: Comprova la inscripció al cens
-    vote: Votar
-    check: Comprova el vot
-    elections: Les eleccions
-  layouts:
-    decidim:
-      elections_vote:
-        exit: Sortir
-  decidim:
-    admin:
-      actions:
-        verify: Verificar
-        unverify: Desverificar
-        spoil_vote: Anul·lar vot
-      voters:
-        index:
-          pending: Cens pendents de verificar
-          verified: Cens verificat
-          import: Importar cens
-          export: Exportar pendents de verificar
-          export_for_elections: Exportar cens verificat
-          votes: Vots
-          tally: Recompte de vots
-      titles:
-        voters: Cens electoral
-        votes: Vots
-        elections: Eleccions
-        spoil_vote: Anul·lar vot
-    menu:
-      census: Cens electoral
-      voting: Eleccions
-    elections_census:
-      admin_log:
-        spoil_vote: "%{user_name} ha anul·lat el vot %{vote_receipt}"
-        verify_voter: "%{user_name} ha verificat el votant %{document_number}"
-        unverify_voter: "%{user_name} ha desverificat el votant %{document_number}"
-      admin:
-        voters: Eleccions
-        tally:
-          show:
-            export_votes: Exportar vots
-            cant_export_votes_yet: No es poden exportar els vots fins que no finalitzi el procés de votació.
-            tally_votes: Recompte de vots
-            perform_tally: Recomptar
-            unencrypted_votes: Vots desencriptats
-            tally_results: Resultat del recompte
-      document_types:
-        dni: DNI
-        passport: Passaport
-        nie: NIE
-        minor_no_documents: Menor sense documents
-        no_documents: Persona sense documentació
-      disabilities:
-        physical: Discapacitat física o orgànica
-        intellectual: Discapacitat intel·lectual
-        not_reported: Discapacitat no informada
-        auditory_sensory: Discapacitat auditiva
-        visual_sensory: Discapacitat visual
-        mental_disorder: Discapacitat per transtorn de salut mental
-        other: Altres
-      genders:
-        female: Dona
-        male: Home
-        other: No binari
-      keys:
-        verify_decryption:
-          title: Verificació de desencriptació
-          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          encrypted_content: Contingut a desencriptar
-          decrypted_content: Contingut desencriptat
-          decrypt: Desencriptar
-        encryption_key:
-          encrypt_key: Clau per encriptar vots
-        verify_encryption:
-          title: Verificació d'encriptació
-          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          encrypt_content: Contingut a encriptar
-          encrypted_content: Contingut encriptat
-          encrypt: Encriptar
-        generate:
-          title: Generació de claus d'encriptació
-          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          generate_key_pair: Generar claus
-          quorum: Quorum necessari per poder desencriptar els vots
-      booth:
-        authentication:
-          new:
-            title: Identificació del/de la votant
-            subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-            form_instructions_1: Per votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
-            form_instructions_2: Per començar el procés de votació, només has d’introduir les dades que demanem a les caselles inferiors.
-            form_instructions_3_html: "Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
-        vote:
-          start_voting: Pots començar la votació.
-          pending: Estàs inscrit/a al cens electoral però les teves dades encara no s'han verificat. Una vegada s'hagin verificat podràs votar.
-          not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
-          error: Hi ha hagut algun error al comprovar les teves dades.
-          already_voted: "Ja has emès el teu vot electrònic, si vols canviar el teu vot pots fer-ho de manera presencial."
-          cant_vote_now: "El període de vot electrònic no està actiu. Recorda que es pot votar de l'1 al 16 de juny."
-          vote_casted: Vot emès correctament.
-          invalid_ballot: Les dades del vot encriptat no són vàlides.
-          cast_vote_failed: No s'ha pogut processar el teu vot, torna-ho a intentar.
-          new:
-            title: Cabina de votació
-            subtitle: Selecciona les persones que vols votar.
-            voting_code_help: Introdueix el codi que has rebut per SMS.
-            voting_errors: "S'han produït els següents errors:"
-            preview: Enviar i previsualitzar
-          vote_options:
-            voting_title: "Sector de persones %{disability_title}."
-            voting_subtitle: "Pots votar un màxim de %{max_votes} persones."
-            more_information: Més informació
-            voting_disability_title:
-              physical: amb discapacitat física o orgànica
-              intellectual: amb discapacitat intel·lectual
-              auditory_sensory: amb discapacitat auditiva
-              visual_sensory: amb discapacitat visual
-              mental_disorder: en situació de transtorn de salut mental
-          preview:
-            available_answers: "Candidatures escollides:"
-            edit: "Modificar el meu vot"
-            vote: "Votar"
-            confirm_vote: "Vols continuar? Una vegada emès el teu vot només es pot canviar de manera presencial."
-          create:
-            vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
-            vote_receipt: "Aquest és el número d’identificació del teu vot: "
-            verify_vote: "Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de "
-            verify_vote_link: "comprovació del vot"
-      verify:
-        new:
-          title: Comprova el teu vot
-          subtitle: Aquí pots verificar que el teu vot s'ha emès correctament i que serà utilitzat en el recompte.
-          receipt_help: "Introdueix el codi que has obtingut al finalitzar la votació electrònica."
-          send: Enviar
-        create:
-          check_failed: Error en la comprovació
-          check_ok: Comprovació correcta
-          vote_tampered: El teu vot existeix però ha estat modificat i no és vàlid. Posa't en contacte amb l'IMPD.
-          exists_but_spoiled: El teu vot existeix, però no es tindrà en compte al recompte perquè ha estat anul·lat.
-          exists: El teu vot existeix i formarà part del recompte.
-          no_vote_with_receipt: No existeix cap vot amb aquest rebut.
-      votes:
-        spoil:
-          success: "Vot anul·lat correctament"
-          error: "Hi ha algun error al formulari"
-          voter_not_found: "No existeix cap votant al cens amb aquestes dades"
-          vote_not_found: "No existeix cap vot amb aquestes dades"
-          not_verified: "El votant no està verificat al cens"
-          not_voted: "El votant no ha votat electrònicament"
-          already_spoiled: "Aquest vot ja ha estat anul·lat"
-          spoiling_not_open: "En aquests moments no està permès anul·lar vots"
-      voters:
-        create:
-          error: Hi ha hagut algun error amb la teva inscripció.
-          success: "Les teves dades han estat introduïdes correctament al cens electoral. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a eleccionsIMPD@bcn.cat."
-        import:
-          error: Hi ha hagut algun al importar el cens
-          success: Cens importat correctament
-        verify:
-          success: Persona verificada correctament
-        unverify:
-          success: Persona desverificada correctament
-        new:
-          title: Inscripció al cens
-          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          tos_title: Termes legals
-          tos_text: Text dels termes legals
-          tos_agreement: "Estic d'acord amb els <a href='https://impd.decidim.barcelona/pages/terms-and-conditions?locale=ca' target='_blank'>termes legals</a> i la <a href='https://impd.decidim.barcelona/pages/privacitat?locale=ca' target='_blank'>política de privacitat</a>."
-          send: Enviar
-          email_help: El correu electrònic del representant legal en cas de menor de 16 anys.
-          mobile_phone_number_help: El número de telèfon mòbil del representant legal en cas de menor de 16 anys.
-          select_document_type: Escull el tipus de document
-          select_disability: Escull una discapacitat
-          select_secondary_disability: Escull una discapacitat secundària (opcional)
-          select_gender: Escull un sexe
-          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya.
-          disability_certificate_help_2: "Si no tens el dictamen tècnic facultatiu, hauràs d'enviar el document de declaració de la discapacitat que hi ha a sota. Abans te l'hauràs de descarregar, omplir les dades que es demanen i signar-lo."
-          disability_certificate_help_3: "Document de declaració de la discapacitat."
-          disability_certificate_help_4: "En cas de ser una persona en situació de trastorn de salut mental i no disposar del reconeixement legal de la situació de discapacitat, envia el diagnòstic psiquiàtric o un document que acrediti que t’estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental."
-          file_settings_help: "Les extensions permeses són: %{extensions}."
-          gender_help: Camp amb finalitats estadístiques
-          date_select:
-            day: Dia
-            month: Mes
-            year: Any
-          form_instructions_1: "Si vols inscriure’t al cens electoral, cal que sàpigues el següent:"
-          form_instructions_2: "Has d'estar empadronat/ada a Barcelona."
-          form_instructions_3: "Has de tenir preparada aquesta documentació: reconeixement legal de la situació de discapacitat o diagnòstic per trastorn de salut mental o document que acrediti que t'estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental."
-          form_instructions_4: També has de tenir a mà el número de DNI, NIE o passaport.
-          form_instructions_5: "En el cas de persones tutores d'un/a menor de 16 anys amb discapacitat, cal també tenir preparat el llibre de família."
-          form_instructions_6: "Per inscriure’t al cens has d’introduir les dades que demanem a les caselles inferiors."
-          form_instructions_7_html: "Si tens dificultats per fer la inscripció, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
-        search:
-          title: Comprova la inscripció al cens
-          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          success: Comprovació correcta.
-          pending: Comprovació de dades en procés.
-          not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
-          error: Hi ha hagut algun error al comprovar la teva inscripció.
-          form_instructions_1: Per poder votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
-          form_instructions_2: Per comprovar si estàs inscrit/a al cens electoral, només has d’introduir les dades que demanem a les caselles inferiors.
-          form_instructions_3_html: "Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
-          ok_instructions_1_html: "Estàs inscrit/a al cens <strong>%{disability}</strong>"
-          ok_instructions_2_html: "i/o <strong>%{disability}</strong>"
-          ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
-          ok_instructions_4_html: "següent formulari"
-          pending_instructions_1_html: "Les teves dades han estat introduïdes correctament al cens electoral. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>."
-          pending_instructions_2: Emplenar el formulari d’inscripció no garanteix el dret a vot de manera immediata. Les dades seran revisades a fi de comprovar que compleixes tots els requisits per poder votar. T’avisarem només en cas que hi hagi alguna incidència en la inscripció al cens.
   activemodel:
     attributes:
       add_documents: Adjunts
       answer:
         add_documents: Adjunts
-      spoil:
-        document_type: Tipus de document
-        document_number: Número de document
-        birthday: Data de naixement
-        disability: Discapacitat principal
-        secondary_disability: Discapacitat secundària
-        vote_receipt: Rebut del vot
-        voting_code: Codi de votació
-      voter:
-        document_type: Tipus de document
-        document_number: Número de document
-        legal_guardian_document_type: Tipus de document del representant legal
-        legal_guardian_document_number: Número de document del representant legal
-        legal_guardian_name: Nom
-        legal_guardian_lastname: Primer cognom
-        legal_guardian_second_lastname: Segon cognom
-        name: Nom
-        lastname: Primer cognom
-        second_lastname: Segon cognom
-        full_name: Nom i cognoms
-        disability: Discapacitat principal
-        secondary_disability: Discapacitat secundària
-        address: Adreça
-        address_type: Tipus de via
-        address_name: Nom de la via
-        address_number: Número
-        address_floor: Pis
-        address_door: Porta
-        address_postal_code: Codi postal (de l'adreça d’empadronament)
-        birthday: Data de naixement
-        gender: Sexe
-        email: Correu electrònic
-        mobile_phone_number: Telèfon mòbil
-        tos_agreement: Termes legals
-        created_at: Data de creació
-        disability_certificate: Document acreditatiu de la discapacitat
-        family_book: Llibre de família
-      vote:
-        voting_code: Codi de votació
-        spoiled_at: Data d'anul·lació
-        receipt: Rebut del vot
       check:
         receipt: Rebut del vot
+      spoil:
+        birthday: Data de naixement
+        disability: Discapacitat principal
+        document_number: Número de document
+        document_type: Tipus de document
+        secondary_disability: Discapacitat secundària
+        vote_id: Rebut del vot o codi de votació
+      vote:
+        receipt: Rebut del vot
+        spoiled_at: Data d'anul·lació
+        voting_code: Codi de votació
+      voter:
+        address: Adreça
+        address_door: Porta
+        address_floor: Pis
+        address_name: Nom de la via
+        address_number: Número
+        address_postal_code: Codi postal (de l'adreça d’empadronament)
+        address_type: Tipus de via
+        birthday: Data de naixement
+        created_at: Data de creació
+        disability: Discapacitat principal
+        disability_certificate: Document acreditatiu de la discapacitat
+        document_number: Número de document
+        document_type: Tipus de document
+        email: Correu electrònic
+        family_book: Llibre de família
+        full_name: Nom i cognoms
+        gender: Sexe
+        lastname: Primer cognom
+        legal_guardian_document_number: Número de document del representant legal
+        legal_guardian_document_type: Tipus de document del representant legal
+        legal_guardian_lastname: Primer cognom
+        legal_guardian_name: Nom
+        legal_guardian_second_lastname: Segon cognom
+        mobile_phone_number: Telèfon mòbil
+        name: Nom
+        second_lastname: Segon cognom
+        secondary_disability: Discapacitat secundària
+        tos_agreement: Termes legals
     errors:
       models:
         answer:
           attributes:
             add_documents:
               needs_to_be_reattached: És necessari tornar a adjuntar l'arxiu
-        voter:
-          email_or_phone_required: Has d'introduir el correu electrònic o el telèfon
-          must_be_different: Ha de ser diferent de la discapacitat principal
-          invalid_census: No existeixen aquestes dades al padró
-        voting:
-          phone_overuse: Aquest número de telèfon ja s'ha utilitzat en un altre vot.
         vote:
-          too_many_votes: Has seleccionat massa opcions.
           at_least_one_vote: Has de seleccionar almenys una opció de vot per cada candidatura.
           invalid_options: Alguna de les opcions seleccionades no és vàlida.
+          too_many_votes: Has seleccionat massa opcions.
+        voter:
+          email_or_phone_required: Has d'introduir el correu electrònic o el telèfon
+          invalid_census: No existeixen aquestes dades al padró
+          must_be_different: Ha de ser diferent de la discapacitat principal
+        voting:
+          phone_overuse: Aquest número de telèfon ja s'ha utilitzat en un altre vot.
+  decidim:
+    admin:
+      actions:
+        spoil_vote: Anul·lar vot
+        unverify: Desverificar
+        verify: Verificar
+      titles:
+        elections: Eleccions
+        spoil_vote: Anul·lar vot
+        voters: Cens electoral
+        votes: Vots
+      voters:
+        index:
+          export: Exportar pendents de verificar
+          export_for_elections: Exportar cens verificat
+          import: Importar cens
+          pending: Cens pendents de verificar
+          tally: Recompte de vots
+          verified: Cens verificat
+          votes: Vots
+    elections_census:
+      admin:
+        tally:
+          show:
+            cant_export_votes_yet: No es poden exportar els vots fins que no finalitzi el procés de votació.
+            export_votes: Exportar vots
+            perform_tally: Recomptar
+            tally_results: Resultat del recompte
+            tally_votes: Recompte de vots
+            unencrypted_votes: Vots desencriptats
+        voters: Eleccions
+      admin_log:
+        spoil_vote: "%{user_name} ha anul·lat el vot %{vote_receipt}"
+        unverify_voter: "%{user_name} ha desverificat el votant %{document_number}"
+        verify_voter: "%{user_name} ha verificat el votant %{document_number}"
+      booth:
+        authentication:
+          new:
+            form_instructions_1: Per votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
+            form_instructions_2: Per començar el procés de votació, només has d’introduir les dades que demanem a les caselles inferiors.
+            form_instructions_3_html: Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+            subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+            title: Identificació del/de la votant
+        vote:
+          already_voted: Ja has emès el teu vot electrònic, si vols canviar el teu vot pots fer-ho de manera presencial. Per fer-ho, caldrà que facilitis el codi de votació rebut per SMS o el rebut del vot que has obtingut al finalitzar la votació.
+          cant_vote_now: El període de vot electrònic no està actiu. Recorda que es pot votar de l'1 al 16 de juny.
+          cast_vote_failed: No s'ha pogut processar el teu vot, torna-ho a intentar.
+          create:
+            save_receipt_information: Si us plau, assegura't que guardes aquesta informació fins a la finalització del procés electoral, necessitaràs aquest codi en cas que vulguis canviar el teu vot de manera presencial i també si vols verificar que el teu vot ah estat comptabilitzat en el recompte.
+            verify_vote: 'Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de '
+            verify_vote_link: comprovació del vot
+            vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
+            vote_receipt: 'Aquest és el número d’identificació del teu vot: '
+          error: Hi ha hagut algun error al comprovar les teves dades.
+          invalid_ballot: Les dades del vot encriptat no són vàlides.
+          new:
+            preview: Enviar i previsualitzar
+            subtitle: Selecciona les persones que vols votar.
+            title: Cabina de votació
+            voting_code_help: Introdueix el codi que has rebut per SMS.
+            voting_errors: 'S''han produït els següents errors:'
+          not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
+          pending: Estàs inscrit/a al cens electoral però les teves dades encara no s'han verificat. Una vegada s'hagin verificat podràs votar.
+          preview:
+            available_answers: 'Candidatures escollides:'
+            confirm_vote: Vols continuar? Una vegada emès el teu vot només es pot canviar de manera presencial.
+            edit: Modificar el meu vot
+            vote: Votar
+          start_voting: Pots començar la votació.
+          vote_casted: Vot emès correctament.
+          vote_options:
+            more_information: Més informació
+            voting_disability_title:
+              auditory_sensory: amb discapacitat auditiva
+              intellectual: amb discapacitat intel·lectual
+              mental_disorder: en situació de transtorn de salut mental
+              physical: amb discapacitat física o orgànica
+              visual_sensory: amb discapacitat visual
+            voting_subtitle: Pots votar un màxim de %{max_votes} persones.
+            voting_title: Sector de persones %{disability_title}.
+      disabilities:
+        auditory_sensory: Discapacitat auditiva
+        intellectual: Discapacitat intel·lectual
+        mental_disorder: Discapacitat per transtorn de salut mental
+        not_reported: Discapacitat no informada
+        other: Altres
+        physical: Discapacitat física o orgànica
+        visual_sensory: Discapacitat visual
+      document_types:
+        dni: DNI
+        minor_no_documents: Menor sense documents
+        nie: NIE
+        no_documents: Persona sense documentació
+        passport: Passaport
+      genders:
+        female: Dona
+        male: Home
+        other: No binari
+      keys:
+        encryption_key:
+          encrypt_key: Clau per encriptar vots
+        generate:
+          generate_key_pair: Generar claus
+          quorum: Quorum necessari per poder desencriptar els vots
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Generació de claus d'encriptació
+        verify_decryption:
+          decrypt: Desencriptar
+          decrypted_content: Contingut desencriptat
+          encrypted_content: Contingut a desencriptar
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Verificació de desencriptació
+        verify_encryption:
+          encrypt: Encriptar
+          encrypt_content: Contingut a encriptar
+          encrypted_content: Contingut encriptat
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Verificació d'encriptació
+      verify:
+        create:
+          check_failed: Error en la comprovació
+          check_ok: Comprovació correcta
+          exists: El teu vot existeix i formarà part del recompte.
+          exists_but_spoiled: El teu vot existeix, però no es tindrà en compte al recompte perquè ha estat anul·lat.
+          no_vote_with_receipt: No existeix cap vot amb aquest rebut.
+          vote_tampered: El teu vot existeix però ha estat modificat i no és vàlid. Posa't en contacte amb l'IMPD.
+        new:
+          receipt_help: Introdueix el codi que has obtingut al finalitzar la votació electrònica.
+          send: Enviar
+          subtitle: Aquí pots verificar que el teu vot s'ha emès correctament i que serà utilitzat en el recompte.
+          title: Comprova el teu vot
+      voters:
+        create:
+          error: Hi ha hagut algun error amb la teva inscripció.
+          success: Les teves dades han estat introduïdes correctament al cens electoral. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a eleccionsIMPD@bcn.cat.
+        import:
+          error: Hi ha hagut algun al importar el cens
+          success: Cens importat correctament
+        new:
+          date_select:
+            day: Dia
+            month: Mes
+            year: Any
+          disability_certificate_help: Dictamen tècnic facultatiu de la discapacitat de la Generalitat de Catalunya.
+          disability_certificate_help_2: Si no tens el dictamen tècnic facultatiu, hauràs d'enviar el document de declaració de la discapacitat que hi ha a sota. Abans te l'hauràs de descarregar, omplir les dades que es demanen i signar-lo.
+          disability_certificate_help_3: Document de declaració de la discapacitat.
+          disability_certificate_help_4: En cas de ser una persona en situació de trastorn de salut mental i no disposar del reconeixement legal de la situació de discapacitat, envia el diagnòstic psiquiàtric o un document que acrediti que t’estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental.
+          email_help: El correu electrònic del representant legal en cas de menor de 16 anys.
+          file_settings_help: 'Les extensions permeses són: %{extensions}.'
+          form_instructions_1: 'Si vols inscriure’t al cens electoral, cal que sàpigues el següent:'
+          form_instructions_2: Has d'estar empadronat/ada a Barcelona.
+          form_instructions_3: 'Has de tenir preparada aquesta documentació: reconeixement legal de la situació de discapacitat o diagnòstic per trastorn de salut mental o document que acrediti que t''estan atenent en un servei de rehabilitació psicosocial o en algun altre servei de salut mental.'
+          form_instructions_4: També has de tenir a mà el número de DNI, NIE o passaport.
+          form_instructions_5: En el cas de persones tutores d'un/a menor de 16 anys amb discapacitat, cal també tenir preparat el llibre de família.
+          form_instructions_6: Per inscriure’t al cens has d’introduir les dades que demanem a les caselles inferiors.
+          form_instructions_7_html: Si tens dificultats per fer la inscripció, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+          gender_help: Camp amb finalitats estadístiques
+          mobile_phone_number_help: El número de telèfon mòbil del representant legal en cas de menor de 16 anys.
+          select_disability: Escull una discapacitat
+          select_document_type: Escull el tipus de document
+          select_gender: Escull un sexe
+          select_secondary_disability: Escull una discapacitat secundària (opcional)
+          send: Enviar
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Inscripció al cens
+          tos_agreement: Estic d'acord amb els <a href='https://impd.decidim.barcelona/pages/terms-and-conditions?locale=ca' target='_blank'>termes legals</a> i la <a href='https://impd.decidim.barcelona/pages/privacitat?locale=ca' target='_blank'>política de privacitat</a>.
+          tos_text: Text dels termes legals
+          tos_title: Termes legals
+        search:
+          error: Hi ha hagut algun error al comprovar la teva inscripció.
+          form_instructions_1: Per poder votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
+          form_instructions_2: Per comprovar si estàs inscrit/a al cens electoral, només has d’introduir les dades que demanem a les caselles inferiors.
+          form_instructions_3_html: Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+          not_present: No estàs inscrit/a al cens electoral. Per inscriure’t al cens emplena el formulari següent
+          ok_instructions_1_html: Estàs inscrit/a al cens <strong>%{disability}</strong>
+          ok_instructions_2_html: i/o <strong>%{disability}</strong>
+          ok_instructions_3_html: Si et trobes en alguna altra situació de discapacitat reconeguda o has detectat algun error, emplena el %{link}.
+          ok_instructions_4_html: següent formulari
+          pending: Comprovació de dades en procés.
+          pending_instructions_1_html: Les teves dades han estat introduïdes correctament al cens electoral. Per a qualsevol consulta pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+          pending_instructions_2: Emplenar el formulari d’inscripció no garanteix el dret a vot de manera immediata. Les dades seran revisades a fi de comprovar que compleixes tots els requisits per poder votar. T’avisarem només en cas que hi hagi alguna incidència en la inscripció al cens.
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          success: Comprovació correcta.
+          title: Comprova la inscripció al cens
+        unverify:
+          success: Persona desverificada correctament
+        verify:
+          success: Persona verificada correctament
+      votes:
+        spoil:
+          already_spoiled: Aquest vot ja ha estat anul·lat
+          error: Hi ha algun error al formulari
+          not_verified: El votant no està verificat al cens
+          not_voted: El votant no ha votat electrònicament
+          spoiling_not_open: En aquests moments no està permès anul·lar vots
+          success: Vot anul·lat correctament
+          vote_not_found: No existeix cap vot amb aquestes dades
+          voter_not_found: No existeix cap votant al cens amb aquestes dades
+    menu:
+      census: Cens electoral
+      voting: Eleccions
+  elections_census:
+    census_title: Cens electoral
+    check: Comprova el vot
+    elections: Les eleccions
+    intro: Informació
+    new: Inscripció al cens
+    search: Comprova la inscripció al cens
+    title: Cens electoral
+    vote: Votar
+    voting_title: Eleccions
   errors:
     messages:
-      carrierwave_processing_error: no s'ha pogut processar
-      carrierwave_integrity_error: no és d'una mena d'arxiu permès
       carrierwave_download_error: no s'ha pogut descarregar
-      extension_whitelist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions permeses són: %{allowed_types}"
-      extension_blacklist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions prohibides són: %{prohibited_types}"
-      content_type_whitelist_error: "No es poden pujar arxius de l'extensió %{content_type}"
-      content_type_blacklist_error: "No es poden pujar arxius de l'extensió %{content_type}"
-      rmagick_processing_error: "No s'ha pogut manipular amb rmagick, potser perquè no és una imatge? Error original: %{e}"
-      mini_magick_processing_error: "No s'ha pogut manipular amb MiniMagick, potser perquè no és una imatge? Error original: %{e}"
-      min_size_error: "La grandària de l'arxiu ha de ser major que %{min_size}"
-      max_size_error: "La grandària de l'arxiu ha de ser inferior a %{max_size}"
+      carrierwave_integrity_error: no és d'una mena d'arxiu permès
+      carrierwave_processing_error: no s'ha pogut processar
+      content_type_blacklist_error: No es poden pujar arxius de l'extensió %{content_type}
+      content_type_whitelist_error: No es poden pujar arxius de l'extensió %{content_type}
+      extension_blacklist_error: 'No es poden pujar arxius de l''extensió %{extension}. Les extensions prohibides són: %{prohibited_types}'
+      extension_whitelist_error: 'No es poden pujar arxius de l''extensió %{extension}. Les extensions permeses són: %{allowed_types}'
+      max_size_error: La grandària de l'arxiu ha de ser inferior a %{max_size}
+      min_size_error: La grandària de l'arxiu ha de ser major que %{min_size}
+      mini_magick_processing_error: 'No s''ha pogut manipular amb MiniMagick, potser perquè no és una imatge? Error original: %{e}'
+      rmagick_processing_error: 'No s''ha pogut manipular amb rmagick, potser perquè no és una imatge? Error original: %{e}'
+  layouts:
+    decidim:
+      elections_vote:
+        exit: Sortir

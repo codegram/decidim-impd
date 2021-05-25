@@ -871,6 +871,7 @@ DEPENDENCIES
   decidim-elections_census!
   faker
   fog-aws
+  i18n-tasks
   jose
   jwt
   letter_opener_web (~> 1.3)

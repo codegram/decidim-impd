@@ -28,6 +28,7 @@ group :development do
   gem "jose"
   gem 'openssl', '~> 2.1'
   gem 'jwt'
+  gem 'i18n-tasks'
 end
 
 group :production do
