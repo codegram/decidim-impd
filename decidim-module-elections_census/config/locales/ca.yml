@@ -84,14 +84,6 @@ ca:
           verified: Cens verificat
           votes: Vots
     elections_census:
-      tally:
-        decrypt:
-          title: Desencriptar vots
-          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-          encrypted_votes: Vots encriptats
-          decrypt: Desencriptar
-          decrypted_votes: Vots desencriptats
-          download: Descarregar
       admin:
         tally:
           show:
@@ -189,6 +181,17 @@ ca:
           encrypted_content: Contingut encriptat
           subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
           title: Verificació d'encriptació
+      tally:
+        decrypt:
+          decrypt: Desencriptar
+          decrypted_votes: Vots desencriptats
+          download: Descarregar
+          encrypted_votes: Vots encriptats
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Desencriptar vots
+        tally:
+          decrypted_votes: Vots desencriptats
+          tally: Realitzar recompte
       verify:
         create:
           check_failed: Error en la comprovació

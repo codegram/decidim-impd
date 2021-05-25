@@ -181,6 +181,17 @@ es:
           encrypted_content: Contenido encriptado
           subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
           title: Verificació d'encriptació
+      tally:
+        decrypt:
+          decrypt: Desencriptar
+          decrypted_votes: Votos desencriptados
+          download: Descargar
+          encrypted_votes: Votos encriptados
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Desencriptar votos
+        tally:
+          decrypted_votes: Votos desencriptados
+          tally: Realizar recuento
       verify:
         create:
           check_failed: Error en la comprobación
