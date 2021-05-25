@@ -96,4 +96,6 @@
   exports.Decidim.Elections.buildKey = buildKey;
   exports.Decidim.Elections.generateParts = generateParts;
   exports.Decidim.Elections.generateDigest = generateDigest;
+  exports.Decidim.Elections.generateKeys = generateKeys;
+  exports.Decidim.Elections.importCryptoKey = importCryptoKey
 })(window);

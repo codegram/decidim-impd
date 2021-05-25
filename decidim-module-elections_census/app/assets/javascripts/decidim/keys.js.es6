@@ -6,8 +6,10 @@
     event.preventDefault()
     $("textarea").toArray().forEach((element) => $(element).val(""))
     let quorum = parseInt($("input#quorum").val())
+    let exportedDecryptKey
+    let exportedEncryptKey
 
-    [expportedDecryptKey, exportedEncryptKey] = await Elections.generateKeys(quorum)
+    [exportedDecryptKey, exportedEncryptKey] = await Elections.generateKeys(quorum)
 
     let numParts = $(".tally-key-part").length
     let parts = Elections.generateParts(exportedDecryptKey, numParts, quorum)
