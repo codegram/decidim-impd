@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "csv"
 
 module Decidim
   module ElectionsCensus
@@ -87,10 +88,25 @@ module Decidim
         def elections_export
           enforce_permission_to :export, :voter
 
-          ExportVotersForElectionsJob.perform_later(current_user, current_organization)
-          flash[:notice] = t("decidim.admin.exports.notice")
+          collection = Decidim::ElectionsCensus::Voter.verified.where(organization: current_organization)
+          serializer = Decidim::ElectionsCensus::ElectionVoterSerializer
 
-          redirect_to action: :index
+          csv = CSV.generate do |csv|
+            csv << ["NOM", "PRIMER_COGNOM,", "SEGON_COGNOM", "TIPUS_DOCUMENT", "DOCUMENT", "DISCAPACITAT_1", "DISCAPACITAT_2", "VOT_ONLINE"]
+
+            collection.find_each do |voter|
+              csv << serializer.new(voter).serialize.values
+            end
+          end
+
+          digest = Digest::SHA256.hexdigest(csv)
+
+          send_data(
+            csv,
+            filename: "cens_impd_#{digest}.csv",
+            type: "text/csv",
+            disposition: :attachment
+          )
         end
       end
     end

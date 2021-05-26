@@ -3,8 +3,6 @@
 module Decidim
   module ElectionsCensus
     class ElectionVoterSerializer < VoterSerializer
-      include Decidim::ApplicationHelper
-
       # Public: Initializes the serializer with a voter.
       def initialize(voter)
         @voter = voter
