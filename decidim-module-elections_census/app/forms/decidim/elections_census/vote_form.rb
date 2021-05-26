@@ -37,7 +37,7 @@ module Decidim
       def serialized_ballot
         @serialized_ballot ||= votes.flat_map do |disability, selected|
           if selected.first == "blank"
-            Vote::CANDIDATES_IDS.fetch(["#{disability}_blank".to_sym])
+            Vote::CANDIDATES_IDS.fetch("#{disability}_blank".to_sym)
           else
             selected.map do |candidate|
               Vote::CANDIDATES_IDS.fetch(candidate.to_sym)
