@@ -106,7 +106,7 @@ module Decidim
 
       def voting_code_expired?
         return if voting_code.blank?
-        return if voter.voting_code_expires_at < Time.current
+        return if voter.voting_code_expires_at > Time.current
 
         errors.add(:voting_code, :voting_code_expired)
       end
