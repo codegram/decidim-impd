@@ -49,6 +49,7 @@ module Decidim
           voter.with_lock do
             voter.mobile_phone_number = form.mobile_phone_number
             voter.voting_code = code
+            voter.voting_code_expires_at = 15.minutes.from_now
             voter.save!
           end
 

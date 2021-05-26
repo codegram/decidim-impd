@@ -37,7 +37,7 @@ module Decidim
       end
 
       def vote!
-        update_columns(voting_code: nil, voted_at: Time.current)
+        update_columns(voting_code: nil, voted_at: Time.current, voting_code_expires_at: nil)
       end
 
       def password

@@ -15,6 +15,7 @@ module Decidim
 
       validates :voter_id, :voter, :voting_code, :voting_digest, presence: true
       validate :voting_code_exists
+      validate :voting_code_expired?
       validate :correct_password
       validate :number_of_votes
       validate :valid_options
@@ -101,6 +102,13 @@ module Decidim
         return if code_voter.present?
 
         errors.add(:voting_code, :invalid)
+      end
+
+      def voting_code_expired?
+        return if voting_code.blank?
+        return if voter.voting_code_expires_at < Time.current
+
+        errors.add(:voting_code, :voting_code_expired)
       end
 
       def code_voter

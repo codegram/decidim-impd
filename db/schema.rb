@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_175844) do
+ActiveRecord::Schema.define(version: 2021_05_26_124633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -493,6 +493,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_175844) do
     t.datetime "verified_at"
     t.string "voting_code"
     t.datetime "voted_at"
+    t.datetime "voting_code_expires_at"
     t.index ["document_number"], name: "index_decidim_elections_census_voters_on_document_number"
     t.index ["voting_code"], name: "index_decidim_elections_census_voters_on_voting_code", unique: true
   end

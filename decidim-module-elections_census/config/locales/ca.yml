@@ -57,6 +57,7 @@ ca:
           at_least_one_vote: Has de seleccionar almenys una opció de vot per cada candidatura.
           invalid_options: Alguna de les opcions seleccionades no és vàlida.
           too_many_votes: Has seleccionat massa opcions.
+          voting_code_expired: El codi de votació ha caducat.
         voter:
           email_or_phone_required: Has d'introduir el correu electrònic o el telèfon
           invalid_census: No existeixen aquestes dades al padró
