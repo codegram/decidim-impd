@@ -24,11 +24,11 @@ module Decidim
           montserrat_vilarrasa_monclus: "3",
           carles_marine_gea: "4",
           miquel_serra_albiac: "7",
-          carmen_piquer_pique: "14",
+          carmen_piquer_piquer: "14",
           encarna_munoz_chamorro: "8",
           rafel_tixe_milian: "2",
           anais_garcia_balmana: "5",
-          paquita_garcia_caballer: "12"
+          paquita_garcia_caballero: "12"
         }
       end
 
