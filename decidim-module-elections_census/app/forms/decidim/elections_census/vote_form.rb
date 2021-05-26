@@ -32,6 +32,10 @@ module Decidim
           end
         end
 
+        if params["vote"] && params["vote"]["voting_code"].present?
+          params["vote"]["voting_code"] = params["vote"]["voting_code"].gsub(/\W/, '')
+        end
+
         super(params)
       end
 
