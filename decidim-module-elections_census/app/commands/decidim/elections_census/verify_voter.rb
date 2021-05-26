@@ -40,7 +40,7 @@ module Decidim
       end
 
       def generate_unique_code
-        range = [*'0'..'9',*'A'..'Z']
+        range = [*'0'..'9',*'A'..'Z'] - ["0", "O", "I"]
         code = Array.new(8) { range.sample }.join
 
         if Voter.where(voting_code: code).exists?  || Vote.where(code: code).exists?
