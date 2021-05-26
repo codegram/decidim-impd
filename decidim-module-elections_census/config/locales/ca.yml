@@ -110,11 +110,11 @@ ca:
             subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
             title: Identificació del/de la votant
         vote:
-          already_voted: Ja has emès el teu vot electrònic, si vols canviar el teu vot pots fer-ho de manera presencial. Per fer-ho, caldrà que facilitis el codi de votació rebut per SMS o el rebut del vot que has obtingut al finalitzar la votació.
+          already_voted: Ja has emès el teu vot electrònic.
           cant_vote_now: El període de vot electrònic no està actiu. Recorda que es pot votar de l'1 al 16 de juny.
           cast_vote_failed: No s'ha pogut processar el teu vot, torna-ho a intentar.
           create:
-            save_receipt_information: Si us plau, assegura't que guardes aquesta informació fins a la finalització del procés electoral, necessitaràs aquest codi en cas que vulguis canviar el teu vot de manera presencial i també si vols verificar que el teu vot ha estat comptabilitzat en el recompte.
+            save_receipt_information: Si us plau, assegura't que guardes aquesta informació fins a la finalització del procés electoral.
             verify_vote: 'Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de '
             verify_vote_link: comprovació del vot
             vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
@@ -131,7 +131,7 @@ ca:
           pending: Estàs inscrit/a al cens electoral però les teves dades encara no s'han verificat. Una vegada s'hagin verificat podràs votar.
           preview:
             available_answers: 'Candidatures escollides:'
-            confirm_vote: Vols continuar? Una vegada emès el teu vot només es pot canviar de manera presencial.
+            confirm_vote: Vols continuar?
             edit: Modificar el meu vot
             vote: Votar
           start_voting: Pots començar la votació.
