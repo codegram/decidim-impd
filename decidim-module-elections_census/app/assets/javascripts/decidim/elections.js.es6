@@ -84,7 +84,14 @@
   }
 
   const importCryptoKey = async (string) => {
-    const jwk = JSON.parse(string)
+    let jwk;
+
+    if (typeof string === "string") {
+      jwk = JSON.parse(string)
+    } else {
+      jwk = string
+    }
+
     let key = await Crypto.subtle.importKey("jwk", jwk, {name: "RSA-OAEP", hash: {name: "SHA-256"}}, false, ["encrypt"])
     return key;
   }
