@@ -8,15 +8,26 @@
         <%= t(".vote_receipt") %>
         <strong class="evote__poll-id"><%= @vote.receipt %></strong>
       </p>
-      <p> <strong><%= t(".save_receipt_information") %></strong> </p>
+      <p><strong><%= t(".save_receipt_information") %></strong></p>
+      <input type="hidden" name="vote-receipt" id="vote-receipt" value="<%= @vote.receipt %>" />
+      <button data-download-for="vote-receipt" data-download-as="rebut_vot.txt" class="button expanded download-receipt" id="download-receipt"><%= t(".download_receipt") %></button>
       <p>
-      <%= t(".verify_vote") %>
-      <%= link_to t(".verify_vote_link"), verify_path %>.
+        <%= t(".verify_vote") %>
+        <%= link_to t(".verify_vote_link"), verify_path %>.
       </p>
     </div>
-
-    <a href="/" class="button">
-      <%= t("layouts.decidim.elections_vote.exit") %>
-    </a>
   </div>
 </div>
+<script type="text/javascript">
+  $(() => {
+    $("#download-receipt").on("click", function(event) {
+      event.preventDefault()
+      let $button = $(event.target)
+      let fileName = $button.data("download-as")
+      let target = $(`#${$button.data("download-for")}`)
+      let content = target.val()
+
+      saveTextAs(content, fileName)
+    })
+  });
+</script>

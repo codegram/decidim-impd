@@ -7,6 +7,7 @@ module Decidim
         layout "decidim/elections_vote"
         include Rectify::ControllerHelpers
         include Decidim::FormFactory
+        include Decidim::ElectionsCensus::ApplicationHelper
 
         before_action :ensure_form_not_tampered
 
