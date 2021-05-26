@@ -63,7 +63,7 @@ es:
           invalid_census: No existen estos datos en el padrón
           must_be_different: Tiene que ser diferente de la discapacidad principal
         voting:
-          phone_overuse: Este número de teléfono ya se ha utilizado en otro voto.
+          phone_overuse: Un mismo número de teléfono solo se puede usar para votar dos veces como máximo.
   decidim:
     admin:
       actions:
@@ -115,7 +115,7 @@ es:
           cast_vote_failed: No se ha podido introducir tu voto en la urna electrónica, vuélvelo a intentar más tarde.
           create:
             download_receipt: Descargar el número de identificación de tu voto
-            save_receipt_information: Por favor, asegúrate que guardas esta información hasta la finalización del proceso electoral.
+            save_receipt_information: Hace falta que guardes este número hasta que acabe el proceso de votación.
             verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
             verify_vote_link: comprobación del voto
             vote_casted: Ya has votado, tu voto ha sido correctamente grabado.
