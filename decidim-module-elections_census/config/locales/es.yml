@@ -115,7 +115,7 @@ es:
           cast_vote_failed: No se ha podido introducir tu voto en la urna electrónica, vuélvelo a intentar más tarde.
           create:
             download_receipt: Descargar el número de identificación de tu voto
-            save_receipt_information: Hace falta que guardes este número hasta que acabe el proceso de votación.
+            save_receipt_information: Hace falta que guardes este número hasta que acabe el proceso de votación. Lo necesitarás si quieres comprobar tu voto.
             verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
             verify_vote_link: comprobación del voto
             vote_casted: Ya has votado, tu voto ha sido correctamente grabado.

@@ -115,7 +115,7 @@ ca:
           cast_vote_failed: No s'ha pogut introduir el teu vot a la urna electrònica, torna-ho a intentar més tard.
           create:
             download_receipt: Descarregar el número d'identificació del teu vot
-            save_receipt_information: Cal que guardis aquest número fins que acabi el procés de votació.
+            save_receipt_information: Cal que guardis aquest número fins que acabi el procés de votació. El necessitaràs si vols comprovar el teu vot.
             verify_vote: 'Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de '
             verify_vote_link: comprovació del vot
             vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
