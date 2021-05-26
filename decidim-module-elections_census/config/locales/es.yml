@@ -104,16 +104,17 @@ es:
           new:
             form_instructions_1: Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental.
             form_instructions_2: Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores.
-            form_instructions_3_html: Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+            form_instructions_3_html: Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:eleccionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
             mandatory_fields: Todos los campos son obligatorios.
             phone_help: Recibiràs un SMS con el código para votar.
-            subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
-            title: Identificación del/de la votante
+            subtitle: Identifícate para empezar la votación
+            title: Votación
         vote:
           already_voted: Ya has emitido tu voto electrónico.
-          cant_vote_now: El periodo de voto electrónico no está activo. Recuerda que se puede votar del 1 al 16 de junio.
-          cast_vote_failed: No se ha podido procesar tu voto, vuélvelo a intentar.
+          cant_vote_now: El periodo de votación electrónica no está activo. Recuerda que se puede votar del 1 al 16 de junio.
+          cast_vote_failed: No se ha podido introducir tu voto en la urna electrónica, vuélvelo a intentar más tarde.
           create:
+            download_receipt: Descargar el número de identificación de tu voto
             save_receipt_information: Por favor, asegúrate que guardas esta información hasta la finalización del proceso electoral.
             verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
             verify_vote_link: comprobación del voto
@@ -123,7 +124,7 @@ es:
           invalid_ballot: Los datos del voto encriptado no son válidos.
           new:
             preview: Enviar y previsualizar
-            subtitle: Selecciona las personas que quieres votar.
+            subtitle: Selecciona las personas candidatas que quieres votar.
             title: Cabina de votación
             voting_code_help: Introduce el código que has recibido por SMS.
             voting_errors: 'Se han producido los siguientes errores:'
@@ -131,20 +132,20 @@ es:
           pending: Tus datos se constan en el censo electoral, pero aún no han estado verificados.
           preview:
             available_answers: 'Candidaturas escogidas:'
-            confirm_vote: "¿Quieres continuar?"
-            edit: Modificar mi voto
-            vote: Votar
+            confirm_vote: "¿Quieres continuar con la votación?"
+            edit: Modifica tu voto
+            vote: Vota
           start_voting: Puedes empezar la votación.
-          vote_casted: Voto registrado correctament.
+          vote_casted: Voto introducido correctamente en la urna electrónica.
           vote_options:
             more_information: Más información
             voting_disability_title:
               auditory_sensory: con discapacidad auditiva
               intellectual: con discapacidad intelectual
               mental_disorder: en situación de transtorno de salut mental
-              physical: con discapacidad física o orgánica
+              physical: con discapacidad física
               visual_sensory: con discapacidad visual
-            voting_subtitle: Puedes votar un máximo de %{max_votes} personas.
+            voting_subtitle: Puedes escoger un máximo de %{max_votes} personas candidatas.
             voting_title: Sector de personas %{disability_title}.
       disabilities:
         auditory_sensory: Discapacidad auditiva
@@ -199,14 +200,14 @@ es:
         create:
           check_failed: Error en la comprobación
           check_ok: Comprobación correcta
-          exists: Tu voto existe y formará parte del recuento.
-          exists_but_spoiled: Tu voto existe, pero no se tendrá en cuenta al recuento porque ha sido anulado.
-          no_vote_with_receipt: No existe ningún voto con este recibo.
-          vote_tampered: Tu voto existe pero ha sido modificado y no es válido. Ponte en contacto con el IMPD.
+          exists: Tu voto ha sido introducido correctamente en la urna electrónica y formará parte del recuento de votos.
+          exists_but_spoiled: Tu voto ha sido introducido correctamente en la urna electrónica, pero no se tendrá en cuenta en el recuento de votos porque ha sido anulado.
+          no_vote_with_receipt: No existe ningún voto con este número de identificación.
+          vote_tampered: Tu voto existe pero ha sido modificado y no es válido. Ponte en contacto con el Institut Municipal de Persones amb Discapacitat.
         new:
-          receipt_help: Introduce el código que has obtenido al finalizar la votación electrónica.
+          receipt_help: Introduce el número de identificación de tu voto que has obtenido al finalizar la votación electrónica.
           send: Enviar
-          subtitle: Aquí puedes verificar que tu voto se ha emitido correctamente y que será utilizado en el recuento.
+          subtitle: Aquí puedes verificar que tu voto se ha introducido correctamente en la urna electrónica y que será utilizado en el recuento de votos.
           title: Comprueba tu voto
       voters:
         create:
@@ -280,13 +281,13 @@ es:
       voting: Elecciones
   elections_census:
     census_title: Censo electoral
-    check: Comprueba el voto
+    check: Comprobación del voto
     elections: Las elecciones
     intro: Información
     new: Inscripción en el censo
     search: Comprueba la inscripción en el censo
     title: Censo electoral
-    vote: Votar
+    vote: Votación
     voting_title: Votación
   errors:
     messages:
