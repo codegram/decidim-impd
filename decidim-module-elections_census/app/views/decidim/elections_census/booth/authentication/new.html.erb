@@ -16,7 +16,7 @@
           <%= invisible_captcha %>
           <div class="card">
             <div class="card__content">
-              <%= form_required_explanation %>
+              <div class="help-text help-text-form-required-fields"><%= t(".mandatory_fields") %></div>
 
               <div class="field">
                 <%= f.select :document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t("decidim.elections_census.voters.new.select_document_type") %>
@@ -36,6 +36,7 @@
 
               <div class="field">
                 <%= f.text_field :mobile_phone_number %>
+                <p class="help-text"><%= t(".phone_help") %></p>
               </div>
             </div>
           </div>

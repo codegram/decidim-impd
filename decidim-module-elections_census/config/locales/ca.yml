@@ -104,6 +104,8 @@ ca:
             form_instructions_1: Per votar s’ha d’estar inscrit/a al cens electoral. Han d’estar-hi totes les persones amb discapacitat i/o trastorn de salut mental.
             form_instructions_2: Per començar el procés de votació, només has d’introduir les dades que demanem a les caselles inferiors.
             form_instructions_3_html: Si tens dubtes sobre si constes o no al cens, pots trucar al 934 132 716 (de dilluns a divendres, de 9.00 a 13.30 hores, o bé dimarts, de 16.00 a 18.30 hores) o escriure un missatge electrònic a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+            mandatory_fields: Tots els camps són obligatoris.
+            phone_help: Rebràs un SMS amb el codi per votar.
             subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
             title: Identificació del/de la votant
         vote:
