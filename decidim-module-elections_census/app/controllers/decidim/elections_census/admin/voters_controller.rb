@@ -92,7 +92,7 @@ module Decidim
           serializer = Decidim::ElectionsCensus::ElectionVoterSerializer
 
           csv = CSV.generate do |csv|
-            csv << ["NOM", "PRIMER_COGNOM,", "SEGON_COGNOM", "TIPUS_DOCUMENT", "DOCUMENT", "DISCAPACITAT_1", "DISCAPACITAT_2", "VOT_ONLINE"]
+            csv << ["NOM", "PRIMER_COGNOM", "SEGON_COGNOM", "TIPUS_DOCUMENT", "DOCUMENT", "DISCAPACITAT_1", "DISCAPACITAT_2", "VOT_ONLINE"]
 
             collection.find_each do |voter|
               csv << serializer.new(voter).serialize.values
