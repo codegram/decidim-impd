@@ -95,6 +95,9 @@ es:
             tally_votes: Recuento de votos
             unencrypted_votes: Votos desencriptados
         voters: Elecciones
+        votes:
+          spoil:
+            cant_spoil_votes_yet: No se pueden anular votos en este momento.
       admin_log:
         spoil_vote: "%{user_name} ha anulado el voto %{vote_receipt}"
         unverify_voter: "%{user_name} ha desverificado el votante %{document_number}"

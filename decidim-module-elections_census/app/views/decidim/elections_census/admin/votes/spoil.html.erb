@@ -1,50 +1,63 @@
-<%= decidim_form_for(@form, url: spoil_vote_path, class: "form grid-container") do |f| %>
+<% if can_spoil_votes? %>
+  <%= decidim_form_for(@form, url: spoil_vote_path, class: "form grid-container") do |f| %>
+    <div class="card">
+      <div class="card-divider">
+        <h2 class="card-title flex--sbc">
+          <%= t "decidim.admin.titles.spoil_vote" %>
+        </h2>
+      </div>
+      <div class="card-section">
+        <div class="grid-x">
+          <div class="cell">
+            <fieldset>
+              <div class="field">
+                <%= f.select :document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t("decidim.elections_census.voters.new.select_document_type") %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :document_number %>
+              </div>
+
+              <div class="field voter-birthday">
+                <%= f.date_select :birthday, start_year: Time.current.year, end_year: 110.years.ago.year, default: 35.years.ago, prompt: { day: t("decidim.elections_census.voters.new.date_select.day"), month: t("decidim.elections_census.voters.new.date_select.month"), year: t("decidim.elections_census.voters.new.date_select.year") } %>
+              </div>
+
+              <div class="field">
+                <%= f.select :disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_disability") %>
+              </div>
+
+              <div class="field">
+                <%= f.select :secondary_disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_secondary_disability") %>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="card-section">
+        <div class="grid-x">
+          <div class="cell">
+            <fieldset>
+              <div class="field">
+                <%= f.text_field :vote_id %>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-x align-center mt-sm">
+      <%= f.submit t("decidim.admin.actions.spoil_vote") %>
+    </div>
+  <% end -%>
+<% else %>
   <div class="card">
     <div class="card-divider">
-      <h2 class="card-title flex--sbc">
-        <%= t "decidim.admin.titles.spoil_vote" %>
-      </h2>
+      <h2 class="card-title"> <%= t "decidim.admin.titles.spoil_vote" %> </h2>
     </div>
     <div class="card-section">
-      <div class="grid-x">
-        <div class="cell">
-          <fieldset>
-            <div class="field">
-              <%= f.select :document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t("decidim.elections_census.voters.new.select_document_type") %>
-            </div>
-
-            <div class="field">
-              <%= f.text_field :document_number %>
-            </div>
-
-            <div class="field voter-birthday">
-              <%= f.date_select :birthday, start_year: Time.current.year, end_year: 110.years.ago.year, default: 35.years.ago, prompt: { day: t("decidim.elections_census.voters.new.date_select.day"), month: t("decidim.elections_census.voters.new.date_select.month"), year: t("decidim.elections_census.voters.new.date_select.year") } %>
-            </div>
-
-            <div class="field">
-              <%= f.select :disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_disability") %>
-            </div>
-
-            <div class="field">
-              <%= f.select :secondary_disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_secondary_disability") %>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-    <div class="card-section">
-      <div class="grid-x">
-        <div class="cell">
-          <fieldset>
-            <div class="field">
-              <%= f.text_field :vote_id %>
-            </div>
-          </fieldset>
-        </div>
+      <div class="row column">
+        <%= t(".cant_spoil_votes_yet") %>
       </div>
     </div>
   </div>
-  <div class="grid-x align-center mt-sm">
-    <%= f.submit t("decidim.admin.actions.spoil_vote") %>
-  </div>
-<% end -%>
+<% end %>

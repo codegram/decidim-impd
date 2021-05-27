@@ -5,6 +5,7 @@ module Decidim
     module Admin
       class VotesController < Admin::ApplicationController
         layout "decidim/admin/voters"
+        helper_method :can_spoil_votes?
 
         def spoil
           enforce_permission_to :spoil, :vote
@@ -49,6 +50,15 @@ module Decidim
           else
             @form = SpoilVoteForm.new
           end
+        end
+
+        def can_spoil_votes?
+          return true if Rails.env.development?
+
+          offline_voting_starts = Rails.application.secrets.offline_voting_starts
+          offline_voting_ends = Rails.application.secrets.offline_voting_ends
+
+          Time.current.between?(offline_voting_starts, offline_voting_ends)
         end
       end
     end
