@@ -5,12 +5,14 @@ module Decidim
     module Admin
       class TallyController < Admin::ApplicationController
         layout "decidim/admin/voters"
+        helper_method :can_export_votes?
 
         def show
-          @export_votes_enabled = true
         end
 
         def export_votes
+          return unless can_export_votes?
+
           votes = Vote.find_each.map do |vote|
             {
               receipt: vote.receipt,
@@ -29,6 +31,10 @@ module Decidim
             type: "application/json",
             disposition: :attachment
           )
+        end
+
+        def can_export_votes?
+          Rails.application.secrets.votes_export_enabled?
         end
       end
     end

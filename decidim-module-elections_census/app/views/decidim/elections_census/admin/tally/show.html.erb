@@ -4,7 +4,7 @@
   </div>
   <div class="card-section">
     <div class="row column">
-      <% if @export_votes_enabled %>
+      <% if can_export_votes? %>
         <%= link_to t(".export_votes"), tally_export_votes_path, class: "button" %>
       <% else %>
         <%= t(".cant_export_votes_yet") %>
