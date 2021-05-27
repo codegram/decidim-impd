@@ -6,16 +6,16 @@ es:
       answer:
         add_documents: Adjuntos
       check:
-        receipt: Recibo del voto
+        receipt: Número de identificación del voto
       spoil:
         birthday: Fecha de nacimiento
         disability: Discapacidad principal
         document_number: Número de documento
         document_type: Tipo de documento
         secondary_disability: Discapacidad secundaria
-        vote_id: Recibo del voto o código de votación
+        vote_id: Número de identificación del voto o código de votación
       vote:
-        receipt: Recibo del voto
+        receipt: Número de identificación del voto
         spoiled_at: Fecha de anulación
         voting_code: Código de votación
       voter:

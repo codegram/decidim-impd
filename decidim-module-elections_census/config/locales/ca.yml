@@ -6,16 +6,16 @@ ca:
       answer:
         add_documents: Adjunts
       check:
-        receipt: Rebut del vot
+        receipt: Número d'identificació del vot
       spoil:
         birthday: Data de naixement
         disability: Discapacitat principal
         document_number: Número de document
         document_type: Tipus de document
         secondary_disability: Discapacitat secundària
-        vote_id: Rebut del vot o codi de votació
+        vote_id: Número d'identificació del vot o codi de votació
       vote:
-        receipt: Rebut del vot
+        receipt: Número d'identificació del vot
         spoiled_at: Data d'anul·lació
         voting_code: Codi de votació
       voter:
