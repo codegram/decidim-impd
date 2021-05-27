@@ -13,5 +13,24 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
-//= require decidim
+  //= require decidim
 //= require decidim-elections_census
+
+function hideProposalsComponentsEleccions() {
+  var pages = ['Consulta les candidatures', 'Consulta las candidaturas'];
+
+  if ( window.location.href.match(/eleccions-consell-rector-impd-2021/) )  {
+    $('.process-nav__more').hide();
+    $(".process-nav__link").each( function(){
+      var $el = $(this);
+      var title = $el.html().trim();
+      if ( pages.includes(title) ) {
+        $el.hide();
+      }
+    });
+  }
+}
+
+$(document).ready(function() {
+  hideProposalsComponentsEleccions();
+});
