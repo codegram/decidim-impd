@@ -4,6 +4,8 @@
   </div>
   <div class="card-section">
     <div class="row column">
+      <p>Nombre de vots electrònics: <%= Decidim::ElectionsCensus::Vote.count %></p>
+      <p>Nombre de vots electrònics anul·lats: <%= Decidim::ElectionsCensus::Vote.spoiled.count %></p>
       <% if can_export_votes? %>
         <%= link_to t(".export_votes"), tally_export_votes_path, class: "button" %>
       <% else %>

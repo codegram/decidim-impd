@@ -83,6 +83,8 @@ module Decidim
       validates :code, :receipt, :ballot, presence: true
       validates :ballot_style, presence: true, length: {minimum: 1, maximum: 2}
 
+      scope :spoiled, -> { where.not(spoiled_at: nil) }
+
       before_validation(on: :create) do
         self.receipt = generate_receipt
       end
