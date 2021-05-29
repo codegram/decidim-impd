@@ -1,0 +1,311 @@
+---
+es:
+  activemodel:
+    attributes:
+      add_documents: Adjuntos
+      answer:
+        add_documents: Adjuntos
+      check:
+        receipt: Número de identificación del voto
+      spoil:
+        birthday: Fecha de nacimiento
+        disability: Discapacidad principal
+        document_number: Número de documento
+        document_type: Tipo de documento
+        secondary_disability: Discapacidad secundaria
+        vote_id: Número de identificación del voto o código de votación
+      vote:
+        receipt: Número de identificación del voto
+        spoiled_at: Fecha de anulación
+        voting_code: Código de votación
+      voter:
+        address: Dirección
+        address_door: Puerta
+        address_floor: Piso
+        address_name: Nombre de la vía
+        address_number: Número
+        address_postal_code: Código postal (de la dirección de empadronamiento)
+        address_type: Tipo de vía
+        birthday: Fecha de nacimiento
+        created_at: Fecha de creación
+        disability: Discapacidad principal
+        disability_certificate: Documento acreditativo de la discapacidad
+        document_number: Número de documento
+        document_type: Tipo de documento
+        email: Correo electrónico
+        family_book: Libro de família
+        full_name: Nombre y apellidos
+        gender: Sexo
+        lastname: Primer apellido
+        legal_guardian_document_number: Número de documento del representante legal
+        legal_guardian_document_type: Tipo de documento del representante legal
+        legal_guardian_lastname: Primer apellido
+        legal_guardian_name: Nombre
+        legal_guardian_second_lastname: Segundo apellido
+        mobile_phone_number: Teléfono móvil
+        name: Nombre
+        second_lastname: Segundo apellido
+        secondary_disability: Discapacidad secundaria
+        tos_agreement: Términos legales
+    errors:
+      models:
+        answer:
+          attributes:
+            add_documents:
+              needs_to_be_reattached: Es necesario volver a adjuntar el archivo.
+        vote:
+          at_least_one_vote: Tienes que seleccionar almenos una opción de voto para cada candidatura.
+          invalid_options: Alguna de las opciones seleccionades no es válida.
+          too_many_votes: Has seleccionado demasiadas opciones.
+          voting_code_expired: El código de votación ha caducado.
+        voter:
+          email_or_phone_required: Tienes que introduir el correo electrónico o el teléfono
+          invalid_census: No existen estos datos en el padrón
+          must_be_different: Tiene que ser diferente de la discapacidad principal
+        voting:
+          phone_overuse: Un mismo número de teléfono solo se puede usar para votar dos veces como máximo.
+  decidim:
+    admin:
+      actions:
+        spoil_vote: Anular voto
+        unverify: Desverificar
+        verify: Verificar
+      titles:
+        elections: Elecciones
+        spoil_vote: Anular voto
+        voters: Censo electoral
+        votes: Votos
+      voters:
+        index:
+          export: Exportar pendientes de verificar
+          export_for_elections: Exportar censo verificado
+          import: Importar censo
+          pending: Censo pendientes de verificar
+          tally: Recuento de votos
+          verified: Censo verificado
+          votes: Votos
+    elections_census:
+      admin:
+        tally:
+          show:
+            cant_export_votes_yet: No se pueden exportar los votos hasta que no finalice el proceso de votación.
+            export_votes: Exportar votos
+            perform_tally: Recuento
+            tally_results: Resultado del recuento
+            tally_votes: Recuento de votos
+            unencrypted_votes: Votos desencriptados
+        voters: Elecciones
+        votes:
+          spoil:
+            cant_spoil_votes_yet: No se pueden anular votos en este momento.
+      admin_log:
+        spoil_vote: "%{user_name} ha anulado el voto %{vote_receipt}"
+        unverify_voter: "%{user_name} ha desverificado el votante %{document_number}"
+        verify_voter: "%{user_name} ha verificado el votante %{document_number}"
+      booth:
+        authentication:
+          new:
+            form_instructions_1: Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental.
+            form_instructions_2: Para empezar el proceso de voto, solo tienes que introducir los datos que pedimos en las casillas inferiores.
+            form_instructions_3_html: Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:eleccionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+            mandatory_fields: Todos los campos son obligatorios.
+            phone_help: Recibiràs un SMS con el código para votar.
+            subtitle: Identifícate para empezar la votación
+            title: Votación
+        vote:
+          already_voted: Ya has emitido tu voto electrónico.
+          cant_vote_now: El periodo de votación electrónica no está activo. Recuerda que se puede votar del 1 al 16 de junio.
+          cast_vote_failed: No se ha podido introducir tu voto en la urna electrónica, vuélvelo a intentar más tarde.
+          create:
+            download_receipt: Descargar el número de identificación de tu voto
+            save_receipt_information: Hace falta que guardes este número hasta que acabe el proceso de votación. Lo necesitarás si quieres comprobar tu voto.
+            verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
+            verify_vote_link: comprobación del voto
+            vote_casted: Ya has votado, tu voto ha sido correctamente grabado.
+            vote_receipt: 'Este es el número de identificación de tu voto:'
+          error: Ha habido algun error al comprobar tus datos.
+          invalid_ballot: Los datos del voto encriptado no son válidos.
+          new:
+            preview: Enviar y previsualizar
+            subtitle: Selecciona las personas candidatas que quieres votar.
+            title: Cabina de votación
+            voting_code_help: Introduce el código que has recibido por SMS.
+            voting_errors: 'Se han producido los siguientes errores:'
+          not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
+          pending: Tus datos se constan en el censo electoral, pero aún no han estado verificados.
+          preview:
+            available_answers: 'Candidaturas escogidas:'
+            confirm_vote: "¿Quieres continuar con la votación?"
+            edit: Modifica tu voto
+            vote: Vota
+          start_voting: Puedes empezar la votación.
+          vote_casted: Voto introducido correctamente en la urna electrónica.
+          vote_options:
+            more_information: Más información
+            voting_disability_title:
+              auditory_sensory: con discapacidad auditiva
+              intellectual: con discapacidad intelectual
+              mental_disorder: en situación de transtorno de salut mental
+              physical: con discapacidad física
+              visual_sensory: con discapacidad visual
+            voting_subtitle: Puedes escoger un máximo de %{max_votes} personas candidatas.
+            voting_title: Sector de personas %{disability_title}.
+      disabilities:
+        auditory_sensory: Discapacidad auditiva
+        intellectual: Discapacidad intelectual
+        mental_disorder: Discapacidad por transtorno de salud mental
+        not_reported: Discapacidad no informada
+        other: Otros
+        physical: Discapacidad física
+        visual_sensory: Discapacidad visual
+      document_types:
+        dni: DNI
+        minor_no_documents: Menor sin documentación
+        nie: NIE
+        no_documents: Persona sin documentación
+        passport: Pasaporte
+      genders:
+        female: Mujer
+        male: Hombre
+        other: No binario
+      keys:
+        encryption_key:
+          encrypt_key: Clave para encriptar votos
+        generate:
+          generate_key_pair: Generar llaves
+          quorum: Quorum necesario para poder desencriptar los votos
+          subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Generación de llaves de encriptación
+        verify_decryption:
+          decrypt: Desencriptar
+          decrypted_content: Contenido desencriptado
+          encrypted_content: Contenido a desencriptar
+          subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Verificación de desencriptación
+        verify_encryption:
+          encrypt: Encriptar
+          encrypt_content: Contenido a encriptar
+          encrypted_content: Contenido encriptado
+          subtitle: Elecciones 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Verificació d'encriptació
+      tally:
+        decrypt:
+          decrypt: Desencriptar
+          decrypted_votes: Votos desencriptados
+          download: Descargar
+          encrypted_votes: Votos encriptados
+          subtitle: Eleccions 2021 al Consell Rector de l'Institut Municipal de Persones amb Discapacitat
+          title: Desencriptar votos
+        tally:
+          decrypted_votes: Votos desencriptados
+          tally: Realizar recuento
+      verify:
+        create:
+          check_failed: Error en la comprobación
+          check_ok: Comprobación correcta
+          exists: Tu voto ha sido introducido correctamente en la urna electrónica y formará parte del recuento de votos.
+          exists_but_spoiled: Tu voto ha sido introducido correctamente en la urna electrónica, pero no se tendrá en cuenta en el recuento de votos porque ha sido anulado.
+          no_vote_with_receipt: No existe ningún voto con este número de identificación.
+          vote_tampered: Tu voto existe pero ha sido modificado y no es válido. Ponte en contacto con el Institut Municipal de Persones amb Discapacitat.
+        new:
+          receipt_help: Introduce el número de identificación de tu voto que has obtenido al finalizar la votación electrónica.
+          send: Enviar
+          subtitle: Aquí puedes verificar que tu voto se ha introducido correctamente en la urna electrónica y que será utilizado en el recuento de votos.
+          title: Comprueba tu voto
+      voters:
+        create:
+          error: Ha habido algun error con tu inscripción.
+          success: Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a eleccionsIMPD@bcn.cat.
+        import:
+          error: Ha habido algun error al importar el censo.
+          success: Censo importado correctamente
+        new:
+          date_select:
+            day: Día
+            month: Mes
+            year: Año
+          disability_certificate_help: Dictamen técnico facultativo de la discapacidad de la Generalitat de Catalunya.
+          disability_certificate_help_2: Si no tienes el dictamen técnico facultativo, tendrás que enviar el documento de declaración de la discapacidad que hay debajo. Antes te lo tendrás que descargar, llenar los datos y firmarlo.
+          disability_certificate_help_3: Documento de declaración de la discapacidad.
+          disability_certificate_help_4: En caso de ser una persona en situación de trastorno de salud mental y no dispongas del reconocimiento legal de la situación de discapacidad, envía el diagnóstico psiquiátrico o un documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental.
+          email_help: El correo electrónico del representante legal en caso de menor de 16 años.
+          file_settings_help: 'Las extensiones permitidas son: %{extensions}.'
+          form_instructions_1: 'Si quieres inscribirte en el censo electoral, ten en cuenta lo siguiente:'
+          form_instructions_2: Debes estar empadronado/a en Barcelona.
+          form_instructions_3: 'Debes tener preparada esta documentación: reconocimiento legal de la situación de discapacidad o diagnóstico por trastorno de salud mental o documento que acredite que te están atendiendo en un servicio de rehabilitación psicosocial o en algún otro servicio de salud mental.'
+          form_instructions_4: Número de DNI, NIE o pasaporte.
+          form_instructions_5: En el caso de personas tutoras de un/a menor de 16 años con discapacidad, también hay que tener preparado el libro de familia
+          form_instructions_6: Para inscribirte al censo tienes que introducir los datos que pedimos en las casillas inferiores.
+          form_instructions_7_html: Si tienes dificultades para hacer la inscripción,, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+          gender_help: Campo con finalidades estadísticas
+          mobile_phone_number_help: El número de teléfono móvil del representante legal en caso de menor de 16 años.
+          select_disability: Escoge una discapacidad
+          select_document_type: Escoge el tipo de documento
+          select_gender: Escoge un sexo
+          select_secondary_disability: Escoge una discapacidad secundaria (opcional)
+          send: Enviar
+          subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
+          title: Inscripción en el censo
+          tos_agreement: Estoy de acuerdo con los <a href='https://impd.decidim.barcelona/pages/terms-and-conditions?locale=es' target='_blank'>términos legales</a> y la <a href='https://impd.decidim.barcelona/pages/privacitat?locale=es' target='_blank'>política de privacidad</a>
+          tos_text: Texto de los términos legales.
+          tos_title: Términos legales
+        search:
+          error: Ha habido algun error al comprobar tu inscripción.
+          form_instructions_1: Para poder votar hay que estar inscrito/a en el censo electoral. Deben estarlo todas las personas con discapacidad o trastorno de salud mental.
+          form_instructions_2: Para comprobar si estás inscrito/a en el censo electoral, solo tienes que introducir los datos que pedimos en las casillas inferiores.
+          form_instructions_3_html: Si tienes dudas sobre si constas o no en el censo, puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+          not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario
+          ok_instructions_1_html: Estás inscrito/a en el censo <strong>%{disability}</strong>
+          ok_instructions_2_html: o <strong>%{disability}</strong>
+          ok_instructions_3_html: Si te encuentras en alguna otra situación de discapacidad reconocida o has detectado algún error, rellena el %{link}
+          ok_instructions_4_html: siguiente formulario.
+          pending: Comprobación de datos en curso.
+          pending_instructions_1_html: Tus datos se han introducido correctamente en el censo electoral. Para cualquier consulta puedes llamar al 934 132 716 (de lunes a viernes de 9.00 a 13.30 horas o los martes de 16.00 a 18.30 horas) o escribir un mensaje electrónico a <a href='mailto:elecctionsIMPD@bcn.cat'>eleccionsIMPD@bcn.cat</a>.
+          pending_instructions_2: Rellenar el formulario de inscripción no garantiza el derecho al voto de forma inmediata. Los datos se revisarán con el objetivo de comprobar que cumples con todos los requisitos para poder votar. Te avisaremos solo en caso de que haya alguna incidencia en la inscripción en el censo.
+          subtitle: Elecciones 2021 al Consejo Rector del Institut Municipal de Persones amb Discapacitat
+          success: Comprobación correcta.
+          title: Comprueba la inscripción en el censo
+        unverify:
+          success: Persona desverificada correctamente
+        verify:
+          success: Persona verificada correctamente
+      votes:
+        spoil:
+          already_spoiled: Este voto ya ha sido anulado
+          error: Hay algún error en el formulario
+          not_verified: El votante no está verificado en el censo
+          not_voted: El votante no ha votado electrónicamente
+          spoiling_not_open: En estos momentos no está permitido anular votos
+          success: Voto anulado correctamente
+          vote_not_found: No existe ningún voto con estos datos
+          voter_not_found: No existe ningún votante en el censo con estos datos
+    menu:
+      census: Censo electoral
+      voting: Elecciones
+  elections_census:
+    census_title: Censo electoral
+    check: Comprobación del voto
+    elections: Las elecciones
+    intro: Información
+    new: Inscripción en el censo
+    search: Comprueba la inscripción en el censo
+    title: Censo electoral
+    vote: Votación
+    voting_title: Votación
+  errors:
+    messages:
+      carrierwave_download_error: no pudo ser descargado
+      carrierwave_integrity_error: no es de un tipo de archivo permitido
+      carrierwave_processing_error: no pudo ser procesado
+      content_type_blacklist_error: No se pueden subir archivos de la extensión %{content_type}
+      content_type_whitelist_error: No se pueden subir archivos de la extensión %{content_type}
+      extension_blacklist_error: 'No se pueden subir archivos de la extensión %{extension}. Las extensiones prohibidas son: %{prohibited_types}'
+      extension_whitelist_error: 'No se pueden subir archivos de la extensión %{extension}. Las extensiones permitidas son: %{allowed_types}'
+      max_size_error: El tamaño del archivo debe ser inferior a %{max_size}
+      min_size_error: El tamaño del archivo debe ser mayor que %{min_size}
+      mini_magick_processing_error: 'No se pudo manipular con MiniMagick, quizá porque no es una imágen? Error original: %{e}'
+      rmagick_processing_error: 'No se pudo manipular con rmagick, quizá porque no es una imágen? Error original: %{e}'
+  layouts:
+    decidim:
+      elections_vote:
+        exit: Salir

@@ -1,0 +1,34 @@
+<% add_decidim_meta_tags({
+  title: t("elections_census.title")
+}) %>
+
+<!doctype html>
+<html class="no-js" lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= decidim_page_title %></title>
+    <%= render "layouts/decidim/head" %>
+  </head>
+  <body>
+    <main class="focus">
+      <div class="focus__top">
+        <%= render partial: "layouts/decidim/logo", locals: { organization: current_organization } %>
+        <nav class="focus__user topbar__user__logged">
+          <%= @form.voter.full_name %>
+        </nav>
+        <%= link_to "/", class: "focus__exit" do %>
+          <span class="focus__x-icon" aria-hidden="true">×</span>
+          <%= t(".exit") %>
+        <% end %>
+      </div>
+      <div class="focus__content evote">
+        <%= yield %>
+      </div>
+    </main>
+  </body>
+</html>

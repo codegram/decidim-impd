@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <%= render partial: "encryption_key", locals: {download: false} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <form id="encrypt-decrypt">
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="decrypted-content"><%= t(".encrypt_content") %></label>
+                <textarea id="decrypted-content" rows="5"></textarea>
+              </div>
+              <div class="field">
+                <label for="encrypted-content"><%= t(".encrypted_content") %></label>
+                <textarea id="encrypted-content" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <button id="encrypt" class="button expanded"><%= t(".encrypt") %></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "decidim/keys" %>

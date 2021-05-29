@@ -1,0 +1,204 @@
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-10 medium-centered">
+        <p><%= t(".form_instructions_1") %></p>
+        <ul>
+          <li><%= t(".form_instructions_2") %></li>
+          <li><%= t(".form_instructions_3") %></li>
+          <li><%= t(".form_instructions_4") %></li>
+          <li><%= t(".form_instructions_5") %></li>
+        </ul>
+        <p><%= t(".form_instructions_6") %></p>
+        <p><%= t(".form_instructions_7_html") %></p>
+
+        <%= decidim_form_for(@form) do |f| %>
+          <%= invisible_captcha %>
+          <div class="card">
+            <div class="card__content">
+              <%= form_required_explanation %>
+
+              <div class="field">
+                <%= f.select :document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t(".select_document_type") %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :document_number %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :name %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :lastname %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :second_lastname %>
+              </div>
+
+              <div class="field">
+                <%= f.select :gender, Decidim::ElectionsCensus::VoterForm::GENDERS.map {|option| [t(option, scope: "decidim.elections_census.genders"), option]}, prompt: t(".select_gender") %>
+                <p class="help-text"><%= t(".gender_help") %></p>
+              </div>
+
+              <div class="field voter-birthday">
+                <%= f.date_select :birthday, start_year: Time.current.year, end_year: 110.years.ago.year, default: 35.years.ago, prompt: { day: t(".date_select.day"), month: t(".date_select.month"), year: t(".date_select.year") } %>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card legal-guardian-fields">
+            <div class="card__content">
+              <div class="field">
+                <%= f.select :legal_guardian_document_type, Decidim::ElectionsCensus::VoterForm::DOCUMENT_TYPES.map {|option| [t(option, scope: "decidim.elections_census.document_types"), option]}, prompt: t(".select_document_type") %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :legal_guardian_document_number %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :legal_guardian_name %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :legal_guardian_lastname %>
+              </div>
+
+              <div class="field">
+                <%= f.text_field :legal_guardian_second_lastname %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <%= f.text_field :address_type %>
+              </div>
+              <div class="field">
+                <%= f.text_field :address_name %>
+              </div>
+              <div class="field">
+                <%= f.text_field :address_number %>
+              </div>
+              <div class="field">
+                <%= f.text_field :address_floor %>
+              </div>
+              <div class="field">
+                <%= f.text_field :address_door %>
+              </div>
+              <div class="field">
+                <%= f.text_field :address_postal_code %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <%= f.select :disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_disability") %>
+              </div>
+
+              <div class="field">
+                <%= f.select :secondary_disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t(".select_secondary_disability") %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <%= f.file_field :disability_certificate %>
+                <p class="help-text"><%= t(".disability_certificate_help") %></p>
+                <p class="help-text"><%= t(".disability_certificate_help_2") %></p>
+                <p class="help-text"><%= link_to t(".disability_certificate_help_3"), "https://decidim-impd.s3.eu-west-3.amazonaws.com/decidim-impd/comunicacio-tipologia-discapacitat.pdf", target: "_blank"  %></p>
+                <p class="help-text"><%= t(".disability_certificate_help_4") %></p>
+              </div>
+
+              <div class="field family-book">
+                <%= f.file_field :family_book %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <%= f.email_field :email %>
+                <p class="help-text"><%= t(".email_help") %></p>
+              </div>
+
+              <div class="field">
+                <%= f.telephone_field :mobile_phone_number %>
+                <p class="help-text"><%= t(".mobile_phone_number_help") %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="card__tos">
+            <div class="card__content">
+              <div class="field">
+                <%= f.check_box :tos_agreement, label: t(".tos_agreement") %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <%= f.submit t(".send"), class: "button expanded" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(() => {
+      const $form = $("form.new_voter");
+      const $legalGuardianFields = $form.find(".legal-guardian-fields");
+      const $familyBook = $form.find(".family-book");
+      const needsLegalGuardian = () => {
+          let birthday_day = parseInt($("#voter_birthday_3i").val());
+          let birthday_month = parseInt($("#voter_birthday_2i").val()) - 1;
+          let birthday_year = parseInt($("#voter_birthday_1i").val());
+
+          if (birthday_day > 0 && birthday_month >= 0 && birthday_year > 0) {
+              let birthday = new Date(birthday_year, birthday_month, birthday_day).getTime();
+              let threshold = new Date(2021, 5, 18).getTime();
+              let difference = Math.round((threshold - birthday)/(1000*60*60*24*365));
+
+              if (difference < 16) {
+                  $legalGuardianFields.show();
+                  $familyBook.show();
+              } else {
+                  $legalGuardianFields.hide();
+                  $familyBook.hide();
+              }
+          } else {
+              $legalGuardianFields.hide();
+              $familyBook.hide();
+          }
+      }
+
+      needsLegalGuardian();
+      $form.find(".voter-birthday select").on("change", () => {
+        needsLegalGuardian();
+      });
+    })
+</script>

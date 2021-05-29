@@ -1,0 +1,18 @@
+<% add_decidim_page_title(t("elections_census.title")) %>
+
+<%= render "layouts/decidim/application" do %>
+  <%= render partial: "layouts/decidim/elections_census_process_header" %>
+  <%= cell "decidim/translation_bar", current_organization %>
+  <div class="wrapper">
+    <%= yield %>
+  </div>
+  <% if content_for? :expanded %>
+    <div class="expanded">
+      <div class="wrapper wrapper--inner">
+        <div class="row">
+          <%= yield :expanded %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

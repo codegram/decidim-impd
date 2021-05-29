@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".title") %></h1>
+        <p>
+        <%= t(".subtitle") %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns large-6 medium-centered">
+        <form>
+          <div class="card">
+            <div class="card__content">
+              <div class="field">
+                <label for="quorum"><%= t(".quorum") %></label>
+                <input id="quorum" type="number" value="5" min="2" max="7" name="quorum"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__content">
+              <div class="actions">
+                <button id="key-generation" class="button expanded"><%= t(".generate_key_pair") %></button>
+              </div>
+            </div>
+          </div>
+
+          <%= render partial: "encryption_key", locals: {download: true} %>
+          <%= render partial: "private_key_parts", locals: {download: true} %>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "decidim/keys" %>

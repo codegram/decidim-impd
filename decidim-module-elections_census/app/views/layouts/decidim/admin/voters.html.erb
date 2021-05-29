@@ -1,0 +1,34 @@
+<% content_for :secondary_nav do %>
+  <div class="secondary-nav">
+    <div class="secondary-nav__title">
+      <%= t "decidim.admin.titles.elections" %>
+    </div>
+    <ul>
+      <% if admin_allowed_to? :read, :voter %>
+        <li <% if params["verified"].blank? %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.pending", scope: "decidim.admin"), decidim_elections_census_admin.root_path %>
+        </li>
+      <% end %>
+      <% if admin_allowed_to? :read, :voter %>
+        <li <% if params["verified"].present? %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.verified", scope: "decidim.admin"), decidim_elections_census_admin.root_path(verified: true) %>
+        </li>
+      <% end %>
+      <% if admin_allowed_to? :spoil, :vote %>
+        <li <% if request.original_url.include?("spoil") %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.votes", scope: "decidim.admin"), decidim_elections_census_admin.spoil_vote_path %>
+        </li>
+      <% end %>
+      <% if admin_allowed_to? :tally, :vote %>
+        <li <% if request.original_url.include?("tally") %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.tally", scope: "decidim.admin"), decidim_elections_census_admin.tally_path %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render "layouts/decidim/admin/application" do %>
+  <%= yield %>
+<% end %>
+

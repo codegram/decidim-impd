@@ -7,8 +7,7 @@
     "heroku-redis:hobby-dev",
     "logentries:le_tryit",
     "memcachedcloud:30",
-    "newrelic:wayne",
-    "sendgrid:starter"
+    "newrelic:wayne"
   ],
   "scripts": {
     "postdeploy":"SEED=true rake db:seed"

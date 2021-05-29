@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card__content">
+    <div class="field">
+      <label for="encrypt-key"><%= t(".encrypt_key") %></label>
+      <textarea id="encrypt-key" rows="5"></textarea>
+      <% if download %>
+        <button data-download-for="encrypt-key" data-download-as="clau-publica" class="button expanded download-key">Descarregar</button>
+    <% end %>
+    </div>
+  </div>
+</div>

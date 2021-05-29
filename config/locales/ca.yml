@@ -1,29 +1,37 @@
+---
 ca:
+  candidates:
+    auditory_sensory:
+      encarna_munoz_chamorro: Encarna Muñoz Chamorro
+      rafel_tixe_milian: Rafel Tixé i Milian
+    blank: Vot en blanc
+    intellectual:
+      carles_marine_gea: Carles Mariné Gea
+      carmen_piquer_piquer: Carmen Piquer Piquer
+      miquel_serra_albiac: Miquel Serra Albiac
+      montserrat_vilarrasa_monclus: Montserrat Vilarrasa Monclús
+    mental_disorder:
+      marta_delgadillo_fernandez: Marta Delgadillo Fernández
+      raquel_montllor_linares: Raquel Montllor Linares
+    physical:
+      ana_sune_peremiquel: Ana Suñé Peremiquel (Els nostres drets, la nostra prioritat)
+      angel_urraca_bresciani: Àngel Urraca Bresciani (Barcelona també és nostra)
+      antonio_de_senillosa_de_olano_nico: Antonio de Senillosa de Olano - Nico (Els nostres drets, la nostra prioritat)
+      bertrand_de_five_pragner: Bertrand de Five Pragner (Barcelona també és nostra)
+      carme_riu_pascual: Carme Riu Pascual (Barcelona també és nostra)
+      cesar_leon_ortega: César León Ortega (Els nostres drets, la nostra prioritat)
+      francisco_javier_ona_sobrino: Francisco Javier de Oña Sobrino
+      leticia_esporrin_sanclemente: Leticia Esporrin Sanclemente (Els nostres drets, la nostra prioritat)
+      neus_mora_fernandez: Neus Mora Fernández (Barcelona també és nostra)
+      oriol_roqueta_del_rio: Oriol Roqueta del Río
+      vanessa_fuentes_heredero: Vanessa Fuentes Heredero (Barcelona també és nostra)
+      xavier_duacastilla_soler: Xavier Duacastilla Soler (Els nostres drets, la nostra prioritat)
+    visual_sensory:
+      anais_garcia_balmana: Anaïs García Balmaña
+      paquita_garcia_caballero: Paquita García Caballero
   decidim:
     forms:
       question_type:
         files: Adjunts
-  activemodel:
-    attributes:
-      add_documents: Adjunts
-      answer:
-        add_documents: Adjunts
-    errors:
-      models:
-        answer:
-          attributes:
-            add_documents:
-              needs_to_be_reattached: És necessari tornar a adjuntar l'arxiu
-  errors:
-    messages:
-      carrierwave_processing_error: no s'ha pogut processar
-      carrierwave_integrity_error: no és d'una mena d'arxiu permès
-      carrierwave_download_error: no s'ha pogut descarregar
-      extension_whitelist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions permeses són: %{allowed_types}"
-      extension_blacklist_error: "No es poden pujar arxius de l'extensió %{extension}. Les extensions prohibides són: %{prohibited_types}"
-      content_type_whitelist_error: "No es poden pujar arxius de l'extensió %{content_type}"
-      content_type_blacklist_error: "No es poden pujar arxius de l'extensió %{content_type}"
-      rmagick_processing_error: "No s'ha pogut manipular amb rmagick, potser perquè no és una imatge? Error original: %{e}"
-      mini_magick_processing_error: "No s'ha pogut manipular amb MiniMagick, potser perquè no és una imatge? Error original: %{e}"
-      min_size_error: "La grandària de l'arxiu ha de ser major que %{min_size}"
-      max_size_error: "La grandària de l'arxiu ha de ser inferior a %{max_size}"
+    sms:
+      text: 'El teu codi per realitzar la votació és: %{code}'

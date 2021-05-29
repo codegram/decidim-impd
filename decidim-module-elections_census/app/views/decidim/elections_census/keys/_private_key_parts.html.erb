@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card__content">
+    <% (1..7).to_a.each do |index| %>
+      <div class="field">
+        <label for="tally-key-part-<%= index %>">Part <%= index %> de la clau privada</label>
+        <textarea class="tally-key-part" id="tally-key-part-<%= index %>" rows="5"></textarea>
+        <% if download %>
+          <button data-download-for="tally-key-part-<%= index %>" data-download-as="clau-privada-part-<%= index %>" class="button expanded download-key">Descarregar</button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

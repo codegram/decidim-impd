@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title flex--sbc">
+      <div>
+        <%= t "decidim.admin.titles.voters" %>
+      </div>
+      <div id="js-other-actions-wrapper">
+        <% if admin_allowed_to? :import, :voter %>
+          <%= link_to t("voters.index.import", scope: "decidim.admin"), decidim_elections_census_admin.import_voters_path, class: "button small new" %>
+        <% end %>
+        <% if admin_allowed_to? :export, :voter %>
+          <%= link_to t("voters.index.export", scope: "decidim.admin"), decidim_elections_census_admin.export_voters_path, class: "button small new" %>
+      <% end %>
+        <% if admin_allowed_to? :export, :voter %>
+          <%= link_to t("voters.index.export_for_elections", scope: "decidim.admin"), decidim_elections_census_admin.elections_export_voters_path, class: "button small new" %>
+      <% end %>
+      </div>
+    </h2>
+  </div>
+  <div class="card-section">
+    <div class="table-scroll">
+      <table class="table-list">
+        <thead>
+          <tr>
+            <th><%= t("document_number", scope: "activemodel.attributes.voter") %></th>
+            <th><%= t("full_name", scope: "activemodel.attributes.voter") %></th>
+            <th><%= t("email", scope: "activemodel.attributes.voter") %></th>
+            <th><%= t("created_at", scope: "activemodel.attributes.voter") %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @voters.each do |voter| %>
+            <tr data-voter-id="<%= voter.id %>">
+              <td><%= voter.document_number %> (<%= t(voter.document_type, scope: "decidim.elections_census.document_types") %>)</td>
+              <td><%= voter.name %> <%= voter.lastname %></td>
+              <td><%= voter.email %></td>
+              <td><%= l voter.created_at, format: :short %></td>
+              <td class="table-list__actions">
+                <% if !voter.verified? && admin_allowed_to?(:verify, :voter, voter: voter) %>
+                  <%= icon_link_to "check", verify_voter_path(voter), t("actions.verify", scope: "decidim.admin"), class: "resend-invitation", method: :post %>
+                <% end %>
+
+                <% if voter.verified? && admin_allowed_to?(:unverify, :voter, voter: voter) %>
+                  <%= icon_link_to "x", unverify_voter_path(voter), t("actions.unverify", scope: "decidim.admin"), class: "resend-invitation", method: :post %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @voters, theme: "decidim" %>
+    </div>
+  </div>
+</div>
+

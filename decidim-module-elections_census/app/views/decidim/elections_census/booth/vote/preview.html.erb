@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="columns large-8">
+    <ul class="accordion mb-m evote__preview"
+        data-accordion
+        data-multi-expand="true"
+        data-allow-all-closed="true">
+      <% @form.votes.each do |disability, votes| %>
+        <li class="accordion-item evote__preview-question is-active" data-accordion-item>
+          <a href="#" class="accordion-title flex--sbc">
+            <%= t("decidim.elections_census.booth.vote.vote_options.voting_title", disability_title: t("decidim.elections_census.booth.vote.vote_options.voting_disability_title.#{disability}")) %>
+          </a>
+
+          <div class="accordion-content" data-tab-content>
+            <strong><%= t(".available_answers") %></strong>
+
+            <ul>
+              <% votes.each do |vote| %>
+                <% if vote == "blank" %>
+                  <li><%= I18n.t("candidates.blank") %></li>
+                <% else %>
+                  <li><%= I18n.t(vote, scope: "candidates.#{disability}") %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="card">
+      <div class="card__content">
+        <div class="actions">
+          <%= decidim_form_for(@form, url: booth_vote_path) do |f| %>
+            <%= f.hidden_field :preview, value: false %>
+            <%= f.hidden_field :voting_digest %>
+            <%= f.hidden_field :voter_id %>
+            <%= f.hidden_field :voting_code %>
+            <%= invisible_captcha %>
+            <% @form.votes.each do |disability, votes| %>
+              <% votes.each do |vote| %>
+                <%= hidden_field_tag "vote[votes][#{disability}][]", vote %>
+              <% end %>
+            <% end %>
+            <%= f.submit t(".edit"), class: "button expanded secondary", name: "edit_vote" %>
+          <% end %>
+          <%= decidim_form_for(@form, url: booth_cast_path) do |f| %>
+            <%= f.hidden_field :preview, value: false %>
+            <%= f.hidden_field :voting_digest %>
+            <%= f.hidden_field :voter_id %>
+            <%= f.hidden_field :voting_code %>
+            <%= f.hidden_field :encrypted_ballot %>
+            <%= invisible_captcha %>
+            <%= f.submit t(".vote"), class: "button expanded", disabled: "disabled", id: "vote-button", data: {confirm: t(".confirm_vote"), disable: true } %>
+          <% end %>
+
+          <script type="text/javascript">
+            $(() => {
+              let Elections = window.Decidim.Elections;
+              let serializedBallot = "<%= @form.serialized_ballot %>";
+              let voteEncryptionKey = <%= Rails.application.secrets.vote_encryption_key.to_json.html_safe %>;
+
+              Elections.importCryptoKey(voteEncryptionKey).then(function(key) {
+                Elections.encryptContent(key, serializedBallot).then(function(encryptedContent) {
+                  $("#vote_encrypted_ballot").val(encryptedContent);
+                  $("#vote-button").removeAttr("disabled");
+                })
+              })
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
