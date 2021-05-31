@@ -121,7 +121,7 @@ es:
             save_receipt_information: Hace falta que guardes este número hasta que acabe el proceso de votación. Lo necesitarás si quieres comprobar tu voto.
             verify_vote: 'Puedes comprobar si tu voto se ha introducido correctamente en la urna, en la página de '
             verify_vote_link: comprobación del voto
-            vote_casted: Ya has votado, tu voto ha sido correctamente grabado.
+            vote_casted: Ya has votado, tu voto ha sido introducido correctamente en la urna electrónica.
             vote_receipt: 'Este es el número de identificación de tu voto:'
           error: Ha habido algun error al comprobar tus datos.
           invalid_ballot: Los datos del voto encriptado no son válidos.

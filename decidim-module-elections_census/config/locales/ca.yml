@@ -121,7 +121,7 @@ ca:
             save_receipt_information: Cal que guardis aquest número fins que acabi el procés de votació. El necessitaràs si vols comprovar el teu vot.
             verify_vote: 'Pots comprovar si el teu vot s’ha introduït correctament a l’urna, a la pàgina de '
             verify_vote_link: comprovació del vot
-            vote_casted: Ja has votat, el teu vot ha estat correctament enregistrat.
+            vote_casted: Ja has votat, el teu vot ha estat introduït correctament a l'urna electrònica.
             vote_receipt: 'Aquest és el número d’identificació del teu vot: '
           error: Hi ha hagut algun error al comprovar les teves dades.
           invalid_ballot: Les dades del vot encriptat no són vàlides.
