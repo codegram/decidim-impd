@@ -54,7 +54,7 @@ module Decidim
       def allowed_disabilities
         return [] unless voter.present?
 
-        @allowed_disabilities ||= [voter.disability, voter.secondary_disability].reject(&:blank?).map(&:to_sym).select{|disability| Decidim::ElectionsCensus::Vote::CANDIDATES.keys.include?(disability) }
+        @allowed_disabilities ||= [voter.disability, voter.secondary_disability].reject(&:blank?).map(&:to_sym).select{|disability| Decidim::ElectionsCensus::Vote::CANDIDATES.keys.include?(disability) }.uniq
       end
 
       def option_selected?(disability, candidate)

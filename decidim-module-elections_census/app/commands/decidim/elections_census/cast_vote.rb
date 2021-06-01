@@ -26,7 +26,7 @@ module Decidim
           Vote.create!(
             code: form.voting_code,
             ballot: form.encrypted_ballot,
-            ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?)
+            ballot_style: [voter.disability, voter.secondary_disability].reject(&:blank?).uniq
           )
         end
       rescue ActiveRecord::ActiveRecordError => exception

@@ -15,6 +15,7 @@ module Decidim
           voter.second_lastname = voter_data["SEGON_COGNOM"] unless voter_data["SEGON_COGNOM"].blank?
           voter.disability = disability
           voter.secondary_disability = parse_disability(voter_data["DISCAPACITAT_2"]) unless voter_data["DISCAPACITAT_2"].blank?
+          voter.secondary_disability = nil if voter.disability == voter.secondary_disability
           voter.address = voter_data["ADRECA"] unless voter_data["ADRECA"].blank?
           voter.gender = parse_gender(voter_data["GENERE"]) unless voter_data["GENERE"].blank?
           voter.email = voter_data["EMAIL"].to_s.downcase unless voter_data["EMAIL"].blank?

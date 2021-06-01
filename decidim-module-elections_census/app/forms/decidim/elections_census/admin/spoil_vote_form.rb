@@ -26,7 +26,7 @@ module Decidim
         end
 
         def ballot_style
-          [disability, secondary_disability].reject(&:blank?)
+          [disability, secondary_disability].reject(&:blank?).uniq
         end
 
         def voter
