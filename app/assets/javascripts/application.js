@@ -33,4 +33,17 @@ function hideProposalsComponentsEleccions() {
 
 $(document).ready(function() {
   hideProposalsComponentsEleccions();
+
+  $('input, select').on('keyup', function(e) {
+      switch (e.which) {
+          case 39:
+              $(e.target).closest('.field').next().find('input, select').first().focus(); break;
+          case 37:
+              $(e.target).closest('.field').prev().find('input, select').first().focus(); break;
+          case 40:
+              $(e.target).closest('.field').next().find('input, select').first().focus(); break;
+          case 38:
+              $(e.target).closest('.field').prev().find('input, select').first().focus(); break;
+      }
+  });
 });
