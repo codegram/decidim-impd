@@ -59,12 +59,25 @@
               let serializedBallot = "<%= @form.serialized_ballot %>";
               let voteEncryptionKey = <%= Rails.application.secrets.vote_encryption_key.to_json.html_safe %>;
 
-              Elections.importCryptoKey(voteEncryptionKey).then(function(key) {
-                Elections.encryptContent(key, serializedBallot).then(function(encryptedContent) {
-                  $("#vote_encrypted_ballot").val(encryptedContent);
-                  $("#vote-button").removeAttr("disabled");
-                })
-              })
+              Elections.importCryptoKey(voteEncryptionKey).then(
+                function(key) {
+                  Elections.encryptContent(key, serializedBallot).then(
+                    function(encryptedContent) {
+                      $("#vote_encrypted_ballot").val(encryptedContent);
+                      $("#vote-button").removeAttr("disabled");
+                  }, function(error) {
+                    alert(`Error encriptant el vot: ${error}`)
+                    if (Sentry !== undefined) {
+                      Sentry.captureException(error);
+                    }
+                  })
+                }, function(error) {
+                  alert(`Error al importar clau d'encriptació: ${error}`)
+                  if (Sentry !== undefined) {
+                    Sentry.captureException(error);
+                  }
+                }
+              )
             });
           </script>
         </div>
