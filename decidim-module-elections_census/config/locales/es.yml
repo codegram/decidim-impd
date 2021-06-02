@@ -130,6 +130,7 @@ es:
             preview: Enviar y previsualizar
             subtitle: Selecciona las personas candidatas que quieres votar.
             title: Cabina de votación
+            select_options_to_continue: Hay que seleccionar una opción como mínimo de cada sector de discapacidad que te sale a la pantalla (incluye el voto en blanco).
             voting_code_help: Introduce el código que has recibido por SMS.
             voting_errors: 'Se han producido los siguientes errores:'
           not_present: No estás inscrito/a en el censo electoral. Para inscribirte en el censo, rellena el siguiente formulario

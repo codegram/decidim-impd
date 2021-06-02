@@ -128,6 +128,7 @@ ca:
           invalid_ballot: Les dades del vot encriptat no són vàlides.
           new:
             preview: Enviar i previsualitzar
+            select_options_to_continue: Cal seleccionar una opció com a mínim de cada sector de discapacitat que et surt a la pantalla (inclou el vot en blanc).
             subtitle: Selecciona les persones candidates que vols votar.
             title: Cabina de votació
             voting_code_help: Introdueix el codi que has rebut per SMS.
