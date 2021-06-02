@@ -60,6 +60,7 @@ es:
           voting_code_expired: El código de votación ha caducado.
         voter:
           email_or_phone_required: Tienes que introduir el correo electrónico o el teléfono
+          error_with_census: Ha habido un error con el padrón, vuelve a intentarlo.
           invalid_census: No existen estos datos en el padrón
           must_be_different: Tiene que ser diferente de la discapacidad principal
         voting:

@@ -60,6 +60,7 @@ ca:
           voting_code_expired: El codi de votació ha caducat.
         voter:
           email_or_phone_required: Has d'introduir el correu electrònic o el telèfon
+          error_with_census: Hi ha hagut un error amb el padró, torna-ho a intentar.
           invalid_census: No existeixen aquestes dades al padró
           must_be_different: Ha de ser diferent de la discapacitat principal
         voting:

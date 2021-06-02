@@ -39,6 +39,8 @@ module Decidim
         errors.add(:document_type, :invalid_census)
         errors.add(:address_postal_code, :invalid_census)
         errors.add(:birthday, :invalid_census)
+      rescue Faraday::TimeoutError, Faraday::ConnectionFailed
+        errors.add(:document_number, :error_with_census)
       end
     end
   end
