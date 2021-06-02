@@ -54,7 +54,7 @@
           <% end %>
 
           <script type="text/javascript">
-            $(() => {
+            $(function() {
               let Elections = window.Decidim.Elections;
               let serializedBallot = "<%= @form.serialized_ballot %>";
               let voteEncryptionKey = <%= Rails.application.secrets.vote_encryption_key.to_json.html_safe %>;
