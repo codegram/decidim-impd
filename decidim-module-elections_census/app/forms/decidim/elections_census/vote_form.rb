@@ -84,6 +84,7 @@ module Decidim
 
       def number_of_votes
         return if encrypted_ballot.present?
+        return errors.add(:votes, :at_least_one_vote) if votes.empty?
 
         allowed_disabilities.each do |disability|
           number_of_votes = votes.fetch(disability, []).length
