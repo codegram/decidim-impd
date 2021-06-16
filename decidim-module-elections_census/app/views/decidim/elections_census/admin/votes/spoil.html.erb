@@ -23,11 +23,11 @@
               </div>
 
               <div class="field">
-                <%= f.select :disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_disability") %>
+                <%= f.select :disability, (Decidim::ElectionsCensus::VoterForm::DISABILITIES + ["other"]).map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_disability") %>
               </div>
 
               <div class="field">
-                <%= f.select :secondary_disability, Decidim::ElectionsCensus::VoterForm::DISABILITIES.map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_secondary_disability") %>
+                <%= f.select :secondary_disability, (Decidim::ElectionsCensus::VoterForm::DISABILITIES + ["other"]).map {|option| [t(option, scope: "decidim.elections_census.disabilities"), option]}, prompt: t("decidim.elections_census.voters.new.select_secondary_disability") %>
               </div>
             </fieldset>
           </div>
