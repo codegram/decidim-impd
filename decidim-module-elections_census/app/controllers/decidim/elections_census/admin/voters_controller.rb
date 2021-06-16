@@ -91,20 +91,54 @@ module Decidim
           collection = Decidim::ElectionsCensus::Voter.verified.where(organization: current_organization)
           serializer = Decidim::ElectionsCensus::ElectionVoterSerializer
 
-          csv = CSV.generate do |csv|
-            csv << ["NOM", "PRIMER_COGNOM", "SEGON_COGNOM", "TIPUS_DOCUMENT", "DOCUMENT", "DISCAPACITAT_1", "DISCAPACITAT_2", "VOT_ONLINE"]
+          book = Spreadsheet::Workbook.new
+          worksheets = ["INTEL·LECTUAL", "FÍSICA", "TRANSTORN MENTAL", "SENSORIAL AUDITIVA", "SENSORIAL VISUAL", "ALTRES"].inject({}) do |all, title|
+            worksheet = book.create_worksheet(name: title)
+            worksheet.row(0).replace(["PRIMER_COGNOM", "SEGON_COGNOM", "NOM", "TIPUS_DOCUMENT", "DOCUMENT", "VOT_ONLINE", "DISCAPACITAT_1", "DISCAPACITAT_2"])
+            all.update(title => worksheet)
+          end
 
-            collection.find_each do |voter|
-              csv << serializer.new(voter).serialize.values
+          voters = ["INTEL·LECTUAL", "FÍSICA", "TRANSTORN MENTAL", "SENSORIAL AUDITIVA", "SENSORIAL VISUAL", "ALTRES"].inject({}) do |all, title|
+            all.update(title => [])
+          end
+
+          collection.find_each do |voter|
+            voter = serializer.new(voter).serialize
+            voters[voter[:DISCAPACITAT_1]] << voter
+            voters[voter[:DISCAPACITAT_2]] << voter if voter[:DISCAPACITAT_2].present?
+          end
+
+          voters.each do |disability, voters|
+            voters.sort_by do |voter|
+              [
+                voter[:PRIMER_COGNOM].to_s.strip,
+                voter[:SEGON_COGNOM].to_s.strip,
+                voter[:NOM].to_s.strip
+              ]
+            end.each_with_index do |voter, index|
+              worksheet = worksheets[disability]
+              values = [
+                voter[:PRIMER_COGNOM].to_s.strip,
+                voter[:SEGON_COGNOM].to_s.strip,
+                voter[:NOM].to_s.strip,
+                voter[:TIPUS_DOCUMENT].to_s.strip,
+                voter[:DOCUMENT].to_s.strip,
+                voter[:VOT_ONLINE].to_s.strip,
+                voter[:DISCAPACITAT_1].to_s.strip,
+                voter[:DISCAPACITAT_2].to_s.strip
+              ]
+              worksheet.row(index + 1).replace(values)
             end
           end
 
-          digest = Digest::SHA256.hexdigest(csv)
+          file_contents = StringIO.new
+          book.write file_contents
+          digest = Digest::SHA256.hexdigest(file_contents.string)
 
           send_data(
-            csv,
-            filename: "cens_impd_#{digest}.csv",
-            type: "text/csv",
+            file_contents.string,
+            filename: "cens_impd_#{digest}.xls",
+            type: "application/vnd.ms-excel",
             disposition: :attachment
           )
         end
