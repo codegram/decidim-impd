@@ -10,6 +10,7 @@ $(() => {
     const $totalVotes = $("#total-votes")
     const $totalValidVotes = $("#total-valid-votes")
     const $totalSpoiledVotes = $("#total-spoiled-votes")
+    const $totalNullVotes = $("#total-null-votes")
     let votes;
 
     try {
@@ -32,20 +33,18 @@ $(() => {
       return vote.spoiled_at === undefined || vote.spoiled_at !== undefined && vote.spoiled_at !== null
     })
 
+    let results = calculatePercentages(countVotes(validVotes))
+    let nullVotes = results.find(result => result.candidate_id.toString() === "nul").votes
+
     updateCounter($totalVotes, votes.length)
     updateCounter($totalValidVotes, validVotes.length)
     updateCounter($totalSpoiledVotes, spoiledVotes.length)
-
-    let results = calculatePercentages(countVotes(validVotes))
+    updateCounter($totalNullVotes, nullVotes)
 
     $(".evote__preview-result").toArray().forEach((element) => {
       let $element = $(element)
       let candidateId = $element.data("candidate-id")
       let result = results.find(result => result.candidate_id.toString() === candidateId.toString())
-
-      if (result === undefined) {
-        result = {votes: 0, percentage: 0}
-      }
 
       let $progressBar = $element.find(".progress__bar__bar")
       let $progressBarComplete = $element.find(".progress__bar__bar--complete")
@@ -59,7 +58,7 @@ $(() => {
       $progressBar.attr("aria-valuetext", `${result.percentage} percent`)
       $progressBarComplete.attr("style", `width: ${result.percentage}%`)
       $progressBarIncomplete.attr("style", `width: ${100 - result.percentage}%`)
-      $percentage.html(`${result.percentage.toLocaleString('es', {minimumFractionDigits: 2})}%`)
+      $percentage.html(`${result.percentage.toLocaleString('es', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`)
       $label.find("span").html(votes)
     })
   }
@@ -82,6 +81,10 @@ $(() => {
       let votedCandidates = vote.rawVotes.split("#").map((id) => candidatesMapping[id])
 
       votedCandidates.forEach((candidate) => {
+        if (candidate === undefined) {
+          candidate = "nul"
+        }
+
         let question = $(`[data-candidate-id='${candidate}']`).data("question-id")
 
         if (results.questions[question] === undefined) {
