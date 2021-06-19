@@ -34,7 +34,7 @@ module Decidim
         end
 
         def can_export_votes?
-          Rails.application.secrets.votes_export_enabled? && Time.current > Rails.application.secrets.offline_voting_ends
+          Rails.application.secrets.votes_export_enabled && Time.current > Rails.application.secrets.offline_voting_ends
         end
       end
     end
