@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_124633) do
+ActiveRecord::Schema.define(version: 2021_06_18_232422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -469,6 +469,13 @@ ActiveRecord::Schema.define(version: 2021_05_26_124633) do
     t.index ["endorsements_count"], name: "idx_decidim_debates_debates_on_endorsemnts_count"
   end
 
+  create_table "decidim_elections_census_polling_stations", force: :cascade do |t|
+    t.string "name"
+    t.jsonb "votes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "decidim_elections_census_voters", force: :cascade do |t|
     t.string "name", null: false
     t.string "lastname", null: false
@@ -498,7 +505,7 @@ ActiveRecord::Schema.define(version: 2021_05_26_124633) do
     t.index ["voting_code"], name: "index_decidim_elections_census_voters_on_voting_code", unique: true
   end
 
-  create_table "decidim_elections_census_votes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "decidim_elections_census_votes", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
     t.string "code", null: false
     t.string "receipt", null: false
     t.string "ballot_style", default: [], null: false, array: true

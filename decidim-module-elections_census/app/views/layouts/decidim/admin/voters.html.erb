@@ -24,6 +24,12 @@
           <%= link_to t("voters.index.tally", scope: "decidim.admin"), decidim_elections_census_admin.tally_path %>
         </li>
       <% end %>
+
+      <% if admin_allowed_to? :tally, :vote %>
+        <li <% if request.original_url.include?("polling") %> class="is-active" <% end %>>
+          <%= link_to t("voters.index.polling_station", scope: "decidim.admin"), decidim_elections_census_admin.polling_stations_path %>
+        </li>
+      <% end %>
     </ul>
   </div>
 <% end %>

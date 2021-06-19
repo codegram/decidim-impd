@@ -1,10 +1,35 @@
 ---
 ca:
   candidates:
+    encarna_munoz_chamorro: Encarna Muñoz Chamorro
+    rafel_tixe_milian: Rafel Tixé i Milian
+    carles_marine_gea: Carles Mariné Gea
+    carmen_piquer_piquer: Carmen Piquer Piquer
+    miquel_serra_albiac: Miquel Serra Albiac
+    montserrat_vilarrasa_monclus: Montserrat Vilarrasa Monclús
+    marta_delgadillo_fernandez: Marta Delgadillo Fernández
+    raquel_montllor_linares: Raquel Montllor Linares
+    ana_sune_peremiquel: Ana Suñé Peremiquel (Els nostres drets, la nostra prioritat)
+    angel_urraca_bresciani: Àngel Urraca Bresciani (Barcelona també és nostra)
+    antonio_de_senillosa_de_olano_nico: Antonio de Senillosa de Olano - Nico (Els nostres drets, la nostra prioritat)
+    bertrand_de_five_pragner: Bertrand de Five Pragner (Barcelona també és nostra)
+    carme_riu_pascual: Carme Riu Pascual (Barcelona també és nostra)
+    cesar_leon_ortega: César León Ortega (Els nostres drets, la nostra prioritat)
+    francisco_javier_ona_sobrino: Francisco Javier de Oña Sobrino
+    leticia_esporrin_sanclemente: Leticia Esporrin Sanclemente (Els nostres drets, la nostra prioritat)
+    neus_mora_fernandez: Neus Mora Fernández (Barcelona també és nostra)
+    oriol_roqueta_del_rio: Oriol Roqueta del Río
+    vanessa_fuentes_heredero: Vanessa Fuentes Heredero (Barcelona també és nostra)
+    xavier_duacastilla_soler: Xavier Duacastilla Soler (Els nostres drets, la nostra prioritat)
+    anais_garcia_balmana: Anaïs García Balmaña
+    paquita_garcia_caballero: Paquita García Caballero
+    encarna_munoz_chamorro: Encarna Muñoz Chamorro
+    rafel_tixe_milian: Rafel Tixé i Milian
+    blank: Vot en blanc
+    nil_vote: Vot nul
     auditory_sensory:
       encarna_munoz_chamorro: Encarna Muñoz Chamorro
       rafel_tixe_milian: Rafel Tixé i Milian
-    blank: Vot en blanc
     intellectual:
       carles_marine_gea: Carles Mariné Gea
       carmen_piquer_piquer: Carmen Piquer Piquer

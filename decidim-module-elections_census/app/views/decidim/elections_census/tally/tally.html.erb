@@ -21,16 +21,16 @@
         data-allow-all-closed="true">
 
       <% Decidim::ElectionsCensus::Vote::CANDIDATES.each do |(question, answers)| %>
-        <li class="accordion-item is-active evote__preview-question" data-accordion-item data-question-id="<%= question %>">
+        <li class="accordion-item is-active evote__preview-question" data-accordion-item data-question-id="<%= question %>" data-offline-votes="<%= Decidim::ElectionsCensus::PollingStation.total_votes_for(answers) %>">
           <a href="#" class="accordion-title flex--sbc">
             <%= t("decidim.elections_census.booth.vote.vote_options.voting_title", disability_title: t("decidim.elections_census.booth.vote.vote_options.voting_disability_title.#{question}")) %>
           </a>
           <div class="accordion-content" data-tab-content>
-            <% (answers + [:blank]).each do |candidate| %>
+            <% (answers).each do |candidate| %>
               <% if candidate.to_s == "blank" %>
                 <div class="evote__preview-result" data-question-id="<%= question %>" data-candidate-id="<%= [question, candidate].join("_") %>">
               <% else %>
-                <div class="evote__preview-result" data-question-id="<%= question %>" data-candidate-id="<%= candidate %>">
+                <div class="evote__preview-result" data-question-id="<%= question %>" data-candidate-id="<%= candidate %>" data-offline-votes="<%= Decidim::ElectionsCensus::PollingStation.votes_for(candidate.to_s) %>">
               <% end %>
                 <h3 class="evote__preview-option">
                   <% if candidate.to_s == "blank" %>
@@ -50,7 +50,9 @@
                     </div>
                   </div>
                   <div class="evote__preview-label">
-                    <span>0</span> vots
+                    <span class="online_votes">0</span> en línia +
+                    <span class="offline_votes"><%= Decidim::ElectionsCensus::PollingStation.votes_for(candidate.to_s) %></span> presencials =
+                    <span class="total_votes"><%= Decidim::ElectionsCensus::PollingStation.votes_for(candidate.to_s) %></span> vots
                   </div>
                 </div>
               </div>
@@ -63,12 +65,23 @@
 </div>
 <div class="row section">
   <div class="columns large-8">
-    <h2 class="section-heading">Estadístiques</h2>
+    <h2 class="section-heading">Estadístiques vots en línia</h2>
     <ul>
-      <li id="total-votes">Nombre total de paparetes: <strong>0</strong></li>
+      <li id="total-ballots">Nombre total de paparetes: <strong>0</strong></li>
       <li id="total-valid-votes">Nombre de paparetes vàlides: <strong>0</strong></li>
       <li id="total-spoiled-votes">Nombre de paparetes anul·lades: <strong>0</strong></li>
+      <li id="total-votes">Nombre total de vots: <strong>0</strong></li>
+      <li id="total-blank-votes">Nombre de vots en blanc: <strong>0</strong></li>
       <li id="total-null-votes">Nombre de vots nuls: <strong>0</strong></li>
+    </ul>
+
+    <h2 class="section-heading">Estadístiques vots presencials</h2>
+    <ul>
+      <% @stations.each do |station| %>
+        <li id="total-offline_votes_station-<%= station.id %>">Vots <%= station.name.downcase %>: <strong><%= station.total_votes %></strong></li>
+      <% end %>
+      <li id="total-offline_votes">Nombre total de vots: <strong><%= @total_offline_votes %></strong></li>
+      <li id="total-offline-null-votes">Nombre de vots nuls: <strong><%= @null_votes %></strong></li>
     </ul>
   </div>
 </div>

@@ -71,8 +71,10 @@ ca:
         spoil_vote: Anul·lar vot
         unverify: Desverificar
         verify: Verificar
+        update: Actualitzar %{station}
       titles:
         elections: Eleccions
+        polling_stations: Meses electorals
         spoil_vote: Anul·lar vot
         voters: Cens electoral
         votes: Vots
@@ -82,6 +84,7 @@ ca:
           export_for_elections: Exportar cens verificat
           import: Importar cens
           pending: Cens pendents de verificar
+          polling_station: Meses electorals
           tally: Recompte de vots
           verified: Cens verificat
           votes: Vots

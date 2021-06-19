@@ -7,10 +7,12 @@ $(() => {
   })
 
   const tally = () => {
-    const $totalVotes = $("#total-votes")
+    const $totalBallots = $("#total-ballots")
     const $totalValidVotes = $("#total-valid-votes")
     const $totalSpoiledVotes = $("#total-spoiled-votes")
     const $totalNullVotes = $("#total-null-votes")
+    const $totalBlankVotes = $("#total-blank-votes")
+    const $totalVotes = $("#total-votes")
     let votes;
 
     try {
@@ -35,11 +37,15 @@ $(() => {
 
     let results = calculatePercentages(countVotes(validVotes))
     let nullVotes = results.find(result => result.candidate_id.toString() === "nul").votes
+    let blankVotes = results.filter(result => result.candidate_id.toString().endsWith("blank")).map(result => result.votes).reduce((total, votes) => total + votes)
+    let totalVotes = results.map(result => result.votes).reduce((total, votes) => total + votes) - nullVotes - blankVotes
 
-    updateCounter($totalVotes, votes.length)
+    updateCounter($totalBallots, votes.length)
+    updateCounter($totalVotes, totalVotes)
     updateCounter($totalValidVotes, validVotes.length)
     updateCounter($totalSpoiledVotes, spoiledVotes.length)
     updateCounter($totalNullVotes, nullVotes)
+    updateCounter($totalBlankVotes, blankVotes)
 
     $(".evote__preview-result").toArray().forEach((element) => {
       let $element = $(element)
@@ -51,6 +57,7 @@ $(() => {
       let $progressBarIncomplete = $element.find(".progress__bar__bar--incomplete")
       let $percentage = $element.find(".evote__preview-perc")
       let $label = $element.find(".evote__preview-label")
+      let offlineVotes = parseInt($element.find(".evote__preview-label span.offline_votes").html())
 
       let votes = parseInt(result.votes) || "0"
 
@@ -59,8 +66,13 @@ $(() => {
       $progressBarComplete.attr("style", `width: ${result.percentage}%`)
       $progressBarIncomplete.attr("style", `width: ${100 - result.percentage}%`)
       $percentage.html(`${result.percentage.toLocaleString('es', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`)
-      $label.find("span").html(votes)
+      $label.find("span.online_votes").html(votes)
+      $label.find("span.total_votes").html(votes + offlineVotes)
     })
+  }
+
+  const offlineVotesForCandidate = (candidate) => {
+    return parseInt($(`[data-candidate-id='${candidate}']`).data("offline-votes"))
   }
 
   const calculatePercentages = (results) => {
@@ -69,7 +81,8 @@ $(() => {
     return Object.keys(results.candidates).map((candidate) => {
       let result = results.candidates[candidate]
       let totalVotesInQuestion = results.questions[result.question]
-      result.percentage = result.votes * 100.0 / totalVotesInQuestion
+      let votes = result.votes + offlineVotesForCandidate(candidate)
+      result.percentage = votes * 100.0 / totalVotesInQuestion
       return result
     })
   }
@@ -86,9 +99,10 @@ $(() => {
         }
 
         let question = $(`[data-candidate-id='${candidate}']`).data("question-id")
+        let offlineVotes = parseInt($(`li.accordion-item [data-question-id='${question}']`).data("offline-votes"))
 
         if (results.questions[question] === undefined) {
-          results.questions[question] = 0
+          results.questions[question] = offlineVotes || 0
         }
 
         if (results.candidates[candidate] === undefined) {
