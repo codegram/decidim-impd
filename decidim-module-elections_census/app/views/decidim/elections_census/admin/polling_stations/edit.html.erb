@@ -1,0 +1,28 @@
+<% @polling_stations.each do |station| %>
+  <%= form_tag(url: polling_stations_path, class: "form grid-container") do |f| %>
+    <div class="card">
+      <div class="card-divider">
+        <h2 class="card-title flex--sbc">
+          <%= station.name %> (<%= station.total_votes %> vots)
+        </h2>
+      </div>
+      <div class="card-section">
+        <div class="grid-x">
+          <div class="cell">
+            <fieldset>
+              <% station.votes.each do |candidate, votes| %>
+                <div class="field">
+                  <%= label_tag "votes_#{station.id}_#{candidate}", t(candidate, scope: "candidates")  %>
+                  <%= number_field_tag "votes[#{station.id}][#{candidate}]", votes, min: 0, step: 1, id: "votes_#{station.id}_#{candidate}" %>
+                </div>
+              <% end %>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-x align-center mt-sm">
+      <%= submit_tag t("decidim.admin.actions.update", station: station.name), class: "button" %>
+    </div>
+  <% end -%>
+<% end %>
